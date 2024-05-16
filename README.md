@@ -40,7 +40,7 @@ License
 This project is licensed under the MIT License.
 
 Credits
-The Course Suggestion System is developed and maintained by Your Name.
+The Course Suggestion System is developed and maintained by [Basharul Alam](https://github.com/Basharul2002)
 
 
 **Improvements:**
