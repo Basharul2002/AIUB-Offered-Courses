@@ -1,6 +1,11 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+void course();
+void printCourses(const vector<Course>& courses);
+void recommendCourses(const vector<Course>& allCourses, const vector<int>& completedCourses);
+
+
 // Define a structure to hold course information
 struct Course 
 {
@@ -9,47 +14,15 @@ struct Course
     int courseCredit;
 };
 
-// Function to print available courses
-void printCourses(const vector<Course>& courses) 
-{
-    cout << "Available Courses:\n";
-    for (int i = 0; i < courses.size(); ++i) 
-        cout << i + 1 << ". " << courses[i].name << endl;
-    
-}
-
-// Function to recommend next semester courses
-void recommendCourses(const vector<Course>& allCourses, const vector<int>& completedCourses) 
-{
-    // Store completed courses in a set for fast lookup
-    unordered_set<int> completedSet(completedCourses.begin(), completedCourses.end());
-    
-    cout << "Recommended Courses:\n";
-    for (int i = 0; i < allCourses.size(); ++i) 
-    {
-        // Skip courses that have already been completed
-        if (completedSet.find(i + 1) != completedSet.end()) 
-            continue;
-        
-        const Course& course = allCourses[i];
-        
-        bool canTake = true;
-        // Check if all prerequisites are completed
-        for (int prereq : course.prerequisites) 
-        {
-            if (completedSet.find(prereq) == completedSet.end()) 
-            {
-                canTake = false;
-                break;
-            }
-        }
-        
-        if (canTake) 
-            cout << "- " << course.name << endl;
-    }
-}
 
 int main() {
+    
+    course();
+    return 0;
+}
+
+void course()
+{
     // Define courses with their prerequisites
     vector<Course> allCourses = 
                             {
@@ -175,6 +148,45 @@ int main() {
     
     if(creditCompleted>=100)
         cout<<"- \n";
+}
+
+
+// Function to print available courses
+void printCourses(const vector<Course>& courses) 
+{
+    cout << "Available Courses:\n";
+    for (int i = 0; i < courses.size(); ++i) 
+        cout << i + 1 << ". " << courses[i].name << endl;
     
-    return 0;
+}
+
+// Function to recommend next semester courses
+void recommendCourses(const vector<Course>& allCourses, const vector<int>& completedCourses) 
+{
+    // Store completed courses in a set for fast lookup
+    unordered_set<int> completedSet(completedCourses.begin(), completedCourses.end());
+    
+    cout << "Recommended Courses:\n";
+    for (int i = 0; i < allCourses.size(); ++i) 
+    {
+        // Skip courses that have already been completed
+        if (completedSet.find(i + 1) != completedSet.end()) 
+            continue;
+        
+        const Course& course = allCourses[i];
+        
+        bool canTake = true;
+        // Check if all prerequisites are completed
+        for (int prereq : course.prerequisites) 
+        {
+            if (completedSet.find(prereq) == completedSet.end()) 
+            {
+                canTake = false;
+                break;
+            }
+        }
+        
+        if (canTake) 
+            cout << "- " << course.name << endl;
+    }
 }
