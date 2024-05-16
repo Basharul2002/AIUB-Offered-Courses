@@ -8,8 +8,6 @@ The Course Suggestion System is a C++ project designed to recommend courses for 
 
 * **User Input**
     * Allows users to input their completed courses.
-* **Course Database**
-    * Stores information about available courses, including prerequisites and course descriptions.
 * **Recommendation Algorithm**
     * Analyzes the user's completed courses and suggests relevant courses for the next semester.
 * **Interactive Interface** (Optional)
