@@ -1,11 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void course();
-void printCourses(const vector<Course>& courses);
-void recommendCourses(const vector<Course>& allCourses, const vector<int>& completedCourses);
-
-
 // Define a structure to hold course information
 struct Course 
 {
@@ -14,38 +9,43 @@ struct Course
     int courseCredit;
 };
 
+// Function prototypes
+void course();
+void printCourses(const vector<Course>& courses);
+void recommendCourses(const vector<Course>& allCourses, const vector<int>& completedCourses, int totalCreditCompleted);
 
-int main() {
-    
+int main() 
+{
     course();
     return 0;
 }
 
+
 void course()
 {
-    // Define courses with their prerequisites
+     // Define courses with their prerequisites
     vector<Course> allCourses = 
                             {
                                 /*1*/  {"DIFFERENTIAL CALCULUS & CO-ORDINATE GEOMETRY", {}, 3},
                                 /*2*/  {"PHYSICS 1", {}, 3},
-                                /*3*/  {"PHYSICS 1 LAB", {}, {1}},
+                                /*3*/  {"PHYSICS 1 LAB", {}, 1},
                                 /*4*/  {"ENGLISH READING SKILLS & PUBLIC SPEAKING", {}, 3},
                                 /*5*/  {"INTRODUCTION TO PROGRAMMING", {}, 3},
-                                /*6*/  {"INTRODUCTION TO PROGRAMMING LAB", {}, 3},
+                                /*6*/  {"INTRODUCTION TO PROGRAMMING LAB", {}, 1},
                                 /*7*/  {"INTRODUCTION TO COMPUTER STUDIES", {}, 3},
                                                              
                                 // Semester 2
-                                /*7*/  {"DISCRETE MATHEMATICS", {1, 5}, 3},
-                                /*8*/  {"INTEGRAL CALCULUS & ORDINARY DIFFERENTIAL EQUATIONS", {1}, 3},
-                                /*9*/  {"OBJECT ORIENTED PROGRAMMING 1", {5, 6}, 3},
-                                /*10*/ {"PHYSICS 2", {2}, 3},
-                                /*11*/ {"PHYSICS 2 LAB", {3}, 3},
-                                /*12*/ {"ENGLISH WRITING SKILLS & COMMUNICATION", {4}, 3},
-                                /*13*/ {"INTRODUCTION TO ELECTRICAL CIRCUITS", {2}, 3},
-                                /*14*/ {"INTRODUCTION TO ELECTRICAL CIRCUITS LAB", {3}, 1},
+                                /*8*/  {"DISCRETE MATHEMATICS", {1, 5}, 3},
+                                /*9*/  {"INTEGRAL CALCULUS & ORDINARY DIFFERENTIAL EQUATIONS", {1}, 3},
+                                /*10*/ {"OBJECT ORIENTED PROGRAMMING 1", {5, 6}, 3},
+                                /*11*/ {"PHYSICS 2", {2}, 3},
+                                /*12*/ {"PHYSICS 2 LAB", {3}, 1},
+                                /*13*/ {"ENGLISH WRITING SKILLS & COMMUNICATION", {4}, 3},
+                                /*14*/ {"INTRODUCTION TO ELECTRICAL CIRCUITS", {2}, 3},
+                                /*15*/ {"INTRODUCTION TO ELECTRICAL CIRCUITS LAB", {3}, 1},
                                 
                                 // Semester 3
-                                /*15*/ {"CHEMISTRY", {11}, 3},
+                                /*16*/ {"CHEMISTRY", {11}, 3},
                                 /*17*/ {"COMPLEX VARIABLE,LAPLACE & Z-TRANSFORMATION", {9}, 3},
                                 /*18*/ {"INTRODUCTION TO DATABASE", {10}, 3},
                                 /*19*/ {"ELECTRONIC DEVICES", {14}, 3},
@@ -67,7 +67,7 @@ void course()
                                 // Semester 5
                                 /*32*/ {"THEORY OF COMPUTATION", {24}, 3},
                                 /*33*/ {"PRINCIPLES OF ECONOMICS", {31}, 2},
-                                /*34*/ {"BUSINESS COMMUNICATION", {28}, {3}},
+                                /*34*/ {"BUSINESS COMMUNICATION", {28}, 3},
                                 /*35*/ {"NUMERICAL METHODS FOR SCIENCE AND ENGINEERING", {25}, 3},
                                 /*36*/ {"DATA COMMUNICATION", {31, 32}, 3},
                                 /*37*/ {"MICROPROCESSOR AND EMBEDDED SYSTEM", {31, 32}, 3},
@@ -90,48 +90,13 @@ void course()
                                 // Semester 8
                                 /*49*/ //{"THESIS / PROJECT", {}},
                                 
-                                // Elective
-                                /*50*/ //{"ADVANCE DATABASE MANAGEMENT SYSTEM", {}},
-                                /*51*/ {"BASIC MECHANICAL ENGG.", {}, 3},
-                                /*52*/ {"MANAGEMENT INFORMATION SYSTEM", {}, 3},
-                                /*53*/ {"SIGNALS & LINEAR SYSTEM", {}, 3},
-                                /*54*/ {"BASIC GRAPH THEORY", {}, 3},
-                                /*55*/ {"DIGITAL SYSTEM DESIGN", {}, 3},
-                                /*56*/ {"IMAGE PROCESSING", {}},
-                                /*57*/ {"MULTIMEDIA SYSTEMS", {}},
-                                /*58*/ {"SIMULATION & MODELING", {}},
-                                /*59*/ {"ENTERPRISE RESOURCE PLANNING", {}},
-                                /*60*/ {"DATA WAREHOUSE AND DATA MINING", {}},
-                                /*61*/ {"NATURAL LANGUAGE PROCESSING", {}},
-                                /*62*/ {"SOFTWARE DEVELOPMENT PROJECT MANAGEMENT", {}},
-                                /*52*/ {"COMPUTER SCIENCE MATHEMATICS", {}},
-                                /*50*/ {"MACHINE LEARNING", {}},
-                                /*51*/ {"WIRELESS SENSOR NETWORKS", {}},
-                                /*52*/ {"INDUSTRIAL ELECTRONICS, DRIVES & INSTRUMENTATION", {}},
-                                /*53*/ {"MOBILE APPLICATION DEVELOPMENT", {}},
-                                /*54*/ {"SOFTWARE ARCHITECTURE AND DESIGN PATTERNS", {}},
-                                /*55*/ {"HUMAN COMPUTER INTERACTION", {}},
-                                /*56*/ {"ADVANCED COMPUTER NETWORKS", {}},
-                                /*57*/ {"SOFTWARE REQUIREMENT ENGINEERING", {}},
-                                /*58*/ {"COMPUTER VISION AND PATTERN RECOGNITION", {}},
-                                
-                                
-                                /*55*/ {"DIGITAL MARKETING", {}},
-                                /*56*/ {"E-COMMERCE, E-GOVERNANCE & E-SERIES", {}},
-                                /*57*/ {"DIGITAL SIGNAL PROCESSING", {}},
-                                /*58*/ {"VLSI CIRCUIT DESIGN", {}}
+                               
                                 
                             };
                             
     // Print available courses
     printCourses(allCourses);
                             
-    cout<<"Enter total credit completed: ";
-    int creditCompleted;
-    cin>>creditCompleted;
-    
-    cin.ignore(); // Clear the input buffer
-    
     // Get completed courses from the user
     cout << "Enter completed course numbers separated by spaces: ";
     string line;
@@ -142,13 +107,26 @@ void course()
     while (iss >> courseNumber) 
         completedCourses.push_back(courseNumber);
     
+    // Calculate total credit for completed courses
+    int totalCreditCompleted = 0;
+    for (int courseNum : completedCourses) 
+    {
+        if (courseNum >= 1 && courseNum <= allCourses.size()) 
+        {
+            int index = courseNum - 1;
+            totalCreditCompleted += allCourses[index].courseCredit;
+        }
+    }
     
+    cout << "Total credit completed: " << totalCreditCompleted << endl;
+
     // Recommend next semester courses
-    recommendCourses(allCourses, completedCourses);
+    recommendCourses(allCourses, completedCourses, totalCreditCompleted);
     
-    if(creditCompleted>=100)
-        cout<<"- \n";
 }
+
+
+
 
 
 // Function to print available courses
@@ -161,7 +139,7 @@ void printCourses(const vector<Course>& courses)
 }
 
 // Function to recommend next semester courses
-void recommendCourses(const vector<Course>& allCourses, const vector<int>& completedCourses) 
+void recommendCourses(const vector<Course>& allCourses, const vector<int>& completedCourses, int totalCreditCompleted) 
 {
     // Store completed courses in a set for fast lookup
     unordered_set<int> completedSet(completedCourses.begin(), completedCourses.end());
@@ -186,7 +164,51 @@ void recommendCourses(const vector<Course>& allCourses, const vector<int>& compl
             }
         }
         
+        // Check if the course is "RESEARCH METHODOLOGY" and total credit completed is less than 100
+        if (course.name == "RESEARCH METHODOLOGY" && totalCreditCompleted < 100) 
+            canTake = false;
+        
+        
         if (canTake) 
             cout << "- " << course.name << endl;
     }
 }
+
+
+void ElectiveCourse()
+{
+     // Elective
+     vector<Course> allCourses = 
+                                {
+                                    /*50*/ //{"ADVANCE DATABASE MANAGEMENT SYSTEM", {}},
+                                    /*51*/ {"BASIC MECHANICAL ENGG.", {}, 3},
+                                    /*52*/ {"MANAGEMENT INFORMATION SYSTEM", {}, 3},
+                                    /*53*/ {"SIGNALS & LINEAR SYSTEM", {}, 3},
+                                    /*54*/ {"BASIC GRAPH THEORY", {}, 3},
+                                    /*55*/ {"DIGITAL SYSTEM DESIGN", {}, 3},
+                                    /*56*/ {"IMAGE PROCESSING", {}, 3},
+                                    /*57*/ {"MULTIMEDIA SYSTEMS", {}, 3},
+                                    /*58*/ {"SIMULATION & MODELING", {}, 3},
+                                    /*59*/ {"ENTERPRISE RESOURCE PLANNING", {}, 3},
+                                    /*60*/ {"DATA WAREHOUSE AND DATA MINING", {}, 3},
+                                    /*61*/ {"NATURAL LANGUAGE PROCESSING", {}, 3},
+                                    /*62*/ {"SOFTWARE DEVELOPMENT PROJECT MANAGEMENT", {}, 3},
+                                    /*63*/ {"COMPUTER SCIENCE MATHEMATICS", {}, 3},
+                                    /*64*/ {"MACHINE LEARNING", {}, 3},
+                                    /*65*/ {"WIRELESS SENSOR NETWORKS", {}, 3},
+                                    /*66*/ {"INDUSTRIAL ELECTRONICS, DRIVES & INSTRUMENTATION", {}, 3},
+                                    /*67*/ {"MOBILE APPLICATION DEVELOPMENT", {}, 3},
+                                    /*68*/ {"SOFTWARE ARCHITECTURE AND DESIGN PATTERNS", {}, 3},
+                                    /*69*/ {"HUMAN COMPUTER INTERACTION", {}, 3},
+                                    /*70*/ {"ADVANCED COMPUTER NETWORKS", {}, 3},
+                                    /*71*/ {"SOFTWARE REQUIREMENT ENGINEERING", {}, 3},
+                                    /*72*/ {"COMPUTER VISION AND PATTERN RECOGNITION", {}, 3},
+                                    
+                                    
+                                    /*73*/ {"DIGITAL MARKETING", {}, 3},
+                                    /*74*/ {"E-COMMERCE, E-GOVERNANCE & E-SERIES", {}, 3},
+                                    /*75*/ {"DIGITAL SIGNAL PROCESSING", {}, 3},
+                                    /*76*/ {"VLSI CIRCUIT DESIGN", {}, 3}
+                               };
+}
+
