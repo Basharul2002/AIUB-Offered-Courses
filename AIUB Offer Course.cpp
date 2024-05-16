@@ -24,6 +24,7 @@ int main()
 }
 
 
+// Function Details
 void course()
 {
      // Define courses with their prerequisites
