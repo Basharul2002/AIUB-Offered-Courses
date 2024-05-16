@@ -19,7 +19,7 @@ The Course Suggestion System is a C++ project designed to recommend courses for 
 
 1. **Compile**
    ```sh
-   git clone [https://github.com/your-username/course-suggestion-system.git](https://github.com/your-username/course-suggestion-system.git)
+   git clone [https://github.com/Basharul2002/AIUB-Course-Suggestion-System.git](https://github.com/Basharul2002/AIUB-Course-Suggestion-System.git))
    cd course-suggestion-system
 
    # Assuming your main program is named main.cpp
