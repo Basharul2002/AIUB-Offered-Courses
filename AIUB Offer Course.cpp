@@ -36,7 +36,7 @@ void course()
                                 /*4*/  {"ENGLISH READING SKILLS & PUBLIC SPEAKING", {}, 3},
                                 /*5*/  {"INTRODUCTION TO PROGRAMMING", {}, 3},
                                 /*6*/  {"INTRODUCTION TO PROGRAMMING LAB", {}, 1},
-                                /*7*/  {"INTRODUCTION TO COMPUTER STUDIES", {}, 3},
+                                /*7*/  {"INTRODUCTION TO COMPUTER STUDIES", {}, 1},
                                                              
                                 // Semester 2
                                 /*8*/  {"DISCRETE MATHEMATICS", {1, 5}, 3},
@@ -128,8 +128,6 @@ void course()
 
 
 
-
-
 // Function to print available courses
 void printCourses(const vector<Course>& courses) 
 {
@@ -138,6 +136,7 @@ void printCourses(const vector<Course>& courses)
         cout << i + 1 << ". " << courses[i].name << endl;
     
 }
+
 
 // Function to recommend next semester courses
 void recommendCourses(const vector<Course>& allCourses, const vector<int>& completedCourses, int totalCreditCompleted) 
@@ -212,4 +211,3 @@ void ElectiveCourse()
                                     /*76*/ {"VLSI CIRCUIT DESIGN", {}, 3}
                                };
 }
-
