@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+
 // Define a structure to hold course information
 struct Course 
 {
@@ -9,10 +10,12 @@ struct Course
     int courseCredit;
 };
 
+
 // Function prototypes
 void course();
 void printCourses(const vector<Course>& courses);
 void recommendCourses(const vector<Course>& allCourses, const vector<int>& completedCourses, int totalCreditCompleted);
+
 
 int main() 
 {
@@ -85,13 +88,10 @@ void course()
                                 // Semester 7
                                 /*46*/ {"COMPUTER GRAPHICS", {25, 26}, 3},
                                 /*47*/ {"ENGINEERING MANAGEMENT", {44}, 3},
-                                /*48*/ {"RESEARCH METHODOLOGY", {}, 3},
+                                /*48*/ {"RESEARCH METHODOLOGY", {}, 3}
                                 
                                 // Semester 8
-                                /*49*/ //{"THESIS / PROJECT", {}},
-                                
-                               
-                                
+                                /*49*/ //{"THESIS / PROJECT", {}},  
                             };
                             
     // Print available courses
@@ -164,7 +164,7 @@ void recommendCourses(const vector<Course>& allCourses, const vector<int>& compl
             }
         }
         
-        // Check if the course is "RESEARCH METHODOLOGY" and total credit completed is less than 100
+        // If total credit completed is less than 100 than does not offer RESEARCH METHODOLOGY course
         if (course.name == "RESEARCH METHODOLOGY" && totalCreditCompleted < 100) 
             canTake = false;
         
