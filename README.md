@@ -1,52 +1,30 @@
-# Course Suggestion System
+# AIUB Course Suggestion System
 
 ## Overview
 
 The Course Suggestion System is a C++ project designed to recommend courses for the next semester based on the user's completed courses. It analyzes the user's academic history and suggests relevant courses to help them progress in their academic journey.
 
 ## Features
+- **User Input**: Allows users to enter completed course numbers.
+- **Course Recommendations**: Outputs a list of offered courses for the next semester based on user input.
+- **Download Option**: Users can download the latest release from the ['Releases'](https://github.com/Basharul2002/AIUB-Course-Suggestion-System/releases) section.
 
-* **User Input**
-    * Allows users to input their completed courses.
-* **Recommendation Algorithm**
-    * Analyzes the user's completed courses and suggests relevant courses for the next semester.
-* **Interactive Interface** (Optional)
-    * Provides a user-friendly interface for viewing course recommendations and selecting preferred options.
+## How to Use
+1. Download the latest release from the ['Releases'](https://github.com/Basharul2002/AIUB-Course-Suggestion-System/releases) section.
+2. Run the application in your console.
+3. Follow the on-screen prompts to input your completed course numbers.
+4. View the list of offered courses for your next semester.
 
-## Usage
+## Installation
+To install the application, navigate to the 'Releases' section and download the latest version.
 
-1. **Compile**
-   ```sh
-   git clone https://github.com/Basharul2002/AIUB-Course-Suggestion-System.git
-   cd course-suggestion-system
+## Contributing
+Contributions to this project are welcome. Please ensure to update tests as appropriate.
 
-   # Assuming your main program is named main.cpp
-   g++ main.cpp -o course_suggestion
-Use code with caution.
-content_copy
-Run
+## License
+Distributed under the MIT License. See `LICENSE` for more information.
 
-Bash
-./course_suggestion
-Use code with caution.
-content_copy
-The program will prompt the user to enter completed courses.
-It will then display recommended courses for the next semester.
-(If an interactive interface exists) Users can explore and select preferred courses.
-Contributing
-Contributions to the Course Suggestion System are welcome! If you have any ideas, enhancements, or bug fixes, please submit a pull request. For major changes, please open an issue first to discuss potential changes.
+## Contact
+Basharul Alam Mazu- [basharulalam6@gmail.com](basharulalam6@gmail.com)
+Project Link: https://github.com/basharul2002/AIUB-Course-Suggestion-System
 
-License
-This project is licensed under the MIT License.
-
-Credits
-The Course Suggestion System is developed and maintained by [Basharul Alam](https://github.com/Basharul2002)
-
-
-**Improvements:**
-
-* **Code Block Formatting:** Added code block formatting (````sh`) for better readability.
-* **Directory Change:** Clarified the need to change directory after cloning the repository (assuming `main.cpp` is the main program).
-* **Interactive Interface:** Made the interactive interface section optional to reflect potential implementations.
-* **User Input Prompt:** Added a note about the input prompt during program execution.
-* **Course Selection:** Clarified the functionality of course selection in the context of an interacti
