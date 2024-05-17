@@ -18,11 +18,8 @@ The Course Suggestion System is a C++ project designed to recommend courses for 
 ## Installation
 To install the application, navigate to the 'Releases' section and download the latest version.
 
-## Contributing
-Contributions to this project are welcome. Please ensure to update tests as appropriate.
-
 ## License
-Distributed under the MIT License. See `LICENSE` for more information.
+Distributed under the GPL-3.0 license. See [`LICENSE`](https://github.com/Basharul2002/AIUB-Course-Suggestion-System?tab=GPL-3.0-1-ov-file) for more information.
 
 ## Contact
 Basharul Alam Mazu- [basharulalam6@gmail.com](basharulalam6@gmail.com)
