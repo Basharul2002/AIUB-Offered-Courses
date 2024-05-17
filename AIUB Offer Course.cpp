@@ -9,8 +9,8 @@ struct Course
     int courseCredit;
 };
 
-
-// Function Prototype
+// Function Prototypes
+vector<int> parseInput(const string& input);
 void course();
 void printCourses(const vector<Course>& courses);
 void recommendCourses(const vector<Course>& allCourses, const vector<int>& completedCourses, int totalCreditCompleted);
@@ -18,17 +18,44 @@ void recommendCourses(const vector<Course>& allCourses, const vector<int>& compl
 int main()
 {
     course();
+    system("pause");
     return 0;
 }
 
+// Helper function to parse input line into course numbers
+vector<int> parseInput(const string& input)
+{
+    vector<int> courseNumbers;
+    istringstream iss(input);
+    string part;
 
+    while (iss >> part)
+    {
+        size_t dashPos = part.find('-');
+         // Single number
+        if (dashPos == string::npos)
+            courseNumbers.push_back(stoi(part));
+
+        // Range of numbers
+        else
+        {
+            int start = stoi(part.substr(0, dashPos));
+            int end = stoi(part.substr(dashPos + 1));
+            for (int i = start; i <= end; ++i)
+                courseNumbers.push_back(i);
+
+        }
+    }
+
+    return courseNumbers;
+}
 
 // Course Details
 void course()
 {
-     vector<Course> allCourses =
-     {
-         //semester 1
+    vector<Course> allCourses =
+    {
+        // semester 1
         {"DIFFERENTIAL CALCULUS & CO-ORDINATE GEOMETRY", {}, 3},
         {"PHYSICS 1", {}, 3},
         {"PHYSICS 1 LAB", {1}, 1},
@@ -49,7 +76,7 @@ void course()
 
         // semester 3
         {"CHEMISTRY", {11}, 3},
-        {"COMPLEX VARIABLE,LAPLACE & Z-TRANSFORMATION", {9}, 3},
+        {"COMPLEX VARIABLE, LAPLACE & Z-TRANSFORMATION", {9}, 3},
         {"INTRODUCTION TO DATABASE", {10}, 3},
         {"ELECTRONIC DEVICES", {14}, 3},
         {"ELECTRONIC DEVICES LAB", {15}, 1},
@@ -104,7 +131,7 @@ void course()
         {"NETWORK SECURITY", {41}, 3},
         {"SOFTWARE QUALITY AND TESTING", {67}, 3},
         {"ADVANCED OPERATING SYSTEM", {43}, 3},
-        {"DIGITAL DESIGN WITH SYSTEM [VERILOG,VHDL & FPGAS]", {97}, 3},
+        {"DIGITAL DESIGN WITH SYSTEM [VERILOG, VHDL & FPGAS]", {97}, 3},
         {"ROBOTICS ENGINEERING", {40}, 3},
         {"BUSINESS INTELLIGENCE AND DECISION SUPPORT", {61}, 3},
         {"TELECOMMUNICATIONS ENGINEERING", {37}, 3},
@@ -132,16 +159,14 @@ void course()
     // Print available courses
     printCourses(allCourses);
 
-    cout<<"\n\n";
+    cout << "\n\n";
     // Get completed courses from the user
-    cout << "Enter completed course numbers separated by spaces: ";
+    cout << "Enter completed course numbers or ranges (e.g., 1-10) separated by spaces: ";
     string line;
     getline(cin, line);
-    istringstream iss(line);
-    int courseNumber;
-    vector<int> completedCourses;
-    while (iss >> courseNumber)
-        completedCourses.push_back(courseNumber);
+
+    // Parse input line
+    vector<int> completedCourses = parseInput(line);
 
     // Calculate total credit for completed courses
     int totalCreditCompleted = 0;
@@ -158,21 +183,15 @@ void course()
 
     // Recommend next semester courses
     recommendCourses(allCourses, completedCourses, totalCreditCompleted);
-
 }
-
-
-
 
 // Function to print available courses
 void printCourses(const vector<Course>& courses)
 {
     cout << "Available Courses:\n";
-    for (int i = 0; i < courses.size(); ++i)
+    for (size_t i = 0; i < courses.size(); ++i)
         cout << i + 1 << ". " << courses[i].name << endl;
-
 }
-
 
 // Function to recommend next semester courses
 void recommendCourses(const vector<Course>& allCourses, const vector<int>& completedCourses, int totalCreditCompleted)
@@ -181,7 +200,7 @@ void recommendCourses(const vector<Course>& allCourses, const vector<int>& compl
     unordered_set<int> completedSet(completedCourses.begin(), completedCourses.end());
 
     cout << "Recommended Courses:\n";
-    for (int i = 0; i < allCourses.size(); ++i)
+    for (size_t i = 0; i < allCourses.size(); ++i)
     {
         // Skip courses that have already been completed
         if (completedSet.find(i + 1) != completedSet.end())
@@ -200,14 +219,11 @@ void recommendCourses(const vector<Course>& allCourses, const vector<int>& compl
             }
         }
 
-        // If total credit completed is less than 100 than does not offer RESEARCH METHODOLOGY course
+        // If total credit completed is less than 100, do not offer RESEARCH METHODOLOGY course
         if (course.name == "RESEARCH METHODOLOGY" && totalCreditCompleted < 100)
             canTake = false;
-
 
         if (canTake)
             cout << "- " << course.name << endl;
     }
 }
-
-
