@@ -23,5 +23,3 @@ Distributed under the GPL-3.0 license. See [`LICENSE`](https://github.com/Bashar
 
 ## Contact
 Basharul Alam Mazu- [basharulalam6@gmail.com](basharulalam6@gmail.com)
-Project Link: https://github.com/basharul2002/AIUB-Course-Suggestion-System
-
