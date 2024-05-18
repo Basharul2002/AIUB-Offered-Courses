@@ -11,13 +11,35 @@ struct Course
 
 // Function Prototypes
 vector<int> parseInput(const string& input);
-void course();
+void cseCourse();
+void eeeCourse();
 void printCourses(const vector<Course>& courses);
 void recommendCourses(const vector<Course>& allCourses, const vector<int>& completedCourses, int totalCreditCompleted);
 
 int main()
 {
-    course();
+    cout<<"Department name: \n1.CSE \n2.EEE \nChoose your department: ";
+    string department;
+    cin>>department;
+
+    if(department == "1" || department == "CSE" || department == "cse")
+    {
+        cin.ignore();
+        cseCourse();
+    }
+
+
+    else if(department == "2" || department == "EEE" || department == "eee")
+    {
+        cin.ignore();
+         eeeCourse();
+
+    }
+
+    else
+        cout<<"INVALID INPUT";
+
+
     system("pause");
     return 0;
 }
@@ -50,8 +72,8 @@ vector<int> parseInput(const string& input)
     return courseNumbers;
 }
 
-// Course Details
-void course()
+// Course Plan for CSE
+void cseCourse()
 {
     vector<Course> allCourses =
     {
@@ -184,6 +206,117 @@ void course()
     // Recommend next semester courses
     recommendCourses(allCourses, completedCourses, totalCreditCompleted);
 }
+
+
+// Course Plan for EEE
+void eeeCourse()
+{
+    vector<Course> allCourses =
+    {
+        // Semester 1
+        {"CHEMISTRY", {}, 3},
+        {"DIFFERENTIAL CALCULUS & CO-ORDINATE GEOMETRY", {}, 3},
+        {"PHYSICS 1", {}, 3},
+        {"PHYSICS 1 LAB", {1}, 1},
+        {"ENGLISH READING SKILLS & PUBLIC SPEAKING", {}, 3},
+        {"INTRODUCTION TO ENGINEERING STUDIES", {}, 1},
+
+        //Semester 2
+        {"BASIC MECHANICAL ENGINEERING", {3}, 3},
+        {"ELECTICAL CIRCUIT-1 (DC)", {3, 5}, 3},
+        {"ELECTICAL CIRCUIT-1 (DC) LAB", {6,4}, 3},
+        {"INTEGRAL CALCULUS & ORDINARY DIFFERENTIAL EQUATIONS", {2}, 3},
+        {"PHYSICS 2", {1, 3}, 3},
+        {"PHYSICS 2 LAB", {1,4}, 1},
+        {"PRINCIPLE OF ACCOUNTING", {2}, 3},
+        {"ENGLISH WRITING SKILLS & COMMUNICATION", {4}, 3},
+
+        // Semester 3
+        {"COMPLEX VARIABLE, LAPLACE & Z-TRANSFORMATION", {10}, 3},
+        {"ELECTRICAL CIRCUIT 2 (AC)", {3, 5}, 3},
+        {"ELECTRICAL CIRCUITS-2 (AC) LAB",{9}, 1},
+        {"ELECTRICAL MACHINES 1",{7, 16}, 3},
+        {"ELECTRICAL MACHINES 1 LAB",{7, 16}, 1},
+        {"ELECTRONIC DEVICES",{16}, 3},
+        {"ELECTRONIC DEVICES LAB", {17}, 1},
+        {"PROGRAMMING LANGUAGE 1 (STRUCTURED PROGRAMMING LANGUAGE)", {15}, 3},
+        {"BANGLADESH STUDIES", {}, 3},
+
+        // Semester 4
+        {"ELECTRICAL MACHINES 2", {18}, 3},
+        {"ELECTRICAL MACHINES 2 LAB", {19}, 1},
+        {"ELECTRICAL POWER TRANSMISSION & DISTRIBUTION", {18}, 3},
+        {"MATRICES,VECTORS,FOURIER ANALYSIS", {15}, 3},
+        {"SIGNALS & LINEAR SYSTEMS", {27}, 3},
+        {"ENGINEERING ETHICS AND ENVIRONMENTAL PROTECTION", {6}, 1},
+        {"ANALOG ELECTRONICS",{20}, 3},
+        {"ANALOG ELECTRONICS LAB", {21}, 1},
+        {"COMPUTER AIDED DESIGN & DRAFTING",{8}, 1},
+
+         // Semester 5
+        {"MODERN PHYSICS", {11}, 3},
+        {"ELECTROMAGNETICS FIELDS AND WAVES", {7, 11}, 3},
+        {"PRINCIPLES OF ECONOMICS",{13}, 2},
+        {"DIGITAL LOGIC AND CIRCUITS",{20}, 3},
+        {"DIGITAL LOGIC AND CIRCUITS LAB",{21}, 1},
+        {"ENGINEERING SHOP",{30}, 1},
+        {"INDUSTRIAL ELECTRONICS AND DRIVES",{24}, 3},
+        {"INDUSTRIAL ELECTRONICS AND DRIVES LAB",{25}, 1},
+        {"DIGITAL SIGNAL PROCESSING",{27, 28}, 3},
+
+         // Semester 6
+        {"ELECTRICAL PROPERTIES OF MATERIALS", {33}, 3},
+        {"PROGRAMMING LANGUAGE 2 (OBJECT ORIENTED PROGRAMMING LANGUAGE)", {22}, 3},
+        {"POWER SYSTEMS ANALYSIS",{26}, 3},
+        {"NUMERICAL METHODS FOR SCIENCE AND ENGINEERING",{27, 43}, 3},
+        {"COMPUTATIONAL STATISTICS AND PROBABILITY",{34}, 3},
+        {"PRINCIPLES OF COMMUNICATION",{34}, 3},
+
+        // Semester 7
+        {"BUSINESS COMMUNICATION",{14}, 3},
+        {"ENGINEERING MANAGEMENT",{29}, 3},
+        {"MODERN CONTROL SYSTEMS",{28}, 3},
+        {"MODERN CONTROL SYSTEMS LAB", {28}, 1},
+        {"MICROPROCESSOR AND EMBEDDED SYSTEM", {41, 43}, 3},
+
+        // Semester 8
+        {"INTERNSHIP/ SEMINAR/ WORKSHOP",{48},1},
+        {"ELECTRICAL SERVICES DESIGN LAB",{38},1},
+        {"TELECOMMUNICATIONS ENGINEERING",{47}, 3},
+        {"TELECOMMUNICATIONS ENGINEERING",{44}, 3},
+        {"MEASUREMENT AND INSTRUMENTATION",{50}, 3},
+        {"VLSI CIRCUIT DESIGN",{41}, 3},
+    };
+
+     printCourses(allCourses);
+
+    cout << "\n\n";
+    // Get completed courses from the user
+    cout << "Enter completed course numbers or ranges (e.g., 1-10) separated by spaces: ";
+    string line;
+    getline(cin, line);
+
+    // Parse input line
+    vector<int> completedCourses = parseInput(line);
+
+    // Calculate total credit for completed courses
+    int totalCreditCompleted = 0;
+    for (int courseNum : completedCourses)
+    {
+        if (courseNum >= 1 && courseNum <= allCourses.size())
+        {
+            int index = courseNum - 1;
+            totalCreditCompleted += allCourses[index].courseCredit;
+        }
+    }
+
+    cout << "Total credit completed: " << totalCreditCompleted << endl;
+
+    // Recommend next semester courses
+    recommendCourses(allCourses, completedCourses, totalCreditCompleted);
+}
+
+
 
 // Function to print available courses
 void printCourses(const vector<Course>& courses)
