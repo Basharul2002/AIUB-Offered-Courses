@@ -11,8 +11,9 @@ struct Course
 
 // Function Prototypes
 vector<int> parseInput(const string& input);
-void cseCourse();
+void cseCourses();
 void eeeCourse();
+void courseDataUserInput(vector<Course>allCourses);
 void printCourses(const vector<Course>& courses);
 void recommendCourses(const vector<Course>& allCourses, const vector<int>& completedCourses, int totalCreditCompleted);
 
@@ -25,14 +26,14 @@ int main()
     if(department == "1" || department == "CSE" || department == "cse")
     {
         cin.ignore();
-        cseCourse();
+        cseCourses();
     }
 
 
     else if(department == "2" || department == "EEE" || department == "eee")
     {
         cin.ignore();
-         eeeCourse();
+        eeeCourse();
 
     }
 
@@ -44,36 +45,9 @@ int main()
     return 0;
 }
 
-// Helper function to parse input line into course numbers
-vector<int> parseInput(const string& input)
-{
-    vector<int> courseNumbers;
-    istringstream iss(input);
-    string part;
-
-    while (iss >> part)
-    {
-        size_t dashPos = part.find('-');
-         // Single number
-        if (dashPos == string::npos)
-            courseNumbers.push_back(stoi(part));
-
-        // Range of numbers
-        else
-        {
-            int start = stoi(part.substr(0, dashPos));
-            int end = stoi(part.substr(dashPos + 1));
-            for (int i = start; i <= end; ++i)
-                courseNumbers.push_back(i);
-
-        }
-    }
-
-    return courseNumbers;
-}
 
 // Course Plan for CSE
-void cseCourse()
+void cseCourses()
 {
     vector<Course> allCourses =
     {
@@ -181,30 +155,8 @@ void cseCourse()
     // Print available courses
     printCourses(allCourses);
 
-    cout << "\n\n";
-    // Get completed courses from the user
-    cout << "Enter completed course numbers or ranges (e.g., 1-10) separated by spaces: ";
-    string line;
-    getline(cin, line);
+    courseDataUserInput(allCourses);
 
-    // Parse input line
-    vector<int> completedCourses = parseInput(line);
-
-    // Calculate total credit for completed courses
-    int totalCreditCompleted = 0;
-    for (int courseNum : completedCourses)
-    {
-        if (courseNum >= 1 && courseNum <= allCourses.size())
-        {
-            int index = courseNum - 1;
-            totalCreditCompleted += allCourses[index].courseCredit;
-        }
-    }
-
-    cout << "Total credit completed: " << totalCreditCompleted << endl;
-
-    // Recommend next semester courses
-    recommendCourses(allCourses, completedCourses, totalCreditCompleted);
 }
 
 
@@ -288,32 +240,11 @@ void eeeCourse()
         {"VLSI CIRCUIT DESIGN",{41}, 3},
     };
 
-     printCourses(allCourses);
+    printCourses(allCourses);
 
     cout << "\n\n";
-    // Get completed courses from the user
-    cout << "Enter completed course numbers or ranges (e.g., 1-10) separated by spaces: ";
-    string line;
-    getline(cin, line);
+    courseDataUserInput(allCourses);
 
-    // Parse input line
-    vector<int> completedCourses = parseInput(line);
-
-    // Calculate total credit for completed courses
-    int totalCreditCompleted = 0;
-    for (int courseNum : completedCourses)
-    {
-        if (courseNum >= 1 && courseNum <= allCourses.size())
-        {
-            int index = courseNum - 1;
-            totalCreditCompleted += allCourses[index].courseCredit;
-        }
-    }
-
-    cout << "Total credit completed: " << totalCreditCompleted << endl;
-
-    // Recommend next semester courses
-    recommendCourses(allCourses, completedCourses, totalCreditCompleted);
 }
 
 
@@ -325,6 +256,72 @@ void printCourses(const vector<Course>& courses)
     for (size_t i = 0; i < courses.size(); ++i)
         cout << i + 1 << ". " << courses[i].name << endl;
 }
+
+void courseDataUserInput(vector<Course>allCourses)
+{
+    try
+    {
+         cout << "\n\n";
+        // Get completed courses from the user
+        cout << "Enter completed course numbers or ranges (e.g., 1-10) separated by spaces: ";
+        string line;
+        getline(cin, line);
+
+        // Parse input line
+        vector<int> completedCourses = parseInput(line);
+
+        // Calculate total credit for completed courses
+        int totalCreditCompleted = 0;
+        for (int courseNum : completedCourses)
+        {
+            if (courseNum >= 1 && courseNum <= allCourses.size())
+            {
+                int index = courseNum - 1;
+                totalCreditCompleted += allCourses[index].courseCredit;
+            }
+        }
+
+        cout << "Total credit completed: " << totalCreditCompleted << endl;
+
+        // Recommend next semester courses
+        recommendCourses(allCourses, completedCourses, totalCreditCompleted);
+    }
+
+    catch(exception ex)
+    {
+        cout<<"Invalid Input \n";
+    }
+
+}
+
+// Helper function to parse input line into course numbers
+vector<int> parseInput(const string& input)
+{
+    vector<int> courseNumbers;
+    istringstream iss(input);
+    string part;
+
+    while (iss >> part)
+    {
+        size_t dashPos = part.find('-');
+         // Single number
+        if (dashPos == string::npos)
+            courseNumbers.push_back(stoi(part));
+
+        // Range of numbers
+        else
+        {
+            int start = stoi(part.substr(0, dashPos));
+            int end = stoi(part.substr(dashPos + 1));
+            for (int i = start; i <= end; ++i)
+                courseNumbers.push_back(i);
+
+        }
+    }
+
+    return courseNumbers;
+}
+
 
 // Function to recommend next semester courses
 void recommendCourses(const vector<Course>& allCourses, const vector<int>& completedCourses, int totalCreditCompleted)
