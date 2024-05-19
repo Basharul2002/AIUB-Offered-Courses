@@ -265,7 +265,8 @@ void eeeCourse()
         {"ANALOG ELECTRONICS LAB", {21}, 1},
         {"COMPUTER AIDED DESIGN & DRAFTING",{8}, 1},
 
-         // Semester 5
+
+          // Semester 5
         {"MODERN PHYSICS", {11}, 3},
         {"ELECTROMAGNETICS FIELDS AND WAVES", {7, 11}, 3},
         {"PRINCIPLES OF ECONOMICS",{13}, 2},
@@ -298,7 +299,11 @@ void eeeCourse()
         {"TELECOMMUNICATIONS ENGINEERING",{44}, 3},
         {"MEASUREMENT AND INSTRUMENTATION",{50}, 3},
         {"VLSI CIRCUIT DESIGN",{41}, 3},
+        {"EEE ELECTIVE 1", {}, 3},
+        {"CAPSTONE PROJECT", {}, 3},
     };
+
+
 
     printCourses(allCourses);
 
