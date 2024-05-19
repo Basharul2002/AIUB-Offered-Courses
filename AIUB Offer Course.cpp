@@ -9,6 +9,7 @@ struct Course
     int courseCredit;
 };
 
+
 // Function Prototypes
 void departmentChoose();
 void dept(string dept);
@@ -18,6 +19,7 @@ void eeeCourse();
 void courseDataUserInput(vector<Course>allCourses, string dept);
 void printCourses(const vector<Course>& courses);
 void recommendCourses(const vector<Course>& allCourses, const vector<int>& completedCourses, int totalCreditCompleted);
+
 
 int main()
 {
@@ -34,9 +36,10 @@ void departmentChoose()
     string department;
     cin>>department;
 
-    dept(department);
+    return dept(department);
 
 }
+
 
 void dept(string department)
 {
@@ -101,6 +104,7 @@ void dept(string department)
 
 
 }
+
 
 // Course Plan for CSE
 void cseCourses()
@@ -232,7 +236,7 @@ void eeeCourse()
         //Semester 2
         {"BASIC MECHANICAL ENGINEERING", {3}, 3},
         {"ELECTICAL CIRCUIT-1 (DC)", {3, 5}, 3},
-        {"ELECTICAL CIRCUIT-1 (DC) LAB", {6,4}, 3},
+        {"ELECTICAL CIRCUIT-1 (DC) LAB", {6,4}, 1},
         {"INTEGRAL CALCULUS & ORDINARY DIFFERENTIAL EQUATIONS", {2}, 3},
         {"PHYSICS 2", {1, 3}, 3},
         {"PHYSICS 2 LAB", {1,4}, 1},
