@@ -10,23 +10,60 @@ struct Course
 };
 
 // Function Prototypes
+void departmentChoose();
+void dept(string dept);
 vector<int> parseInput(const string& input);
 void cseCourses();
 void eeeCourse();
-void courseDataUserInput(vector<Course>allCourses);
+void courseDataUserInput(vector<Course>allCourses, string dept);
 void printCourses(const vector<Course>& courses);
 void recommendCourses(const vector<Course>& allCourses, const vector<int>& completedCourses, int totalCreditCompleted);
 
 int main()
 {
+    departmentChoose();
+    cin.ignore(); // To consume the newline character left by previous input
+    //cin.get(); // To wait for the user to press Enter
+    return 0;
+}
+
+
+void departmentChoose()
+{
     cout<<"Department name: \n1.CSE \n2.EEE \nChoose your department: ";
     string department;
     cin>>department;
 
+    dept(department);
+
+}
+
+void dept(string department)
+{
     if(department == "1" || department == "CSE" || department == "cse")
     {
+
         cin.ignore();
         cseCourses();
+        cout << "\n \nWould you like to run the program again? Enter 1 for Yes, 2 for No, or 3 to go back to the department selection: ";
+        string flag;
+        cin>>flag;
+
+        if(flag == "1" || flag == "Yes")
+            dept("1");
+
+        else if(flag == "2" || flag == "No")
+            return;
+
+        else if(flag == "3")
+            departmentChoose();
+
+         else
+        {
+            cout<<"Invalid Input\n";
+            departmentChoose();
+        }
+
     }
 
 
@@ -35,16 +72,35 @@ int main()
         cin.ignore();
         eeeCourse();
 
+        cout << "\n \nWould you like to run the program again? Enter 1 for Yes, 2 for No, or 3 to go back to the department selection: ";
+        string flag;
+        cin>>flag;
+
+        if(flag == "1" || flag == "Yes")
+            dept("2");
+
+        else if(flag == "2" || flag == "No")
+            return;
+
+        else if(flag == "3")
+            departmentChoose();
+
+        else
+        {
+            cout<<"Invalid Input\n";
+            departmentChoose();
+        }
+
     }
 
     else
-        cout<<"INVALID INPUT";
+    {
+        cout<<"INVALID INPUT\n\n";
+        departmentChoose();
+    }
 
 
-    system("pause");
-    return 0;
 }
-
 
 // Course Plan for CSE
 void cseCourses()
@@ -155,7 +211,7 @@ void cseCourses()
     // Print available courses
     printCourses(allCourses);
 
-    courseDataUserInput(allCourses);
+    courseDataUserInput(allCourses, "1");
 
 }
 
@@ -243,7 +299,7 @@ void eeeCourse()
     printCourses(allCourses);
 
     cout << "\n\n";
-    courseDataUserInput(allCourses);
+    courseDataUserInput(allCourses, "2");
 
 }
 
@@ -257,7 +313,8 @@ void printCourses(const vector<Course>& courses)
         cout << i + 1 << ". " << courses[i].name << endl;
 }
 
-void courseDataUserInput(vector<Course>allCourses)
+
+void courseDataUserInput(vector<Course>allCourses, string dept)
 {
     try
     {
@@ -290,6 +347,7 @@ void courseDataUserInput(vector<Course>allCourses)
     catch(exception ex)
     {
         cout<<"Invalid Input \n";
+       // dept(dept);
     }
 
 }
