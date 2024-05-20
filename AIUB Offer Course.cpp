@@ -1,4 +1,4 @@
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
 
 // Define a structure to hold course information
@@ -299,7 +299,6 @@ void eeeCourse()
         {"TELECOMMUNICATIONS ENGINEERING",{44}, 3},
         {"MEASUREMENT AND INSTRUMENTATION",{50}, 3},
         {"VLSI CIRCUIT DESIGN",{41}, 3},
-        {"EEE ELECTIVE 1", {}, 3},
         {"CAPSTONE PROJECT", {}, 3},
     };
 
@@ -418,6 +417,9 @@ void recommendCourses(const vector<Course>& allCourses, const vector<int>& compl
 
         // If total credit completed is less than 100, do not offer RESEARCH METHODOLOGY course
         if (course.name == "RESEARCH METHODOLOGY" && totalCreditCompleted < 100)
+            canTake = false;
+
+        else if(course.name == "CAPSTONE PROJECT" && totalCreditCompleted < 100)
             canTake = false;
 
         if (canTake)
