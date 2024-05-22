@@ -8,76 +8,92 @@ struct Course
     unordered_set<int> prerequisites;
     int courseCredit;
 };
+
+
 // Function Prototypes
-void departmentChoose();
-void dept(string dept);
+void departmentOption();
+void repeatExecution(string department);
+void departmentChoose(string dept);
 vector<int> parseInput(const string& input);
 void cseCourses();
-void eeeCourse();
+void eeeCourses();
 void courseDataUserInput(vector<Course>allCourses, string dept);
 void printCourses(const vector<Course>& courses);
 void recommendCourses(const vector<Course>& allCourses, const vector<int>& completedCourses, int totalCreditCompleted);
+
+// Main function
 int main()
 {
-    departmentChoose();
+    departmentOption();
     cin.ignore(); // To consume the newline character left by previous input
-    //cin.get(); // To wait for the user to press Enter
     return 0;
 }
-void departmentChoose()
+
+
+// Function to prompt the user to choose a department
+void departmentOption()
 {
     cout<<"Department name: \n1.CSE \n2.EEE \n\nChoose your department: ";
     string department;
     cin>>department;
-    return dept(department);
+    cin.ignore();   // To handle any remaining newline character
+    departmentChoose(department);
 }
-void dept(string department)
+
+
+// Function to handle the department choice
+void departmentChoose(string department)
 {
-    if(department == "1" || department == "CSE" || department == "cse")
+    // Convert the input to uppercase for uniform comparison
+    transform(department.begin(), department.end(), department.begin(), ::toupper);
+    
+    if(department == "1" || department == "CSE")
     {
-        cin.ignore();
-        cseCourses();
-        cout << "\n\nWould you like to run the program again? Enter 1 for Yes, 2 for No, or 3 to go back to the department selection: ";
-        string flag;
-        cin>>flag;
-        if(flag == "1" || flag == "Yes")
-            dept("1");
-        else if(flag == "2" || flag == "No")
-            return;
-        else if(flag == "3")
-            departmentChoose();
-         else
-        {
-            cout<<"!!! INVALID INPUT !!!\n\n";
-            departmentChoose();
-        }
+        cseCourses(); // Call the function to handle CSE courses
+        repeatExecution("1"); // Prompt to repeat execution after handling CSE courses
     }
-    else if(department == "2" || department == "EEE" || department == "eee")
+    
+    else if(department == "2" || department == "EEE")
     {
-        cin.ignore();
-        eeeCourse();
-        cout << "\n \nWould you like to run the program again? Enter 1 for Yes, 2 for No, or 3 to go back to the department selection: ";
-        string flag;
-        cin>>flag;
-        if(flag == "1" || flag == "Yes")
-            dept("2");
-        else if(flag == "2" || flag == "No")
-            return;
-        else if(flag == "3")
-            departmentChoose();
-        else
-        {
-            cout<<"!!! INVALID INPUT !!!\n\n";
-            departmentChoose();
-        }
+        eeeCourses(); // Call the function to handle EEE courses
+        repeatExecution("2"); // Prompt to repeat execution after handling EEE courses
     }
+    
     else
     {
-        cout<<"!!! INVALID INPUT !!!\n\n";
-        departmentChoose();
+        cout << "!!! INVALID INPUT !!!\n\n";
+        departmentOption(); // Re-prompt for department choice if input is invalid
     }
 }
-// Course Plan for CSE
+
+
+// Function to handle the repetition of the program based on user's choice
+void repeatExecution(string department)
+{
+    cout << "\n \nWould you like to run the program again? Enter 1 for Yes, 2 for No, or 3 to go back to the department selection: ";
+    string flag;
+    cin>>flag;
+
+
+    if(flag == "1" || flag == "Yes")
+        departmentChoose("2"); // Repeat the current department's course handling
+
+    else if(flag == "2" || flag == "No")
+        return; // Exit the program
+
+    else if(flag == "3")
+        departmentOption(); // Go back to the department selection
+
+    else
+    {
+        cout << "!!! INVALID INPUT !!!\n\n";
+        repeatExecution("NULL"); // Re-prompt for valid input
+    }
+
+}
+
+
+// Function to handle CSE courses (dummy implementation for illustration)
 void cseCourses()
 {
     vector<Course> allCourses =
@@ -90,6 +106,7 @@ void cseCourses()
         {"INTRODUCTION TO PROGRAMMING", {}, 3},
         {"INTRODUCTION TO PROGRAMMING LAB", {5}, 1},
         {"INTRODUCTION TO COMPUTER STUDIES", {}, 1},
+
         // semester 2
         {"DISCRETE MATHEMATICS", {1, 5}, 3},
         {"INTEGRAL CALCULUS & ORDINARY DIFFERENTIAL EQUATIONS", {1}, 3},
@@ -99,6 +116,7 @@ void cseCourses()
         {"ENGLISH WRITING SKILLS & COMMUNICATION", {4}, 3},
         {"INTRODUCTION TO ELECTRICAL CIRCUITS", {2}, 3},
         {"INTRODUCTION TO ELECTRICAL CIRCUITS LAB", {3}, 1},
+
         // semester 3
         {"CHEMISTRY", {11}, 3},
         {"COMPLEX VARIABLE, LAPLACE & Z-TRANSFORMATION", {9}, 3},
@@ -184,8 +202,10 @@ void cseCourses()
     printCourses(allCourses);
     courseDataUserInput(allCourses, "1");
 }
-// Course Plan for EEE
-void eeeCourse()
+
+
+// Function to handle EEE courses (dummy implementation for illustration)
+void eeeCourses()
 {
     vector<Course> allCourses =
     {
@@ -196,6 +216,7 @@ void eeeCourse()
         {"PHYSICS 1 LAB", {1}, 1},
         {"ENGLISH READING SKILLS & PUBLIC SPEAKING", {}, 3},
         {"INTRODUCTION TO ENGINEERING STUDIES", {}, 1},
+        
         //Semester 2
         {"BASIC MECHANICAL ENGINEERING", {3}, 3},
         {"ELECTICAL CIRCUIT-1 (DC)", {3, 5}, 3},
@@ -205,6 +226,7 @@ void eeeCourse()
         {"PHYSICS 2 LAB", {1,4}, 1},
         {"PRINCIPLE OF ACCOUNTING", {2}, 3},
         {"ENGLISH WRITING SKILLS & COMMUNICATION", {4}, 3},
+        
         // Semester 3
         {"COMPLEX VARIABLE, LAPLACE & Z-TRANSFORMATION", {10}, 3},
         {"ELECTRICAL CIRCUIT 2 (AC)", {3, 5}, 3},
@@ -215,6 +237,7 @@ void eeeCourse()
         {"ELECTRONIC DEVICES LAB", {17}, 1},
         {"PROGRAMMING LANGUAGE 1 (STRUCTURED PROGRAMMING LANGUAGE)", {15}, 3},
         {"BANGLADESH STUDIES", {}, 3},
+        
         // Semester 4
         {"ELECTRICAL MACHINES 2", {18}, 3},
         {"ELECTRICAL MACHINES 2 LAB", {19}, 1},
@@ -225,7 +248,8 @@ void eeeCourse()
         {"ANALOG ELECTRONICS",{20}, 3},
         {"ANALOG ELECTRONICS LAB", {21}, 1},
         {"COMPUTER AIDED DESIGN & DRAFTING",{8}, 1},
-          // Semester 5
+          
+        // Semester 5
         {"MODERN PHYSICS", {11}, 3},
         {"ELECTROMAGNETICS FIELDS AND WAVES", {7, 11}, 3},
         {"PRINCIPLES OF ECONOMICS",{13}, 2},
@@ -235,6 +259,7 @@ void eeeCourse()
         {"INDUSTRIAL ELECTRONICS AND DRIVES",{24}, 3},
         {"INDUSTRIAL ELECTRONICS AND DRIVES LAB",{25}, 1},
         {"DIGITAL SIGNAL PROCESSING",{27, 28}, 3},
+
          // Semester 6
         {"ELECTRICAL PROPERTIES OF MATERIALS", {33}, 3},
         {"PROGRAMMING LANGUAGE 2 (OBJECT ORIENTED PROGRAMMING LANGUAGE)", {22}, 3},
@@ -243,11 +268,13 @@ void eeeCourse()
         {"COMPUTATIONAL STATISTICS AND PROBABILITY",{34}, 3},
         {"PRINCIPLES OF COMMUNICATION",{34}, 3},
         // Semester 7
+
         {"BUSINESS COMMUNICATION",{14}, 3},
         {"ENGINEERING MANAGEMENT",{29}, 3},
         {"MODERN CONTROL SYSTEMS",{28}, 3},
         {"MODERN CONTROL SYSTEMS LAB", {28}, 1},
         {"MICROPROCESSOR AND EMBEDDED SYSTEM", {41, 43}, 3},
+
         // Semester 8
         {"INTERNSHIP/ SEMINAR/ WORKSHOP",{48},1},
         {"ELECTRICAL SERVICES DESIGN LAB",{38},1},
@@ -260,8 +287,12 @@ void eeeCourse()
 
     printCourses(allCourses);
     cout << "\n\n";
+
     courseDataUserInput(allCourses, "2");
+
 }
+
+
 // Function to print available courses
 void printCourses(const vector<Course>& courses)
 {
@@ -269,6 +300,8 @@ void printCourses(const vector<Course>& courses)
     for (size_t i = 0; i < courses.size(); ++i)
         cout << i + 1 << ". " << courses[i].name << endl;
 }
+
+
 void courseDataUserInput(vector<Course>allCourses, string dept)
 {
     try
@@ -293,12 +326,16 @@ void courseDataUserInput(vector<Course>allCourses, string dept)
         cout << "\nTotal credit completed: " << totalCreditCompleted << endl;
         // Recommend next semester courses
         recommendCourses(allCourses, completedCourses, totalCreditCompleted);
+        repeatExecution("1");
     }
+
     catch(exception ex)
     {
-        cout<<"!!! INVALID INPUT !!!\n\n";
+        cout<<"!!! INVALID INPUT Choose!!!\n\n";
+        departmentChoose(dept);
     }
 }
+
 // Helper function to parse input line into course numbers
 vector<int> parseInput(const string& input)
 {
@@ -322,6 +359,7 @@ vector<int> parseInput(const string& input)
     }
     return courseNumbers;
 }
+
 // Function to recommend next semester courses
 void recommendCourses(const vector<Course>& allCourses, const vector<int>& completedCourses, int totalCreditCompleted)
 {
