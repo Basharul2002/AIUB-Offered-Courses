@@ -1,4 +1,5 @@
- #include<bits/stdc++.h>
+#include<bits/stdc++.h>
+#include <windows.h>   // For Windows Console API
 using namespace std;
 
 // Define a structure to hold course information
@@ -11,17 +12,22 @@ struct Course
 
 
 // Function Prototypes
-void departmentOption();
-void repeatExecution(string department);
+void setTextColorRed();
+void setTextColorGreen();
+void setTextColorCyan();
+void setTextColorYellow();
+void resetTextColor();
+void departmentOption(bool initial = true);
+void repeatExecution(string department, bool invalid = false);
 void departmentChoose(string dept);
 vector<int> parseInput(const string& input);
 void cseCourses();
 void eeeCourses();
-void courseDataUserInput(vector<Course>allCourses, string dept);
+void courseDataUserInput(vector<Course>allCourses, string dept, bool error = false);
 void printCourses(const vector<Course>& courses);
 void recommendCourses(const vector<Course>& allCourses, const vector<int>& completedCourses, int totalCreditCompleted);
 
-// Main function
+
 int main()
 {
     departmentOption();
@@ -30,13 +36,73 @@ int main()
 }
 
 
-// Function to prompt the user to choose a department
-void departmentOption()
+// Function to change text color to red
+void setTextColorRed()
 {
-    cout<<"Department name: \n1.CSE \n2.EEE \n\nChoose your department: ";
+    HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+    SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_INTENSITY);
+}
+
+
+// Function to change text color to green
+void setTextColorGreen()
+{
+    HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+    SetConsoleTextAttribute(hConsole, FOREGROUND_GREEN | FOREGROUND_INTENSITY);
+}
+
+
+// Function to change text color to green
+void setTextColorCyan()
+{
+    HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+    SetConsoleTextAttribute(hConsole, FOREGROUND_GREEN | FOREGROUND_BLUE | FOREGROUND_INTENSITY);
+}
+
+
+void setTextColorYellow()
+{
+    HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+    SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_GREEN |FOREGROUND_INTENSITY);
+}
+
+
+// Function to reset text color to default
+void resetTextColor()
+{
+    HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+    SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE);
+}
+
+
+// Function to prompt the user to choose a department
+void departmentOption(bool initial)
+{
+    if(initial)
+    {
+        //setTextColorCyan();
+        cout << "Department name: ";
+
+        //resetTextColor();
+        cout << "\n1.CSE \n2.EEE \n\nChoose Your Department: ";
+    }
+
+
+    else
+    {
+        setTextColorRed();
+        cout << "\nInvalid Department Choice!\n";
+
+        resetTextColor();
+        cout << "Please enter a valid option: ";
+    }
+
+
     string department;
+    setTextColorGreen();
     cin>>department;
     cin.ignore();   // To handle any remaining newline character
+    resetTextColor();
     departmentChoose(department);
 }
 
@@ -46,48 +112,75 @@ void departmentChoose(string department)
 {
     // Convert the input to uppercase for uniform comparison
     transform(department.begin(), department.end(), department.begin(), ::toupper);
-    
+
     if(department == "1" || department == "CSE")
     {
         cseCourses(); // Call the function to handle CSE courses
         repeatExecution("1"); // Prompt to repeat execution after handling CSE courses
     }
-    
+
     else if(department == "2" || department == "EEE")
     {
         eeeCourses(); // Call the function to handle EEE courses
         repeatExecution("2"); // Prompt to repeat execution after handling EEE courses
     }
-    
+
     else
-    {
-        cout << "!!! INVALID INPUT !!!\n\n";
-        departmentOption(); // Re-prompt for department choice if input is invalid
-    }
+        departmentOption(false); // Re-prompt for department choice if input is invalid
+
 }
 
 
 // Function to handle the repetition of the program based on user's choice
-void repeatExecution(string department)
+void repeatExecution(string department, bool invalid)
 {
-    cout << "\n \nWould you like to run the program again? Enter 1 for Yes, 2 for No, or 3 to go back to the department selection: ";
-    string flag;
-    cin>>flag;
+    if(!invalid)
+    {
+        setTextColorYellow();
+        cout << "\n\nWould you like to run the program again?\n";
 
+        resetTextColor();
+        cout << "1: Yes\n";
+        cout << "2: Exit\n";
+        cout << "3: Go back to the department selection\n";
+        cout << "\nPlease enter your choice (1, 2, or 3): ";
+    }
 
-    if(flag == "1" || flag == "Yes")
-        departmentChoose("2"); // Repeat the current department's course handling
+    setTextColorGreen();
+    string input;
+    cin>>input;
 
-    else if(flag == "2" || flag == "No")
-        return; // Exit the program
+    resetTextColor();
 
-    else if(flag == "3")
+    // Convert the input to lowercase for uniform comparison
+    transform(department.begin(), department.end(), department.begin(), ::tolower);
+
+    if(input == "1" || input == "yes")
+    {
+        cin.ignore();
+        departmentChoose(department); // Repeat the current department's course handling
+    }
+
+    else if(input == "2" || input == "exit")
+    {
+        cin.ignore();
+        exit(0);  // Exit the program
+    }
+
+    else if(input == "3")
+    {
+        cout<<"\n\n";
         departmentOption(); // Go back to the department selection
+    }
 
     else
     {
-        cout << "!!! INVALID INPUT !!!\n\n";
-        repeatExecution("NULL"); // Re-prompt for valid input
+        setTextColorRed();
+        cout << "\nInvalid choice! \n";
+
+        resetTextColor();
+        cout << "Please enter 1, 2 or 3: ";
+        repeatExecution(department, true); // Re-prompt for valid input
     }
 
 }
@@ -216,7 +309,6 @@ void eeeCourses()
         {"PHYSICS 1 LAB", {1}, 1},
         {"ENGLISH READING SKILLS & PUBLIC SPEAKING", {}, 3},
         {"INTRODUCTION TO ENGINEERING STUDIES", {}, 1},
-        
         //Semester 2
         {"BASIC MECHANICAL ENGINEERING", {3}, 3},
         {"ELECTICAL CIRCUIT-1 (DC)", {3, 5}, 3},
@@ -226,7 +318,6 @@ void eeeCourses()
         {"PHYSICS 2 LAB", {1,4}, 1},
         {"PRINCIPLE OF ACCOUNTING", {2}, 3},
         {"ENGLISH WRITING SKILLS & COMMUNICATION", {4}, 3},
-        
         // Semester 3
         {"COMPLEX VARIABLE, LAPLACE & Z-TRANSFORMATION", {10}, 3},
         {"ELECTRICAL CIRCUIT 2 (AC)", {3, 5}, 3},
@@ -237,7 +328,6 @@ void eeeCourses()
         {"ELECTRONIC DEVICES LAB", {17}, 1},
         {"PROGRAMMING LANGUAGE 1 (STRUCTURED PROGRAMMING LANGUAGE)", {15}, 3},
         {"BANGLADESH STUDIES", {}, 3},
-        
         // Semester 4
         {"ELECTRICAL MACHINES 2", {18}, 3},
         {"ELECTRICAL MACHINES 2 LAB", {19}, 1},
@@ -248,8 +338,7 @@ void eeeCourses()
         {"ANALOG ELECTRONICS",{20}, 3},
         {"ANALOG ELECTRONICS LAB", {21}, 1},
         {"COMPUTER AIDED DESIGN & DRAFTING",{8}, 1},
-          
-        // Semester 5
+          // Semester 5
         {"MODERN PHYSICS", {11}, 3},
         {"ELECTROMAGNETICS FIELDS AND WAVES", {7, 11}, 3},
         {"PRINCIPLES OF ECONOMICS",{13}, 2},
@@ -296,21 +385,35 @@ void eeeCourses()
 // Function to print available courses
 void printCourses(const vector<Course>& courses)
 {
+    setTextColorGreen();
     cout << "\n\nAvailable Courses:\n";
+    resetTextColor();
     for (size_t i = 0; i < courses.size(); ++i)
-        cout << i + 1 << ". " << courses[i].name << endl;
+    {
+
+         setTextColorYellow();
+         cout << i + 1 << ". ";
+         resetTextColor();
+         cout<< courses[i].name << endl;
+    }
 }
 
 
-void courseDataUserInput(vector<Course>allCourses, string dept)
+void courseDataUserInput(vector<Course>allCourses, string dept, bool error)
 {
     try
     {
-         cout << "\n\n";
-        // Get completed courses from the user
-        cout << "Enter completed course numbers or ranges (e.g., 1-10) separated by spaces: ";
+        if(!error)
+        {
+            // Get completed courses from the user
+            cout << "\n\nEnter completed course numbers or ranges (e.g., 1-10) separated by spaces: ";
+        }
+
+        setTextColorGreen();
         string line;
         getline(cin, line);
+
+        resetTextColor();
         // Parse input line
         vector<int> completedCourses = parseInput(line);
         // Calculate total credit for completed courses
@@ -323,16 +426,24 @@ void courseDataUserInput(vector<Course>allCourses, string dept)
                 totalCreditCompleted += allCourses[index].courseCredit;
             }
         }
-        cout << "\nTotal credit completed: " << totalCreditCompleted << endl;
+        cout << "\nTotal credit completed: ";
+        setTextColorYellow();
+        cout<< totalCreditCompleted << endl;
+        resetTextColor();
+
         // Recommend next semester courses
         recommendCourses(allCourses, completedCourses, totalCreditCompleted);
-        repeatExecution("1");
+        repeatExecution(dept);
     }
 
     catch(exception ex)
     {
-        cout<<"!!! INVALID INPUT Choose!!!\n\n";
-        departmentChoose(dept);
+        setTextColorRed();
+        cout << "\nInvalid input format!\n";
+
+        resetTextColor();
+        cout << "Please enter course numbers separated by spaces, and specify ranges using a hyphen (e.g., 1-10): ";
+        courseDataUserInput(allCourses, dept, true);
     }
 }
 
@@ -360,12 +471,18 @@ vector<int> parseInput(const string& input)
     return courseNumbers;
 }
 
+
 // Function to recommend next semester courses
 void recommendCourses(const vector<Course>& allCourses, const vector<int>& completedCourses, int totalCreditCompleted)
 {
     // Store completed courses in a set for fast lookup
     unordered_set<int> completedSet(completedCourses.begin(), completedCourses.end());
-    cout << "Recommended Courses:\n";
+
+    setTextColorGreen();
+    cout << "\nRecommended Courses:\n";
+    resetTextColor();
+
+
     for (size_t i = 0; i < allCourses.size(); ++i)
     {
         // Skip courses that have already been completed
@@ -389,6 +506,10 @@ void recommendCourses(const vector<Course>& allCourses, const vector<int>& compl
 
 
         if (canTake)
+        {
+            //setTextColor();
             cout << "- " << course.name << endl;
+            resetTextColor();
+        }
     }
 }
