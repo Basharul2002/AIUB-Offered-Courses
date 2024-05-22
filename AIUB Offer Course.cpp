@@ -1,5 +1,12 @@
 #include<bits/stdc++.h>
-#include <windows.h>   // For Windows Console API
+#include <sstream>
+#include <exception>
+
+// Define macros for different platforms
+#ifdef _WIN32
+    #include <windows.h> // For Windows Console API
+#endif
+
 using namespace std;
 
 // Define a structure to hold course information
@@ -35,43 +42,59 @@ int main()
     return 0;
 }
 
-
 // Function to change text color to red
 void setTextColorRed()
 {
-    HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-    SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_INTENSITY);
+    #ifdef _WIN32
+        HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+        SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_INTENSITY);
+    #else
+        // Unix-like systems: No color support
+    #endif
 }
-
 
 // Function to change text color to green
 void setTextColorGreen()
 {
-    HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-    SetConsoleTextAttribute(hConsole, FOREGROUND_GREEN | FOREGROUND_INTENSITY);
+    #ifdef _WIN32
+        HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+        SetConsoleTextAttribute(hConsole, FOREGROUND_GREEN | FOREGROUND_INTENSITY);
+    #else
+        // Unix-like systems: No color support
+    #endif
 }
 
-
-// Function to change text color to green
+// Function to change text color to cyan
 void setTextColorCyan()
 {
-    HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-    SetConsoleTextAttribute(hConsole, FOREGROUND_GREEN | FOREGROUND_BLUE | FOREGROUND_INTENSITY);
+    #ifdef _WIN32
+        HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+        SetConsoleTextAttribute(hConsole, FOREGROUND_GREEN | FOREGROUND_BLUE | FOREGROUND_INTENSITY);
+    #else
+        // Unix-like systems: No color support
+    #endif
 }
 
-
+// Function to change text color to yellow
 void setTextColorYellow()
 {
-    HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-    SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_GREEN |FOREGROUND_INTENSITY);
+    #ifdef _WIN32
+        HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+        SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_INTENSITY);
+    #else
+        // Unix-like systems: No color support
+    #endif
 }
-
 
 // Function to reset text color to default
 void resetTextColor()
 {
-    HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-    SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE);
+    #ifdef _WIN32
+        HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+        SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE);
+    #else
+        // Unix-like systems: No color support
+    #endif
 }
 
 
