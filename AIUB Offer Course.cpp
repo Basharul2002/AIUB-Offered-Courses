@@ -4,8 +4,64 @@
 
 // Define macros for different platforms
 #ifdef _WIN32
-    #include <windows.h> // For Windows Console API
+    #define WINDOWS_OS
 #endif
+
+// Function prototypes
+void setTextColorRed();
+void setTextColorGreen();
+void setTextColorCyan();
+void setTextColorYellow();
+void resetTextColor();
+
+#ifdef WINDOWS_OS
+    #include <windows.h> // For Windows Console API
+
+    void setTextColorRed()
+    {
+        HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+        SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_INTENSITY);
+    }
+
+
+    void setTextColorGreen()
+    {
+        HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+        SetConsoleTextAttribute(hConsole, FOREGROUND_GREEN | FOREGROUND_INTENSITY);
+    }
+
+
+    void setTextColorCyan()
+    {
+        HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+        SetConsoleTextAttribute(hConsole, FOREGROUND_GREEN | FOREGROUND_BLUE | FOREGROUND_INTENSITY);
+    }
+
+    void setTextColorYellow()
+    {
+
+        HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+        SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_INTENSITY);
+    }
+
+    void resetTextColor()
+    {
+
+        HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+        SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE);
+    }
+
+
+#else
+    // Define dummy functions for non-Windows platforms
+    void setTextColorRed();
+    void setTextColorGreen();
+    void setTextColorCyan();
+    void setTextColorYellow();
+    void resetTextColor();
+#endif
+
+
 
 using namespace std;
 
@@ -19,11 +75,6 @@ struct Course
 
 
 // Function Prototypes
-void setTextColorRed();
-void setTextColorGreen();
-void setTextColorCyan();
-void setTextColorYellow();
-void resetTextColor();
 void departmentOption(bool initial = true);
 void repeatExecution(string department, bool invalid = false);
 void departmentChoose(string dept);
@@ -40,61 +91,6 @@ int main()
     departmentOption();
     cin.ignore(); // To consume the newline character left by previous input
     return 0;
-}
-
-// Function to change text color to red
-void setTextColorRed()
-{
-    #ifdef _WIN32
-        HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-        SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_INTENSITY);
-    #else
-        // Unix-like systems: No color support
-    #endif
-}
-
-// Function to change text color to green
-void setTextColorGreen()
-{
-    #ifdef _WIN32
-        HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-        SetConsoleTextAttribute(hConsole, FOREGROUND_GREEN | FOREGROUND_INTENSITY);
-    #else
-        // Unix-like systems: No color support
-    #endif
-}
-
-// Function to change text color to cyan
-void setTextColorCyan()
-{
-    #ifdef _WIN32
-        HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-        SetConsoleTextAttribute(hConsole, FOREGROUND_GREEN | FOREGROUND_BLUE | FOREGROUND_INTENSITY);
-    #else
-        // Unix-like systems: No color support
-    #endif
-}
-
-// Function to change text color to yellow
-void setTextColorYellow()
-{
-    #ifdef _WIN32
-        HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-        SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_INTENSITY);
-    #else
-        // Unix-like systems: No color support
-    #endif
-}
-
-// Function to reset text color to default
-void resetTextColor()
-{
-    #ifdef _WIN32
-        HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-        SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE);
-    #else
-        // Unix-like systems: No color support
-    #endif
 }
 
 
