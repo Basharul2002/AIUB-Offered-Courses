@@ -10,16 +10,20 @@ The Course Suggestion System is a C++ project designed to recommend courses for 
 - **Download Option**: Users can download the latest release from the ['Releases'](https://github.com/Basharul2002/AIUB-Course-Suggestion-System/releases) section.
 
 ## How to Use
-1. Download the latest release from the ['Releases'](https://github.com/Basharul2002/AIUB-Course-Suggestion-System/releases) section.
+1. Download the latest release from the ['Releases'](https://github.com/Basharul2002/AIUB-Course-Suggestion-System/releases) section
    ![Download](Assets/Download.png)
-3. Run the application in your console.
+   <br>
+3. Run the application in your console
 4. Choose your deparment
    ![DeparmentChoose](Assets/DeparmentChoose.png)
-5. Follow the on-screen prompts to input your completed course numbers.
+   <br>
+6. Follow the on-screen prompts to input your completed course numbers
    ![CompletedCourses](Assets/ChooseCompletedCourseNumber.png)
-6. View the total completed credit.
+   <br>
+8. View the total completed credit
    ![Result](Assets/CompletedCredit.png)
-7. View the list of offered courses for your next semester
+   <br>
+10. View the list of offered courses for your next semester
    ![OfferedCourses](Assets/OfferedCourses.png)
 
 ## Installation
