@@ -65,6 +65,8 @@ void resetTextColor();
 
 using namespace std;
 
+bool outOfRange = false;
+
 // Define a structure to hold course information
 struct Course
 {
@@ -78,7 +80,7 @@ struct Course
 void departmentOption(bool initial = true);
 void repeatExecution(string department, bool invalid = false);
 void departmentChoose(string dept);
-vector<int> parseInput(const string& input);
+vector<int> parseInput(const string& input, const string& dept);
 void cseCourses();
 void eeeCourses();
 void courseDataUserInput(vector<Course>allCourses, string dept, bool error = false);
@@ -422,11 +424,12 @@ void courseDataUserInput(vector<Course>allCourses, string dept, bool error)
 {
     try
     {
-        if(!error)
-        {
-            // Get completed courses from the user
+        if(!error && !outOfRange) // Get completed courses from the user
             cout << "\n\nEnter completed course numbers or ranges (e.g., 1-10) separated by spaces: ";
-        }
+        
+        else if(!error && outOfRange)
+            cout << "\n\nEnter valid completed course numbers or ranges (e.g., 1-10) separated by spaces: ";
+
 
         setTextColorGreen();
         string line;
@@ -434,7 +437,7 @@ void courseDataUserInput(vector<Course>allCourses, string dept, bool error)
 
         resetTextColor();
         // Parse input line
-        vector<int> completedCourses = parseInput(line);
+        vector<int> completedCourses = parseInput(line, dept);
         // Calculate total credit for completed courses
         int totalCreditCompleted = 0;
         for (int courseNum : completedCourses)
@@ -445,14 +448,22 @@ void courseDataUserInput(vector<Course>allCourses, string dept, bool error)
                 totalCreditCompleted += allCourses[index].courseCredit;
             }
         }
-        cout << "\nTotal credit completed: ";
-        setTextColorYellow();
-        cout<< totalCreditCompleted << endl;
-        resetTextColor();
 
-        // Recommend next semester courses
-        recommendCourses(allCourses, completedCourses, totalCreditCompleted);
-        repeatExecution(dept);
+        if(!outOfRange)
+        {
+            cout << "\nTotal credit completed: ";
+            setTextColorYellow();
+            cout<< totalCreditCompleted << endl;
+            resetTextColor();
+
+            recommendCourses(allCourses, completedCourses, totalCreditCompleted); // Recommend next semester courses
+            repeatExecution(dept);
+        }
+
+        else
+            courseDataUserInput(allCourses, dept, error);
+        
+        
     }
 
     catch(exception ex)
@@ -467,7 +478,7 @@ void courseDataUserInput(vector<Course>allCourses, string dept, bool error)
 }
 
 // Helper function to parse input line into course numbers
-vector<int> parseInput(const string& input)
+vector<int> parseInput(const string& input, const string& dept)
 {
     vector<int> courseNumbers;
     istringstream iss(input);
@@ -475,18 +486,65 @@ vector<int> parseInput(const string& input)
     while (iss >> part)
     {
         size_t dashPos = part.find('-');
-         // Single number
-        if (dashPos == string::npos)
-            courseNumbers.push_back(stoi(part));
-        // Range of numbers
-        else
+
+        try
         {
-            int start = stoi(part.substr(0, dashPos));
-            int end = stoi(part.substr(dashPos + 1));
-            for (int i = start; i <= end; ++i)
-                courseNumbers.push_back(i);
+            // Single number
+            if (dashPos == string::npos)
+            {
+                int number = stoi(part);
+                if ((dept == "1" && number > 94) || (dept == "2" && number > 59))
+                {
+                    setTextColorRed();
+                    cout << "Invalid Input: Number out of range" << endl;
+                    resetTextColor();
+                    outOfRange = true;
+
+                    return courseNumbers;
+                }
+
+                else
+                    courseNumbers.push_back(number);
+
+            }
+
+            // Range of numbers
+            else
+            {
+                int start = stoi(part.substr(0, dashPos));
+                int end = stoi(part.substr(dashPos + 1));
+                for (int i = start; i <= end; ++i)
+                {
+                    if ((dept == "1" && i > 97) || (dept == "2" && i > 95))
+                    {
+                        setTextColorRed();
+                        cout << "Invalid Input: Number out of range" << endl;
+                        resetTextColor();
+                        outOfRange = true;
+
+                        return courseNumbers;
+                    }
+                    else
+                        courseNumbers.push_back(i);
+
+                }
+            }
+        }
+        catch (const invalid_argument& e)
+        {
+            setTextColorRed();
+            cout << "Invalid Input: Non-numeric value detected" << endl;
+            resetTextColor();
+        }
+        catch (const out_of_range& e)
+        {
+            setTextColorRed();
+            cout << "Invalid Input: Number out of range" << endl;
+            resetTextColor();
         }
     }
+
+    outOfRange = false;
     return courseNumbers;
 }
 
@@ -507,6 +565,7 @@ void recommendCourses(const vector<Course>& allCourses, const vector<int>& compl
         // Skip courses that have already been completed
         if (completedSet.find(i + 1) != completedSet.end())
             continue;
+
         const Course& course = allCourses[i];
         bool canTake = true;
         // Check if all prerequisites are completed
@@ -527,7 +586,7 @@ void recommendCourses(const vector<Course>& allCourses, const vector<int>& compl
         if (canTake)
         {
             //setTextColor();
-            cout << "- " << course.name << endl;
+            cout << "- " << course.name << " (" << course.courseCredit << ")" << endl;
             resetTextColor();
         }
     }
