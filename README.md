@@ -15,7 +15,7 @@ The Course Suggestion System is a C++ project designed to recommend courses for 
    <br><br>
 3. Run the application in your console
 4. Choose your deparment
-   ![DeparmentChoose](Assets/DeparmentChoose.png)
+   ![DeparmentChoose](Assets/DepartmentChoose.png)
    <br><br>
 6. Follow the on-screen prompts to input your completed course numbers
    ![CompletedCourses](Assets/ChooseCompletedCourseNumber.png)
