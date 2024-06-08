@@ -38,8 +38,10 @@ To install the AIUB Course Suggestion System, follow these steps:
 
 3. **Handle Security Prompts**
    - If a security prompt appears, click on **"More Info"** to view additional options.
+       ![SecurityPrompts1](Assets/SecurityPrompts1.png)
    - Then, click on **"Run Anyway"** to proceed with the installation.
-
+     ![SecurityPrompts2](Assets/SecurityPrompts2.png)
+2
 4. **Follow On-Screen Instructions**
    - Follow the on-screen instructions to complete the installation.
 
