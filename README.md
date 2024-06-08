@@ -27,7 +27,24 @@ The Course Suggestion System is a C++ project designed to recommend courses for 
    ![OfferedCourses](Assets/OfferedCourses.png)
 
 ## Installation
-To install the application, navigate to the ['Releases'](https://github.com/Basharul2002/AIUB-Course-Suggestion-System/releases) section and download the latest version.
+To install the AIUB Course Suggestion System, follow these steps:
+
+1. **Download the Application**
+   - Navigate to the [Releases](https://github.com/Basharul2002/AIUB-Course-Suggestion-System/releases) section.
+   - Download the latest version of the software.
+
+2. **Run the Installer**
+   - After downloading, double-click the software file to begin the installation process.
+
+3. **Handle Security Prompts**
+   - If a security prompt appears, click on **"More Info"** to view additional options.
+   - Then, click on **"Run Anyway"** to proceed with the installation.
+
+4. **Follow On-Screen Instructions**
+   - Follow the on-screen instructions to complete the installation.
+
+Once installed, you can run the AIUB Course Suggestion System from your desktop or start menu.
+
 
 ## License
 Distributed under the GPL-3.0 license. See [`LICENSE`](https://github.com/Basharul2002/AIUB-Course-Suggestion-System?tab=GPL-3.0-1-ov-file) for more information.
