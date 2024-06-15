@@ -53,3 +53,13 @@ Distributed under the GPL-3.0 license. See [`LICENSE`](https://github.com/Bashar
 
 ## Contact
 Basharul Alam Mazu- [basharulalam6@gmail.com](basharulalam6@gmail.com)
+
+
+# Run in Gitpod
+
+You can also run Face Recognition in Gitpod, a free online dev environment for GitHub:
+
+If you're intersted in a paid subscription with GitPod use the coupon code: TECHWITHTIM19
+
+OOPS, this isn't working quite yet :/
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/Basharul2002/AIUB-Course-Suggestion-System/blob/main/AIUB%20Offer%20Course.cpp)
