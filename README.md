@@ -55,7 +55,7 @@ Distributed under the GPL-3.0 license. See [`LICENSE`](https://github.com/Bashar
 Basharul Alam Mazu- [basharulalam6@gmail.com](basharulalam6@gmail.com)
 
 
-# Run in Gitpod
+## Run in Gitpod
 
 You can also run AIUB Course Suggestion System in Gitpod, a free online dev environment for GitHub:
 
