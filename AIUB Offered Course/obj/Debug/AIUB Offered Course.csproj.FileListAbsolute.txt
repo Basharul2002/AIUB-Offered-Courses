@@ -26,3 +26,19 @@ C:\.TANJIM\VARSITY\5. Summer 23-24\AIUB Offered Course\AIUB Offered Course\bin\D
 C:\.TANJIM\VARSITY\5. Summer 23-24\AIUB Offered Course\AIUB Offered Course\bin\Debug\AIUB Offered Course.application
 C:\.TANJIM\VARSITY\5. Summer 23-24\AIUB Offered Course\AIUB Offered Course\obj\Debug\AIUB Offered Course.exe.manifest
 C:\.TANJIM\VARSITY\5. Summer 23-24\AIUB Offered Course\AIUB Offered Course\obj\Debug\AIUB Offered Course.application
+C:\.TANJIM\VARSITY\5. Summer 23-24\AIUB-Course-Suggestion-System-master\AIUB Offered Course\bin\Debug\AIUB Offered Course.exe.config
+C:\.TANJIM\VARSITY\5. Summer 23-24\AIUB-Course-Suggestion-System-master\AIUB Offered Course\bin\Debug\AIUB Offered Course.exe.manifest
+C:\.TANJIM\VARSITY\5. Summer 23-24\AIUB-Course-Suggestion-System-master\AIUB Offered Course\bin\Debug\AIUB Offered Course.application
+C:\.TANJIM\VARSITY\5. Summer 23-24\AIUB-Course-Suggestion-System-master\AIUB Offered Course\bin\Debug\AIUB Offered Course.exe
+C:\.TANJIM\VARSITY\5. Summer 23-24\AIUB-Course-Suggestion-System-master\AIUB Offered Course\bin\Debug\AIUB Offered Course.pdb
+C:\.TANJIM\VARSITY\5. Summer 23-24\AIUB-Course-Suggestion-System-master\AIUB Offered Course\bin\Debug\Guna.UI2.dll
+C:\.TANJIM\VARSITY\5. Summer 23-24\AIUB-Course-Suggestion-System-master\AIUB Offered Course\obj\Debug\AIUB Offered Course.csproj.AssemblyReference.cache
+C:\.TANJIM\VARSITY\5. Summer 23-24\AIUB-Course-Suggestion-System-master\AIUB Offered Course\obj\Debug\AIUB_Offered_Course.CourseSolution.resources
+C:\.TANJIM\VARSITY\5. Summer 23-24\AIUB-Course-Suggestion-System-master\AIUB Offered Course\obj\Debug\AIUB_Offered_Course.Properties.Resources.resources
+C:\.TANJIM\VARSITY\5. Summer 23-24\AIUB-Course-Suggestion-System-master\AIUB Offered Course\obj\Debug\AIUB Offered Course.csproj.GenerateResource.cache
+C:\.TANJIM\VARSITY\5. Summer 23-24\AIUB-Course-Suggestion-System-master\AIUB Offered Course\obj\Debug\AIUB Offered Course.csproj.CoreCompileInputs.cache
+C:\.TANJIM\VARSITY\5. Summer 23-24\AIUB-Course-Suggestion-System-master\AIUB Offered Course\obj\Debug\AIUB Offered Course.exe.manifest
+C:\.TANJIM\VARSITY\5. Summer 23-24\AIUB-Course-Suggestion-System-master\AIUB Offered Course\obj\Debug\AIUB Offered Course.application
+C:\.TANJIM\VARSITY\5. Summer 23-24\AIUB-Course-Suggestion-System-master\AIUB Offered Course\obj\Debug\AIUB Off.1B9A9B43.Up2Date
+C:\.TANJIM\VARSITY\5. Summer 23-24\AIUB-Course-Suggestion-System-master\AIUB Offered Course\obj\Debug\AIUB Offered Course.exe
+C:\.TANJIM\VARSITY\5. Summer 23-24\AIUB-Course-Suggestion-System-master\AIUB Offered Course\obj\Debug\AIUB Offered Course.pdb
