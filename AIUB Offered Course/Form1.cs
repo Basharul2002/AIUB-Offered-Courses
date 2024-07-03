@@ -306,9 +306,8 @@ namespace AIUB_Offered_Course
                 }
 
                 if (hasDuplicates)
-                {
                     break;
-                }
+                
             }
 
             if (hasDuplicates)
@@ -632,10 +631,10 @@ namespace AIUB_Offered_Course
         // Method to determine if a course should be skipped based on total credits completed
         private bool ShouldSkipCourse(Course course, int totalCreditCompleted)
         {
-            return ((course.Name == "RESEARCH METHODOLOGY" && totalCreditCompleted < 100) ||
-                    (course.Name == "INTERNSHIP" && totalCreditCompleted < 139) ||
-                    (course.Name == "CAPSTONE PROJECT 1" && totalCreditCompleted < 105) ||
-                    (departmentNumber == 3 && (course.CourseType == 2 || course.CourseType == 3) && totalCreditCompleted < 60));
+            return ((departmentNumber == 1 &&  (course.Name == "RESEARCH METHODOLOGY" && totalCreditCompleted < 100) || (course.Name == "INTERNSHIP" && totalCreditCompleted < 139)) ||
+                    (departmentNumber == 2 && course.Name == "CAPSTONE PROJECT 1" && totalCreditCompleted < 105) ||
+                    (departmentNumber == 3 && (course.CourseType == 2 || course.CourseType == 3) && totalCreditCompleted < 60) ||
+                    (departmentNumber == 4 && (course.Name == "INTERNSHIP" && totalCreditCompleted < 137)));
         }
 
         // Method to toggle visibility of DataGridView and its corresponding label
