@@ -1,4 +1,4 @@
-﻿using Guna.UI2.WinForms;
+using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -371,9 +371,6 @@ namespace AIUB_Offered_Course
 
         private void SetupElectiveDataGridViews()
         {
-            // Clear existing rows and columns in DataGridViews
-            ClearDataGridViews();
-  
             if (departmentNumber == 1) // CSE (3 Major)
             {
                 SetupDataGridView(elective1_courses_datagridview, "<b>Major in Information</b>", new int[] { 326, 58, 91 }, DataGridViewContentAlignment.MiddleCenter);
@@ -409,39 +406,24 @@ namespace AIUB_Offered_Course
 
             }
 
-            HideAllDataGridViews();
+           // HideAllDataGridViews();
         }
 
-        private void ClearDataGridViews()
+        private void ClearDataGridViews(Dictionary<int, (Guna2DataGridView, Guna2HtmlLabel)> courseTypeMappings)
         {
-            core_courses_datagridview.Rows.Clear();
-            elective1_courses_datagridview.Columns.Clear();
-            elective2_courses_datagridview.Columns.Clear();
-            elective3_courses_datagridview.Columns.Clear();
-            elective4_courses_datagridview.Columns.Clear();
-            elective5_courses_datagridview.Columns.Clear();
-            elective6_courses_datagridview.Columns.Clear();
-            elective7_courses_datagridview.Columns.Clear();
-            elective8_courses_datagridview.Columns.Clear();
-            elective9_courses_datagridview.Columns.Clear();
-            elective10_courses_datagridview.Columns.Clear();
-            elective11_courses_datagridview.Columns.Clear();
-            elective12_courses_datagridview.Columns.Clear();
-            elective13_courses_datagridview.Columns.Clear();
 
-            elective1_courses_datagridview.Rows.Clear();
-            elective2_courses_datagridview.Rows.Clear();
-            elective3_courses_datagridview.Rows.Clear();
-            elective4_courses_datagridview.Rows.Clear();
-            elective5_courses_datagridview.Rows.Clear();
-            elective6_courses_datagridview.Rows.Clear();
-            elective7_courses_datagridview.Rows.Clear();
-            elective8_courses_datagridview.Rows.Clear();
-            elective9_courses_datagridview.Rows.Clear();
-            elective10_courses_datagridview.Rows.Clear();
-            elective11_courses_datagridview.Rows.Clear();
-            elective12_courses_datagridview.Rows.Clear();
-            elective13_courses_datagridview.Rows.Clear();
+
+            foreach (var kvp in courseTypeMappings)
+            {
+                var (dgv, label) = kvp.Value;
+
+                dgv.Rows.Clear();
+
+                if (kvp.Key != 1)
+                    dgv.Columns.Clear();
+                
+            }
+
         }
 
         private void SetupDataGridView(DataGridView dgv, string labelText, int[] columnWidths, DataGridViewContentAlignment alignment)
@@ -539,54 +521,25 @@ namespace AIUB_Offered_Course
             }
         }
 
-        private void HideAllDataGridViews()
+        private void HideAllDataGridViews(Dictionary<int, (Guna2DataGridView, Guna2HtmlLabel)> courseTypeMappings)
         {
-            // Label
-            core_courses_label.Visible = false;
-
-            elective_courses_label.Visible = false;
-            elective1_courses_label.Visible = false;
-            elective2_courses_label.Visible = false;
-            elective3_courses_label.Visible = false;
-            elective4_courses_label.Visible = false;
-            elective5_courses_label.Visible = false;
-            elective6_courses_label.Visible = false;
-            elective7_courses_label.Visible = false;
-            elective8_courses_label.Visible = false;
-            elective9_courses_label.Visible = false;
-            elective10_courses_label.Visible = false;
-            elective11_courses_label.Visible = false;
-            elective12_courses_label.Visible = false;
-            elective13_courses_label.Visible = false;
-
-            // Data grid View
-            core_courses_datagridview.Visible = false;
-
-            elective1_courses_datagridview.Visible = false;
-            elective2_courses_datagridview.Visible = false;
-            elective3_courses_datagridview.Visible = false;
-            elective4_courses_datagridview.Visible = false;
-            elective5_courses_datagridview.Visible = false;
-            elective6_courses_datagridview.Visible = false;
-            elective7_courses_datagridview.Visible = false;
-            elective8_courses_datagridview.Visible = false;
-            elective9_courses_datagridview.Visible = false;
-            elective10_courses_datagridview.Visible = false;
-            elective11_courses_datagridview.Visible = false;
-            elective12_courses_datagridview.Visible = false;
-            elective13_courses_datagridview.Visible = false;
+            foreach (var (dgv, label) in courseTypeMappings.Values)
+            {
+                label.Visible = false;
+                dgv.Visible = false;
+            }
+            
         }
 
 
         // Function to recommend courses based on prerequisites and completed courses
         private void RecommendCourses(List<int> completedCourses, int totalCreditCompleted)
         {
-            var completedCoursesSet = new HashSet<int>(completedCourses);
+            try
+            {
+                var completedCoursesSet = new HashSet<int>(completedCourses);
 
-            SetupElectiveDataGridViews();
-            recomended_courses_panel.Visible = true;
-
-            var courseTypeMappings = new Dictionary<int, (Guna2DataGridView, Guna2HtmlLabel)>
+                var courseTypeMappings = new Dictionary<int, (Guna2DataGridView, Guna2HtmlLabel)>
                                         {
                                             { 1, (core_courses_datagridview, core_courses_label) },
                                             { 2, (elective1_courses_datagridview, elective1_courses_label) },
@@ -604,47 +557,62 @@ namespace AIUB_Offered_Course
                                             { 14, (elective13_courses_datagridview, elective13_courses_label) }
                                         };
 
-            var courseTypeIndexes = new Dictionary<int, int>();
-            foreach (var key in courseTypeMappings.Keys)
-                courseTypeIndexes[key] = 1; // Initialize all indexes to 1
-            
+                ClearDataGridViews(courseTypeMappings);             // Clear existing rows and columns in DataGridViews
 
-            for (int i = 0, j = 1, k = 1, l = 1, m = 1, n = 1, o = 1, p = 1, q = 1, r = 1, s = 1, t = 1, u = 1, v = 1, w = 1;  i < allCourses.Count; i++)
-            {
-                // Skip if course is already completed
-                if (completedCoursesSet.Contains(i+1))
-                    continue;
-
-                var prerequisites = allCourses[i].Prerequisites;
-
-                // Check if all prerequisites are completed
-
-                if (completedCoursesSet.Contains(i) || (!prerequisites.All(prereq => completedCoursesSet.Contains(prereq))) || ShouldSkipCourse(allCourses[i], totalCreditCompleted))
-                    continue;
+                SetupElectiveDataGridViews();
+                HideAllDataGridViews(courseTypeMappings);
+                recomended_courses_panel.Visible = true;
 
 
-                if (courseTypeMappings.TryGetValue(allCourses[i].CourseType, out var mapping))
+
+                var courseTypeIndexes = new Dictionary<int, int>();
+                foreach (var key in courseTypeMappings.Keys)
+                    courseTypeIndexes[key] = 1; // Initialize all indexes to 1
+
+
+                for (int i = 0, j = 1, k = 1, l = 1, m = 1, n = 1, o = 1, p = 1, q = 1, r = 1, s = 1, t = 1, u = 1, v = 1, w = 1; i < allCourses.Count; i++)
                 {
-                    var (dgv, label) = mapping;
-                    int index = courseTypeIndexes[allCourses[i].CourseType];
-                    AddCourseToDataGridView(dgv, ref index, allCourses[i], departmentNumber == 1 ? ((CseCourse)allCourses[i].CourseDept).ToString() : null);
-                    courseTypeIndexes[allCourses[i].CourseType] = index; // Update the dictionary with the new index
+                    // Skip if course is already completed
+                    if (completedCoursesSet.Contains(i + 1))
+                        continue;
+
+                    var prerequisites = allCourses[i].Prerequisites;
+
+                    // Check if all prerequisites are completed
+
+                    if (completedCoursesSet.Contains(i) || (!prerequisites.All(prereq => completedCoursesSet.Contains(prereq))) || ShouldSkipCourse(allCourses[i], totalCreditCompleted))
+                        continue;
+
+
+                    if (courseTypeMappings.TryGetValue(allCourses[i].CourseType, out var mapping))
+                    {
+                        var (dgv, label) = mapping;
+                        int index = courseTypeIndexes[allCourses[i].CourseType];
+                        AddCourseToDataGridView(dgv, ref index, allCourses[i], departmentNumber == 1 ? ((CseCourse)allCourses[i].CourseDept).ToString() : null);
+                        courseTypeIndexes[allCourses[i].CourseType] = index; // Update the dictionary with the new index
+                    }
                 }
+
+
+                //   AdjustAllDataGridViews();
+
+                foreach (var (dgv, label) in courseTypeMappings.Values)
+                {
+                    AdjustDataGridViewHeight(dgv);
+                    ToggleDataGridViewVisibility(dgv, label);
+                    dgv.Refresh();
+                }
+
+
+                // Skip the first entry (core courses) when setting elective_courses_label visibility
+                elective_courses_label.Visible = courseTypeMappings.Skip(1).Any(mapping => mapping.Value.Item1.Visible);
             }
 
-            
-         //   AdjustAllDataGridViews();
-
-            foreach (var (dgv, label) in courseTypeMappings.Values)
+            catch (Exception ex)
             {
-                AdjustDataGridViewHeight(dgv);
-                ToggleDataGridViewVisibility(dgv, label);
-                dgv.Refresh();
+                // MessageBox.Show($"Function: RecommendCourses and exception: {ex.Message}");
             }
-
-
-            // Skip the first entry (core courses) when setting elective_courses_label visibility
-            elective_courses_label.Visible = courseTypeMappings.Skip(1).Any(mapping => mapping.Value.Item1.Visible);
+            
 
 
 
@@ -678,24 +646,7 @@ namespace AIUB_Offered_Course
 
         // Other supporting methods (SetupElectiveDataGridViews, AdjustAllDataGridViews, etc.) remain the same
 
-        private void AdjustAllDataGridViews()
-        {
-            AdjustDataGridViewHeight(core_courses_datagridview);
-            AdjustDataGridViewHeight(elective1_courses_datagridview);
-            AdjustDataGridViewHeight(elective2_courses_datagridview);
-            AdjustDataGridViewHeight(elective3_courses_datagridview);
-            AdjustDataGridViewHeight(elective4_courses_datagridview);
-
-            AdjustDataGridViewHeight(elective5_courses_datagridview);
-            AdjustDataGridViewHeight(elective6_courses_datagridview);
-            AdjustDataGridViewHeight(elective7_courses_datagridview);
-            AdjustDataGridViewHeight(elective8_courses_datagridview);
-            AdjustDataGridViewHeight(elective9_courses_datagridview);
-            AdjustDataGridViewHeight(elective10_courses_datagridview);
-            AdjustDataGridViewHeight(elective11_courses_datagridview);
-            AdjustDataGridViewHeight(elective12_courses_datagridview);
-            AdjustDataGridViewHeight(elective13_courses_datagridview);
-        }
+    
         private void AdjustDataGridViewHeight(DataGridView dataGridView)
         {
             int rowHeight = dataGridView.RowTemplate.Height;
