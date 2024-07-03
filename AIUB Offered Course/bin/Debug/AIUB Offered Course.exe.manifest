@@ -50,7 +50,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>sPrSSZBxhTfGctDK4uG1meZR7iOm7tawgF5WO9FDb0I=</dsig:DigestValue>
+        <dsig:DigestValue>8/hts0Czw5sHnROr4IzgUmbHZ2OPOSphZ6FmDjqelO0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -66,13 +66,13 @@
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="AIUB Offered Course.exe.config" size="187">
+  <file name="AIUB Offered Course.exe.config" size="182">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>+CM46OnHRrXZXNLMx7+U3V3iubiYL//d8hGOR13lDhU=</dsig:DigestValue>
+      <dsig:DigestValue>6yF81Kr/18DMcg6buS9ejUGZvWeN+ejf96BxgtNWgIE=</dsig:DigestValue>
     </hash>
   </file>
   <file name="frame.ico" size="4286">

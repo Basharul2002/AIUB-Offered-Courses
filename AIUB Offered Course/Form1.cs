@@ -313,7 +313,7 @@ namespace AIUB_Offered_Course
 
             if (hasDuplicates)
             {
-                throw new ArgumentException("Duplicate course IDs are not allowed.");
+                throw new ArgumentException("Duplicate course ID's are Not Allowed");
             }
 
             return courseNumbers;
@@ -387,7 +387,7 @@ namespace AIUB_Offered_Course
                 SetupDataGridView(elective2_courses_datagridview, "<b>Major In Literature</b> <br>First Major: Complete any 10 courses in Literature <br> Second Major: Complete any 6 courses in Literature <br>Minor: Complete any FOUR 4 courses in Literature", new int[] { 417, 58 }, DataGridViewContentAlignment.MiddleCenter);
             }
 
-            else if (departmentNumber == 4) // BBA (7 major)
+            else if (departmentNumber == 4) // BBA (13 major)
             {
                 SetupDataGridView(elective1_courses_datagridview, "<b>Major in ACCOUNTING</b>", new int[] { 417, 58 }, DataGridViewContentAlignment.MiddleCenter);
                 SetupDataGridView(elective2_courses_datagridview, "<b>Major In BUSINESS ANALYTICS (BA)</b>", new int[] { 417, 58 }, DataGridViewContentAlignment.MiddleCenter);
@@ -406,7 +406,7 @@ namespace AIUB_Offered_Course
 
             }
 
-           // HideAllDataGridViews();
+           
         }
 
         private void ClearDataGridViews(Dictionary<int, (Guna2DataGridView, Guna2HtmlLabel)> courseTypeMappings)
@@ -570,7 +570,7 @@ namespace AIUB_Offered_Course
                     courseTypeIndexes[key] = 1; // Initialize all indexes to 1
 
 
-                for (int i = 0, j = 1, k = 1, l = 1, m = 1, n = 1, o = 1, p = 1, q = 1, r = 1, s = 1, t = 1, u = 1, v = 1, w = 1; i < allCourses.Count; i++)
+                for (int i = 0; i < allCourses.Count; i++)
                 {
                     // Skip if course is already completed
                     if (completedCoursesSet.Contains(i + 1))

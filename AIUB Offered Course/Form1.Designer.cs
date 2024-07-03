@@ -1802,7 +1802,7 @@
             this.course_number_warning_label.BackColor = System.Drawing.Color.Transparent;
             this.course_number_warning_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.course_number_warning_label.ForeColor = System.Drawing.Color.Red;
-            this.course_number_warning_label.Location = new System.Drawing.Point(21, 137);
+            this.course_number_warning_label.Location = new System.Drawing.Point(12, 137);
             this.course_number_warning_label.Name = "course_number_warning_label";
             this.course_number_warning_label.Size = new System.Drawing.Size(126, 17);
             this.course_number_warning_label.TabIndex = 6;
