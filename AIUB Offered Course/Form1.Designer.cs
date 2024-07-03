@@ -1802,7 +1802,7 @@
             this.course_number_warning_label.BackColor = System.Drawing.Color.Transparent;
             this.course_number_warning_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.course_number_warning_label.ForeColor = System.Drawing.Color.Red;
-            this.course_number_warning_label.Location = new System.Drawing.Point(12, 137);
+            this.course_number_warning_label.Location = new System.Drawing.Point(32, 137);
             this.course_number_warning_label.Name = "course_number_warning_label";
             this.course_number_warning_label.Size = new System.Drawing.Size(126, 17);
             this.course_number_warning_label.TabIndex = 6;
@@ -1875,12 +1875,12 @@
             this.course_number_textbox.Font = new System.Drawing.Font("Nirmala UI", 9F);
             this.course_number_textbox.ForeColor = System.Drawing.Color.Black;
             this.course_number_textbox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.course_number_textbox.Location = new System.Drawing.Point(10, 99);
+            this.course_number_textbox.Location = new System.Drawing.Point(33, 99);
             this.course_number_textbox.Name = "course_number_textbox";
             this.course_number_textbox.PasswordChar = '\0';
             this.course_number_textbox.PlaceholderText = "1, 3, 5-10, 15, 20, 22-27";
             this.course_number_textbox.SelectedText = "";
-            this.course_number_textbox.Size = new System.Drawing.Size(254, 36);
+            this.course_number_textbox.Size = new System.Drawing.Size(231, 36);
             this.course_number_textbox.TabIndex = 1;
             this.course_number_textbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
