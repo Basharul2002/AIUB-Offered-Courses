@@ -258,7 +258,7 @@ namespace AIUB_Offered_Course
 
                 // Semester 2
                 new Course { Name = "ENGLISH WRITING", Prerequisites = new HashSet<int> {1}, CourseCredit = 3, CourseType = 1}, // 7
-                new Course { Name = "ENGLISH WRITING", Prerequisites = new HashSet<int> (), CourseCredit = 3, CourseType = 1}, // 8
+                new Course { Name = "MORPHOLOGY", Prerequisites = new HashSet<int> (), CourseCredit = 3, CourseType = 1}, // 8
                 new Course { Name = "HISTORY OF EMERGENCE OF BANGLADESH", Prerequisites = new HashSet<int> (), CourseCredit = 3, CourseType = 1}, // 9
                 new Course { Name = "APPRECIATION OF POETRY", Prerequisites = new HashSet<int> (), CourseCredit = 3, CourseType = 1}, // 10
                 new Course { Name = "FUNDAMENTALS OF ECONOMICS", Prerequisites = new HashSet<int> (), CourseCredit = 3, CourseType = 1 }, // 11
@@ -267,7 +267,7 @@ namespace AIUB_Offered_Course
 
                 // Semester 3
                 new Course { Name = "WRITING FOR ARTS AND SOCIAL SCIENCES", Prerequisites = new HashSet<int> {7}, CourseCredit = 3, CourseType = 1}, // 13
-                new Course { Name = "BANGLADESH STUDIES", Prerequisites = new HashSet<int> {9}, CourseCredit = 3, CourseType = 1}, // 14
+                new Course { Name = "BANGLADESH STUDIES", Prerequisites = new HashSet<int> {8}, CourseCredit = 3, CourseType = 1}, // 14
                 new Course { Name = "ARTS AND AESTHETICS", Prerequisites = new HashSet<int> (), CourseCredit = 3, CourseType = 1}, // 15
                 new Course { Name = "STATISTICS FOR SOCIAL SCIENCE", Prerequisites = new HashSet<int> (), CourseCredit = 3, CourseType = 1}, // 16
                 new Course { Name = "HISTORY OF ENGLISH LANGUAGE", Prerequisites = new HashSet<int> (), CourseCredit = 3, CourseType = 1}, // 17
@@ -368,7 +368,6 @@ namespace AIUB_Offered_Course
                                             new Course { Name = "Micro Economics", Prerequisites = new HashSet<int>{4}, CourseCredit = 3, CourseType = 1},
                                             new Course { Name = "Introduction to Information Technology ", Prerequisites = new HashSet<int>{2}, CourseCredit = 3, CourseType = 1}, //1
 
-
                                             // Semester 3
                                             new Course { Name = "Organizational Behavior", Prerequisites = new HashSet<int>{7}, CourseCredit = 3, CourseType = 1},
                                             new Course { Name = "Managerial Accounting", Prerequisites = new HashSet<int>{3}, CourseCredit = 3, CourseType = 1},
@@ -376,7 +375,6 @@ namespace AIUB_Offered_Course
                                             new Course { Name = "Basic in Social Science ", Prerequisites = new HashSet<int>{6}, CourseCredit = 3, CourseType = 1}, //1
                                             new Course { Name = "Office Management Technology ", Prerequisites = new HashSet<int>{12}, CourseCredit = 3, CourseType = 1}, //1
                                             new Course { Name = "Global Languages", Prerequisites = new HashSet<int>{10}, CourseCredit = 3, CourseType = 1},
-
 
                                             // Semester 4
                                             new Course { Name = "Principles of Finance", Prerequisites = new HashSet<int>{14}, CourseCredit = 3, CourseType = 1},

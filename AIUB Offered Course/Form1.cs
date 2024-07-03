@@ -572,26 +572,35 @@ namespace AIUB_Offered_Course
 
                 for (int i = 0; i < allCourses.Count; i++)
                 {
+                    int courseId = i + 1; // Adjust for 1-based index
+
                     // Skip if course is already completed
-                    if (completedCoursesSet.Contains(i + 1))
+                    if (completedCoursesSet.Contains(courseId))
                         continue;
 
-                    var prerequisites = allCourses[i].Prerequisites;
+                    var course = allCourses[i];
+                    var prerequisites = course.Prerequisites;
 
                     // Check if all prerequisites are completed
+                    bool allPrerequisitesCompleted = prerequisites.All(prereq => completedCoursesSet.Contains(prereq));
+                    bool shouldSkipCourse = ShouldSkipCourse(course, totalCreditCompleted);
 
-                    if (completedCoursesSet.Contains(i) || (!prerequisites.All(prereq => completedCoursesSet.Contains(prereq))) || ShouldSkipCourse(allCourses[i], totalCreditCompleted))
+                    if (!allPrerequisitesCompleted || shouldSkipCourse)
                         continue;
 
-
-                    if (courseTypeMappings.TryGetValue(allCourses[i].CourseType, out var mapping))
+                    if (courseTypeMappings.TryGetValue(course.CourseType, out var mapping))
                     {
                         var (dgv, label) = mapping;
-                        int index = courseTypeIndexes[allCourses[i].CourseType];
-                        AddCourseToDataGridView(dgv, ref index, allCourses[i], departmentNumber == 1 ? ((CseCourse)allCourses[i].CourseDept).ToString() : null);
-                        courseTypeIndexes[allCourses[i].CourseType] = index; // Update the dictionary with the new index
+                        int index = courseTypeIndexes[course.CourseType];
+                        string courseDept = departmentNumber == 1 ? ((CseCourse)course.CourseDept).ToString() : null;
+
+                        AddCourseToDataGridView(dgv, ref index, course, courseDept);
+
+                        // Update the dictionary with the new index
+                        courseTypeIndexes[course.CourseType] = index;
                     }
                 }
+
 
 
                 //   AdjustAllDataGridViews();
@@ -612,10 +621,6 @@ namespace AIUB_Offered_Course
             {
                 // MessageBox.Show($"Function: RecommendCourses and exception: {ex.Message}");
             }
-            
-
-
-
         }
 
         // Method to add course details to the DataGridView
@@ -637,6 +642,7 @@ namespace AIUB_Offered_Course
                     (departmentNumber == 4 && (course.Name == "Internship" && totalCreditCompleted < 137) || (totalCreditCompleted < 70 && course.CourseType != 1)));
         }
 
+
         // Method to toggle visibility of DataGridView and its corresponding label
         private void ToggleDataGridViewVisibility(DataGridView dgv, Guna2HtmlLabel label)
         {
@@ -645,8 +651,6 @@ namespace AIUB_Offered_Course
 
 
         // Other supporting methods (SetupElectiveDataGridViews, AdjustAllDataGridViews, etc.) remain the same
-
-    
         private void AdjustDataGridViewHeight(DataGridView dataGridView)
         {
             int rowHeight = dataGridView.RowTemplate.Height;
