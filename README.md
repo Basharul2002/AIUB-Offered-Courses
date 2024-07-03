@@ -102,7 +102,4 @@ For any issues or inquiries, feel free to reach out to me at [basharulalam6@gmai
 ## Run in Gitpod
 
 You can also run the AIUB Course Suggestion System in Gitpod, a free online dev environment for GitHub:
-
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/Basharul2002/AIUB-Course-Suggestion-System/blob/master/AIUB%20Offered%20Course.sln)
-
-**Note:** Running the system in Gitpod is currently not supported.
