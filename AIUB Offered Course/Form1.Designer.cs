@@ -1791,7 +1791,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(93, 69);
+            this.label4.Location = new System.Drawing.Point(85, 69);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(124, 15);
             this.label4.TabIndex = 7;
@@ -1822,7 +1822,7 @@
             this.back_button.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(78)))), ((int)(((byte)(161)))));
             this.back_button.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold);
             this.back_button.ForeColor = System.Drawing.Color.White;
-            this.back_button.Location = new System.Drawing.Point(41, 163);
+            this.back_button.Location = new System.Drawing.Point(30, 163);
             this.back_button.Name = "back_button";
             this.back_button.Size = new System.Drawing.Size(99, 45);
             this.back_button.TabIndex = 4;
@@ -1843,7 +1843,7 @@
             this.completed_course_number_button.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold);
             this.completed_course_number_button.ForeColor = System.Drawing.Color.White;
             this.completed_course_number_button.IndicateFocus = true;
-            this.completed_course_number_button.Location = new System.Drawing.Point(169, 163);
+            this.completed_course_number_button.Location = new System.Drawing.Point(172, 163);
             this.completed_course_number_button.Name = "completed_course_number_button";
             this.completed_course_number_button.Size = new System.Drawing.Size(99, 45);
             this.completed_course_number_button.TabIndex = 3;
@@ -1854,7 +1854,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Nirmala UI", 11F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(67, 46);
+            this.label3.Location = new System.Drawing.Point(59, 46);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(174, 20);
             this.label3.TabIndex = 2;
