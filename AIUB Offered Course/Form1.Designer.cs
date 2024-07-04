@@ -1424,6 +1424,7 @@
             this.elective1_courses_datagridview.Location = new System.Drawing.Point(0, 75);
             this.elective1_courses_datagridview.Name = "elective1_courses_datagridview";
             this.elective1_courses_datagridview.ReadOnly = true;
+            this.elective1_courses_datagridview.RowHeadersVisible = false;
             this.elective1_courses_datagridview.Size = new System.Drawing.Size(475, 96);
             this.elective1_courses_datagridview.TabIndex = 7;
             this.elective1_courses_datagridview.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -1580,11 +1581,11 @@
             // course_heading_label
             // 
             this.course_heading_label.AutoSize = true;
-            this.course_heading_label.Font = new System.Drawing.Font("Nirmala UI", 11F, System.Drawing.FontStyle.Bold);
+            this.course_heading_label.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold);
             this.course_heading_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(78)))), ((int)(((byte)(161)))));
-            this.course_heading_label.Location = new System.Drawing.Point(2, 5);
+            this.course_heading_label.Location = new System.Drawing.Point(-2, 5);
             this.course_heading_label.Name = "course_heading_label";
-            this.course_heading_label.Size = new System.Drawing.Size(161, 40);
+            this.course_heading_label.Size = new System.Drawing.Size(174, 42);
             this.course_heading_label.TabIndex = 0;
             this.course_heading_label.Text = "Completed Credit : 90\r\nAvailable Courses : ";
             // 
@@ -1766,7 +1767,7 @@
             this.course_chosing_panel.Dock = System.Windows.Forms.DockStyle.Top;
             this.course_chosing_panel.Location = new System.Drawing.Point(0, 213);
             this.course_chosing_panel.Name = "course_chosing_panel";
-            this.course_chosing_panel.Size = new System.Drawing.Size(286, 213);
+            this.course_chosing_panel.Size = new System.Drawing.Size(286, 275);
             this.course_chosing_panel.TabIndex = 1;
             this.course_chosing_panel.Visible = false;
             // 
@@ -1783,7 +1784,7 @@
             this.refresh_button.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.refresh_button.ForeColor = System.Drawing.Color.Cornsilk;
             this.refresh_button.Image = global::AIUB_Offered_Course.Properties.Resources.refresh;
-            this.refresh_button.Location = new System.Drawing.Point(264, 99);
+            this.refresh_button.Location = new System.Drawing.Point(264, 103);
             this.refresh_button.Name = "refresh_button";
             this.refresh_button.Size = new System.Drawing.Size(36, 36);
             this.refresh_button.TabIndex = 9;
@@ -1793,7 +1794,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(85, 69);
+            this.label4.Location = new System.Drawing.Point(84, 73);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(124, 15);
             this.label4.TabIndex = 7;
@@ -1804,7 +1805,7 @@
             this.course_number_warning_label.BackColor = System.Drawing.Color.Transparent;
             this.course_number_warning_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.course_number_warning_label.ForeColor = System.Drawing.Color.Red;
-            this.course_number_warning_label.Location = new System.Drawing.Point(32, 137);
+            this.course_number_warning_label.Location = new System.Drawing.Point(29, 141);
             this.course_number_warning_label.Name = "course_number_warning_label";
             this.course_number_warning_label.Size = new System.Drawing.Size(126, 17);
             this.course_number_warning_label.TabIndex = 6;
@@ -1824,7 +1825,7 @@
             this.back_button.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(78)))), ((int)(((byte)(161)))));
             this.back_button.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold);
             this.back_button.ForeColor = System.Drawing.Color.White;
-            this.back_button.Location = new System.Drawing.Point(30, 163);
+            this.back_button.Location = new System.Drawing.Point(32, 195);
             this.back_button.Name = "back_button";
             this.back_button.Size = new System.Drawing.Size(99, 45);
             this.back_button.TabIndex = 4;
@@ -1845,7 +1846,7 @@
             this.completed_course_number_button.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold);
             this.completed_course_number_button.ForeColor = System.Drawing.Color.White;
             this.completed_course_number_button.IndicateFocus = true;
-            this.completed_course_number_button.Location = new System.Drawing.Point(172, 163);
+            this.completed_course_number_button.Location = new System.Drawing.Point(177, 195);
             this.completed_course_number_button.Name = "completed_course_number_button";
             this.completed_course_number_button.Size = new System.Drawing.Size(99, 45);
             this.completed_course_number_button.TabIndex = 3;
@@ -1855,10 +1856,10 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Nirmala UI", 11F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(59, 46);
+            this.label3.Font = new System.Drawing.Font("Nirmala UI", 13F, System.Drawing.FontStyle.Bold);
+            this.label3.Location = new System.Drawing.Point(44, 47);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(174, 20);
+            this.label3.Size = new System.Drawing.Size(213, 25);
             this.label3.TabIndex = 2;
             this.label3.Text = "Enter completed course";
             // 
@@ -1877,7 +1878,7 @@
             this.course_number_textbox.Font = new System.Drawing.Font("Nirmala UI", 9F);
             this.course_number_textbox.ForeColor = System.Drawing.Color.Black;
             this.course_number_textbox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.course_number_textbox.Location = new System.Drawing.Point(33, 99);
+            this.course_number_textbox.Location = new System.Drawing.Point(33, 103);
             this.course_number_textbox.Name = "course_number_textbox";
             this.course_number_textbox.PasswordChar = '\0';
             this.course_number_textbox.PlaceholderText = "1, 3, 5-10, 15, 20, 22-27";
@@ -1904,7 +1905,7 @@
             this.department_warning_label.BackColor = System.Drawing.Color.Transparent;
             this.department_warning_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.department_warning_label.ForeColor = System.Drawing.Color.Red;
-            this.department_warning_label.Location = new System.Drawing.Point(66, 139);
+            this.department_warning_label.Location = new System.Drawing.Point(66, 142);
             this.department_warning_label.Name = "department_warning_label";
             this.department_warning_label.Size = new System.Drawing.Size(167, 17);
             this.department_warning_label.TabIndex = 5;
@@ -1933,7 +1934,7 @@
             "EEE",
             "ENG",
             "BBA"});
-            this.department_combobox.Location = new System.Drawing.Point(198, 92);
+            this.department_combobox.Location = new System.Drawing.Point(198, 95);
             this.department_combobox.Margin = new System.Windows.Forms.Padding(0);
             this.department_combobox.Name = "department_combobox";
             this.department_combobox.Size = new System.Drawing.Size(85, 36);
@@ -1956,7 +1957,7 @@
             this.department_choose_button.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold);
             this.department_choose_button.ForeColor = System.Drawing.Color.White;
             this.department_choose_button.IndicateFocus = true;
-            this.department_choose_button.Location = new System.Drawing.Point(82, 163);
+            this.department_choose_button.Location = new System.Drawing.Point(82, 166);
             this.department_choose_button.Name = "department_choose_button";
             this.department_choose_button.Size = new System.Drawing.Size(144, 37);
             this.department_choose_button.TabIndex = 2;
@@ -1967,7 +1968,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Nirmala UI", 11F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(13, 100);
+            this.label1.Location = new System.Drawing.Point(13, 103);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(183, 20);
             this.label1.TabIndex = 0;

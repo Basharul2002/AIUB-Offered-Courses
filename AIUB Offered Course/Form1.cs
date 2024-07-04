@@ -148,6 +148,7 @@ namespace AIUB_Offered_Course
 
                 if (!IsValidSequence(completedCourses))
                 {
+                    DepartmentChoose();
                     DisplayWarning("**Invalid Course ID Sequence!**");
                     return;
                 }
@@ -163,7 +164,7 @@ namespace AIUB_Offered_Course
 
                 if (!ValidatePrerequisites(completedCourses, out int notCompletedCourseNumber, out int notCompletedPrerequisiteCourseNumber))
                 {
-                    DisplayWarning($"Prerequisite Not Completed for <br>{allCourses[notCompletedCourseNumber - 1].Name}: <br> {allCourses[notCompletedPrerequisiteCourseNumber - 1].Name}");
+                    DisplayWarning($"Prerequisite Not Completed for <br>{allCourses[notCompletedCourseNumber - 1].Name} : <br>{allCourses[notCompletedPrerequisiteCourseNumber - 1].Name}");
                     offered_courses_panel.Visible = false;
                     course_datagridview.Visible = true;
                     return;
@@ -219,8 +220,11 @@ namespace AIUB_Offered_Course
                     if (IsValidCourseNumber(number, dept))
                     {
                         if (!uniqueNumbers.Add(number))
-                            throw new ArgumentException("Duplicate course ID's are Not Allowed");
-                        
+                        {
+                            DepartmentChoose();
+                            DisplayWarning("**Duplicate Course IDs Are Not Allowed**");
+                            //throw new ArgumentException("Duplicate course ID's are Not Allowed");
+                        }
                         courseNumbers.Add(number);
                     }
                     else
@@ -296,6 +300,7 @@ namespace AIUB_Offered_Course
                     outOfRange = true;
                 
             }
+            course_heading_label.Text = $"Total credit completed : {totalCreditCompleted}\r\nAvailable courses you can take next semester: ";
             return totalCreditCompleted;
         }
 
@@ -653,6 +658,7 @@ namespace AIUB_Offered_Course
 
         private void refresh_button_Click(object sender, EventArgs e)
         {
+            course_number_warning_label.Visible = false;
             core_courses_datagridview.Rows.Clear();
             course_number_textbox.Text = string.Empty;
             DepartmentChoose();
