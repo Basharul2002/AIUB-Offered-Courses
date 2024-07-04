@@ -67,17 +67,23 @@ To install the AIUB Course Suggestion System, follow these steps:
    - Navigate to the [Releases](https://github.com/Basharul2002/AIUB-Course-Suggestion-System/releases) section.
    - Download the latest version of the software.
 
-2. **Run the Installer**
+2. **Allow Download**
+   - Check your downloads section.<br>
+     ![Warning1](Assets/Warning1.png) <br>
+     
+   - If security blocks the download, click **'Download Anyway'** to proceed.<br>
+     ![Warning2](Assets/Warning2.png)
+     
+3. **Run the Installer**
    - After downloading, double-click the software file to begin the installation process.
 
-3. **Handle Security Prompts**
-   - If a security prompt appears, click on **"More Info"** to view additional options.<br>
+4. **Handle Security Prompts**
+   - If a security prompt appears, click on **"More Info"** to view additional options.
      ![SecurityPrompts1](Assets/SecurityPrompts1.jpg)
-   
-   - Then, click on **"Run Anyway"** to proceed with the installation.<br>
+   - Then, click on **"Run Anyway"** to proceed with the installation.
      ![SecurityPrompts2](Assets/SecurityPrompts2.jpg)
 
-4. **Follow On-Screen Instructions**
+5. **Follow On-Screen Instructions**
    - Follow the on-screen instructions to complete the installation.
 
 Once installed, you can run the AIUB Course Suggestion System from your desktop or start menu.
