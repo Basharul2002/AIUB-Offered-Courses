@@ -202,9 +202,8 @@ namespace AIUB_Offered_Course
             foreach (var part in parts)
             {
                 if (!TryParseCoursePart(part, dept, uniqueNumbers, courseNumbers))
-                {
                     break;
-                }
+                
             }
 
             return courseNumbers;
