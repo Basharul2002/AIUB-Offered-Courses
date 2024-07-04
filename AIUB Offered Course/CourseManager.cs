@@ -649,40 +649,40 @@ namespace AIUB_Offered_Course
         new Course { Name = "COMPLEX VARIABLE, LAPLACE & Z-TRANSFORMATION", Prerequisites = new HashSet<int> { 6 }, CourseCredit = 3, CourseType = 1}, // 21
         new Course { Name = "PHYSICS 2", Prerequisites = new HashSet<int> { 3 }, CourseCredit = 3, CourseType = 1}, // 22
         new Course { Name = "PHYSICS 2 LAB", Prerequisites = new HashSet<int> { 4 }, CourseCredit = 1, CourseType = 1}, // 23
-        new Course { Name = "PRINCIPLES OF ACCOUNTING [IPE]", Prerequisites = new HashSet<int> { 6 }, CourseCredit = 2, CourseType = 1}, // 24
-        new Course { Name = "MECHANICS OF SOLIDS", Prerequisites = new HashSet<int> { 3 }, CourseCredit = 3, CourseType = 1}, // 25
-        new Course { Name = "MECHANICS OF SOLIDS LAB", Prerequisites = new HashSet<int> { 4 }, CourseCredit = 1, CourseType = 1}, // 26
-        new Course { Name = "PROGRAMMING LANGUAGE 1 (STRUCTURED PROGRAMMING LANGUAGE)", Prerequisites = new HashSet<int> { 6 }, CourseCredit = 3, CourseType = 1}, // 27
+        new Course { Name = "PRINCIPLES OF ACCOUNTING [IPE]", Prerequisites = new HashSet<int> { 15 }, CourseCredit = 2, CourseType = 1}, // 24
+        new Course { Name = "MECHANICS OF SOLIDS", Prerequisites = new HashSet<int> { 12 }, CourseCredit = 3, CourseType = 1}, // 25
+        new Course { Name = "MECHANICS OF SOLIDS LAB", Prerequisites = new HashSet<int> { 13 }, CourseCredit = 1, CourseType = 1}, // 26
+        new Course { Name = "PROGRAMMING LANGUAGE 1 (STRUCTURED PROGRAMMING LANGUAGE)", Prerequisites = new HashSet<int> { 15 }, CourseCredit = 3, CourseType = 1}, // 27
 
 
         // Semeseter 4
-        new Course { Name = "MANUFACTURING AND PRODUCTION PROCESS I", Prerequisites = new HashSet<int> { 9 }, CourseCredit = 3, CourseType = 1}, // 28
-        new Course { Name = "MANUFACTURING AND PRODUCTION PROCESS I LAB", Prerequisites = new HashSet<int> { 9 }, CourseCredit = 1, CourseType = 1}, // 29
-        new Course { Name = "STATISTICAL DECISION MAKING FOR ENGINEERS", Prerequisites = new HashSet<int> { 3 }, CourseCredit = 3, CourseType = 1}, // 30
-        new Course { Name = "MATRICES, VECTORS, FOURIER ANALYSIS", Prerequisites = new HashSet<int> { 3 }, CourseCredit = 3, CourseType = 1}, // 31
-        new Course { Name = "MACHINE TOOLS", Prerequisites = new HashSet<int> { 9 }, CourseCredit = 3, CourseType = 1}, // 32
-        new Course { Name = "MACHINE TOOLS LAB", Prerequisites = new HashSet<int> { 9 }, CourseCredit = 1, CourseType = 1}, // 33
-        new Course { Name = "PRINCIPLES OF ECONOMICS", Prerequisites = new HashSet<int> { 6 }, CourseCredit = 2, CourseType = 1}, // 34
-        new Course { Name = "FLUID MECHANICS AND MACHINERY", Prerequisites = new HashSet<int> { 7 }, CourseCredit = 3, CourseType = 1}, // 35
-        new Course { Name = "FLUID MECHANICS AND MACHINERY LAB", Prerequisites = new HashSet<int> { 7 }, CourseCredit = 1, CourseType = 1}, // 36
+        new Course { Name = "MANUFACTURING AND PRODUCTION PROCESS I", Prerequisites = new HashSet<int> { 18 }, CourseCredit = 3, CourseType = 1}, // 28
+        new Course { Name = "MANUFACTURING AND PRODUCTION PROCESS I LAB", Prerequisites = new HashSet<int> { 18 }, CourseCredit = 1, CourseType = 1}, // 29
+        new Course { Name = "STATISTICAL DECISION MAKING FOR ENGINEERS", Prerequisites = new HashSet<int> { 21 }, CourseCredit = 3, CourseType = 1}, // 30
+        new Course { Name = "MATRICES, VECTORS, FOURIER ANALYSIS", Prerequisites = new HashSet<int> { 21 }, CourseCredit = 3, CourseType = 1}, // 31
+        new Course { Name = "MACHINE TOOLS", Prerequisites = new HashSet<int> { 18 }, CourseCredit = 3, CourseType = 1}, // 32
+        new Course { Name = "MACHINE TOOLS LAB", Prerequisites = new HashSet<int> { 18 }, CourseCredit = 1, CourseType = 1}, // 33
+        new Course { Name = "PRINCIPLES OF ECONOMICS", Prerequisites = new HashSet<int> { 24 }, CourseCredit = 2, CourseType = 1}, // 34
+        new Course { Name = "FLUID MECHANICS AND MACHINERY", Prerequisites = new HashSet<int> { 16 }, CourseCredit = 3, CourseType = 1}, // 35
+        new Course { Name = "FLUID MECHANICS AND MACHINERY LAB", Prerequisites = new HashSet<int> { 16 }, CourseCredit = 1, CourseType = 1}, // 36
 
         // Semester 5
-        new Course { Name = "NUMERICAL METHODS FOR SCIENCE AND ENGINEERING", Prerequisites = new HashSet<int> { 4 }, CourseCredit = 3, CourseType = 1}, // 37
-        new Course { Name = "TECH ELECTIVE 1", Prerequisites = new HashSet<int> { 3 }, CourseCredit = 3, CourseType = 1}, // 37
-        new Course { Name = "LOGISTICS AND DISTRIBUTION MANAGEMENT", Prerequisites = new HashSet<int> { 7 }, CourseCredit = 3, CourseType = 1}, // 38
-        new Course { Name = "PRODUCT DESIGN AND DEVELOPMENT", Prerequisites = new HashSet<int> { 3 }, CourseCredit = 3, CourseType = 1}, // 39
-        new Course { Name = "MANUFACTURING AND PRODUCTION PROCESS II", Prerequisites = new HashSet<int> { 1 }, CourseCredit = 3, CourseType = 1}, // 40
-        new Course { Name = "COMPUTER INTEGRATED MANUFACTURING", Prerequisites = new HashSet<int> { 8 }, CourseCredit = 3, CourseType = 1}, // 41
-        new Course { Name = "ENGINEERING ECONOMY [IPE]", Prerequisites = new HashSet<int> { 7 }, CourseCredit = 3, CourseType = 1}, // 42
+        new Course { Name = "NUMERICAL METHODS FOR SCIENCE AND ENGINEERING", Prerequisites = new HashSet<int> { 31 }, CourseCredit = 3, CourseType = 1}, // 37
+        new Course { Name = "TECH ELECTIVE 1", Prerequisites = new HashSet<int> { 30 }, CourseCredit = 3, CourseType = 1}, // 37
+        new Course { Name = "LOGISTICS AND DISTRIBUTION MANAGEMENT", Prerequisites = new HashSet<int> { 24 }, CourseCredit = 3, CourseType = 1}, // 38
+        new Course { Name = "PRODUCT DESIGN AND DEVELOPMENT", Prerequisites = new HashSet<int> { 30 }, CourseCredit = 3, CourseType = 1}, // 39
+        new Course { Name = "MANUFACTURING AND PRODUCTION PROCESS II", Prerequisites = new HashSet<int> { 28 }, CourseCredit = 3, CourseType = 1}, // 40
+        new Course { Name = "COMPUTER INTEGRATED MANUFACTURING", Prerequisites = new HashSet<int> { 17 }, CourseCredit = 3, CourseType = 1}, // 41
+        new Course { Name = "ENGINEERING ECONOMY [IPE]", Prerequisites = new HashSet<int> { 24 }, CourseCredit = 3, CourseType = 1}, // 42
 
 
         // Semseter 6
-        new Course { Name = "BUSINESS COMMUNICATION", Prerequisites = new HashSet<int> { 5 }, CourseCredit = 3, CourseType = 1}, // 43
-        new Course { Name = "TECH ELECTIVE 2", Prerequisites = new HashSet<int> { 7 }, CourseCredit = 3, CourseType = 1}, // 44
-        new Course { Name = "OPERATIONS MANAGEMENT [IPE]", Prerequisites = new HashSet<int> { 3 }, CourseCredit = 3, CourseType = 1}, // 45
-        new Course { Name = "OPERATIONS RESEARCH [IPE]", Prerequisites = new HashSet<int> { 3 }, CourseCredit = 3, CourseType = 1}, // 46
-        new Course { Name = "QUALITY MANAGEMENT", Prerequisites = new HashSet<int> { 3 }, CourseCredit = 3, CourseType = 1}, // 47
-        new Course { Name = "PROJECT MANAGEMENT [IPE]", Prerequisites = new HashSet<int> { 3 }, CourseCredit = 3, CourseType = 1}, // 48
+        new Course { Name = "BUSINESS COMMUNICATION", Prerequisites = new HashSet<int> { 13 }, CourseCredit = 3, CourseType = 1}, // 43
+        new Course { Name = "TECH ELECTIVE 2", Prerequisites = new HashSet<int> { 42 }, CourseCredit = 3, CourseType = 1}, // 44
+        new Course { Name = "OPERATIONS MANAGEMENT [IPE]", Prerequisites = new HashSet<int> { 38 }, CourseCredit = 3, CourseType = 1}, // 45
+        new Course { Name = "OPERATIONS RESEARCH [IPE]", Prerequisites = new HashSet<int> { 38 }, CourseCredit = 3, CourseType = 1}, // 46
+        new Course { Name = "QUALITY MANAGEMENT", Prerequisites = new HashSet<int> { 38 }, CourseCredit = 3, CourseType = 1}, // 47
+        new Course { Name = "PROJECT MANAGEMENT [IPE]", Prerequisites = new HashSet<int> { 38 }, CourseCredit = 3, CourseType = 1}, // 48
 
 
         // Semseter 7
