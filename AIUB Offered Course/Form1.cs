@@ -74,6 +74,8 @@ namespace AIUB_Offered_Course
                 PrintCourses(CourseManager.EnglishCourses());
             else if (departmentNumber == 4)
                 PrintCourses(CourseManager.BBACourses()); 
+            else if (departmentNumber == 5)
+                PrintCourses(CourseManager.IPECourses());
         }
 
         // For comeback department choosing another panel 
@@ -341,7 +343,8 @@ namespace AIUB_Offered_Course
             return (dept == 1 && totalCreditCompleted == 268) ||
                    (dept == 2 && totalCreditCompleted == 186) ||
                    (dept == 3 && totalCreditCompleted == 201) ||
-                   (dept == 4 && totalCreditCompleted == 630);
+                   (dept == 4 && totalCreditCompleted == 630) ||
+                   (dept == 5 && totalCreditCompleted == 211);
         }
 
         private void DisplayRecommendedCourses(List<int> completedCourses, int totalCreditCompleted)
@@ -449,6 +452,13 @@ namespace AIUB_Offered_Course
                 SetupDataGridView(elective11_courses_datagridview, "<b>Major in MARKETING (MKT)</b>", new int[] { 417, 58 }, DataGridViewContentAlignment.MiddleCenter);
                 SetupDataGridView(elective12_courses_datagridview, "<b>Major In TOURISM AND HOSPITALITY MANAGEMENT (THM)</b>", new int[] { 417, 58 }, DataGridViewContentAlignment.MiddleCenter);
                 SetupDataGridView(elective13_courses_datagridview, "<b>Major In OPERATIONS AND SUPPLY CHAIN MANAGEMENT (OSCM)</b>", new int[] { 417, 58 }, DataGridViewContentAlignment.MiddleCenter);
+            }
+
+            else if (departmentNumber == 5)
+            {
+                SetupDataGridView(elective1_courses_datagridview, "<b>MAJOR IN INDUSTRIAL ENGINEERING</b>", new int[] { 417, 58 }, DataGridViewContentAlignment.MiddleCenter);
+                SetupDataGridView(elective2_courses_datagridview, "<b>MAJOR IN SYSTEM ENGINEERING</b>", new int[] { 417, 58 }, DataGridViewContentAlignment.MiddleCenter);
+                SetupDataGridView(elective3_courses_datagridview, "<b>MAJOR IN PRODUCTION ENGINEERING</b>", new int[] { 417, 58 }, DataGridViewContentAlignment.MiddleCenter);
             }
         }
 
@@ -602,7 +612,6 @@ namespace AIUB_Offered_Course
             {
                 if (mapping.Value.Item1.Visible)
                     AdjustDataGridView(mapping.Value.Item1);
-                
             }
         }
 
@@ -618,7 +627,12 @@ namespace AIUB_Offered_Course
 
         private bool IsValidCourseNumber(int number, int dept)
         {
-            return number >= 1 && number <= (dept == 1 ? 269 : dept == 2 ? 187 : dept == 3 ? 202 : 631);
+            return number >= 1 &&
+                  (dept == 1 && number <= 269 ||
+                   dept == 2 && number <= 187 ||
+                   dept == 3 && number <= 202 ||
+                   dept == 4 && number <= 631 ||
+                   dept == 5 && number <= 83);
         }
 
         // Other supporting methods (SetupElectiveDataGridViews, AdjustAllDataGridViews, etc.) remain the same

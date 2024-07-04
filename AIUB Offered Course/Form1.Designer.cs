@@ -1933,9 +1933,11 @@
             "CSE",
             "EEE",
             "ENG",
-            "BBA"});
+            "BBA",
+            "IPE"});
             this.department_combobox.Location = new System.Drawing.Point(198, 95);
             this.department_combobox.Margin = new System.Windows.Forms.Padding(0);
+            this.department_combobox.MaxDropDownItems = 4;
             this.department_combobox.Name = "department_combobox";
             this.department_combobox.Size = new System.Drawing.Size(85, 36);
             this.department_combobox.StartIndex = 0;
