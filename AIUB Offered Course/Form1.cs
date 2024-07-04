@@ -81,7 +81,7 @@ namespace AIUB_Offered_Course
         {
             congratulation_panel.Visible = false;
             rightside_initial_state_panel.Visible = true;
-            department_choosing_panel.Visible = true;
+           
             course_chosing_panel.Visible = false;
             department_combobox.StartIndex = 0;
             course_datagridview.Visible = false;
@@ -92,6 +92,9 @@ namespace AIUB_Offered_Course
             course_number_warning_label.Visible = false;
             course_number_textbox.Clear();
 
+            
+
+            department_choosing_panel.Visible = true;
             this.AcceptButton = department_choose_button;
 
             departmentNumber = 0;

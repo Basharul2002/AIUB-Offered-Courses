@@ -5,8 +5,6 @@ VisualStudioVersion = 17.9.34607.119
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AIUB Offered Course", "AIUB Offered Course\AIUB Offered Course.csproj", "{083B76FD-212F-4B1F-A04E-42F2454EADE9}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "AIUBOfferedCourse-setup", "AIUBOfferedCourse-setup\AIUBOfferedCourse-setup.vdproj", "{30C21BEA-EF91-4889-BF20-3A197452B27E}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,8 +15,6 @@ Global
 		{083B76FD-212F-4B1F-A04E-42F2454EADE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{083B76FD-212F-4B1F-A04E-42F2454EADE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{083B76FD-212F-4B1F-A04E-42F2454EADE9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{30C21BEA-EF91-4889-BF20-3A197452B27E}.Debug|Any CPU.ActiveCfg = Debug
-		{30C21BEA-EF91-4889-BF20-3A197452B27E}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
