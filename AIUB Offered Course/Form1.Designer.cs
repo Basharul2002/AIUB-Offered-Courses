@@ -268,9 +268,9 @@
             this.recomended_courses_panel.Controls.Add(this.core_courses_datagridview);
             this.recomended_courses_panel.Controls.Add(this.core_courses_label);
             this.recomended_courses_panel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.recomended_courses_panel.Location = new System.Drawing.Point(0, 65);
+            this.recomended_courses_panel.Location = new System.Drawing.Point(0, 53);
             this.recomended_courses_panel.Name = "recomended_courses_panel";
-            this.recomended_courses_panel.Size = new System.Drawing.Size(492, 261);
+            this.recomended_courses_panel.Size = new System.Drawing.Size(492, 273);
             this.recomended_courses_panel.TabIndex = 10;
             this.recomended_courses_panel.Visible = false;
             // 
@@ -306,7 +306,7 @@
             this.elective13_courses_datagridview.DefaultCellStyle = dataGridViewCellStyle3;
             this.elective13_courses_datagridview.Dock = System.Windows.Forms.DockStyle.Top;
             this.elective13_courses_datagridview.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.elective13_courses_datagridview.Location = new System.Drawing.Point(0, 1820);
+            this.elective13_courses_datagridview.Location = new System.Drawing.Point(0, 1775);
             this.elective13_courses_datagridview.Name = "elective13_courses_datagridview";
             this.elective13_courses_datagridview.ReadOnly = true;
             this.elective13_courses_datagridview.RowHeadersVisible = false;
@@ -363,7 +363,7 @@
             this.elective13_courses_label.BackColor = System.Drawing.Color.Transparent;
             this.elective13_courses_label.Dock = System.Windows.Forms.DockStyle.Top;
             this.elective13_courses_label.Font = new System.Drawing.Font("Nirmala UI", 9.5F);
-            this.elective13_courses_label.Location = new System.Drawing.Point(0, 1801);
+            this.elective13_courses_label.Location = new System.Drawing.Point(0, 1756);
             this.elective13_courses_label.Name = "elective13_courses_label";
             this.elective13_courses_label.Size = new System.Drawing.Size(64, 19);
             this.elective13_courses_label.TabIndex = 35;
@@ -401,7 +401,7 @@
             this.elective12_courses_datagridview.DefaultCellStyle = dataGridViewCellStyle6;
             this.elective12_courses_datagridview.Dock = System.Windows.Forms.DockStyle.Top;
             this.elective12_courses_datagridview.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.elective12_courses_datagridview.Location = new System.Drawing.Point(0, 1678);
+            this.elective12_courses_datagridview.Location = new System.Drawing.Point(0, 1633);
             this.elective12_courses_datagridview.Name = "elective12_courses_datagridview";
             this.elective12_courses_datagridview.ReadOnly = true;
             this.elective12_courses_datagridview.RowHeadersVisible = false;
@@ -458,7 +458,7 @@
             this.elective12_courses_label.BackColor = System.Drawing.Color.Transparent;
             this.elective12_courses_label.Dock = System.Windows.Forms.DockStyle.Top;
             this.elective12_courses_label.Font = new System.Drawing.Font("Nirmala UI", 9.5F);
-            this.elective12_courses_label.Location = new System.Drawing.Point(0, 1659);
+            this.elective12_courses_label.Location = new System.Drawing.Point(0, 1614);
             this.elective12_courses_label.Name = "elective12_courses_label";
             this.elective12_courses_label.Size = new System.Drawing.Size(60, 19);
             this.elective12_courses_label.TabIndex = 33;
@@ -496,7 +496,7 @@
             this.elective11_courses_datagridview.DefaultCellStyle = dataGridViewCellStyle9;
             this.elective11_courses_datagridview.Dock = System.Windows.Forms.DockStyle.Top;
             this.elective11_courses_datagridview.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.elective11_courses_datagridview.Location = new System.Drawing.Point(0, 1536);
+            this.elective11_courses_datagridview.Location = new System.Drawing.Point(0, 1491);
             this.elective11_courses_datagridview.Name = "elective11_courses_datagridview";
             this.elective11_courses_datagridview.ReadOnly = true;
             this.elective11_courses_datagridview.RowHeadersVisible = false;
@@ -553,7 +553,7 @@
             this.elective11_courses_label.BackColor = System.Drawing.Color.Transparent;
             this.elective11_courses_label.Dock = System.Windows.Forms.DockStyle.Top;
             this.elective11_courses_label.Font = new System.Drawing.Font("Nirmala UI", 9.5F);
-            this.elective11_courses_label.Location = new System.Drawing.Point(0, 1517);
+            this.elective11_courses_label.Location = new System.Drawing.Point(0, 1472);
             this.elective11_courses_label.Name = "elective11_courses_label";
             this.elective11_courses_label.Size = new System.Drawing.Size(64, 19);
             this.elective11_courses_label.TabIndex = 31;
@@ -591,7 +591,7 @@
             this.elective10_courses_datagridview.DefaultCellStyle = dataGridViewCellStyle12;
             this.elective10_courses_datagridview.Dock = System.Windows.Forms.DockStyle.Top;
             this.elective10_courses_datagridview.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.elective10_courses_datagridview.Location = new System.Drawing.Point(0, 1394);
+            this.elective10_courses_datagridview.Location = new System.Drawing.Point(0, 1349);
             this.elective10_courses_datagridview.Name = "elective10_courses_datagridview";
             this.elective10_courses_datagridview.ReadOnly = true;
             this.elective10_courses_datagridview.RowHeadersVisible = false;
@@ -648,7 +648,7 @@
             this.elective10_courses_label.BackColor = System.Drawing.Color.Transparent;
             this.elective10_courses_label.Dock = System.Windows.Forms.DockStyle.Top;
             this.elective10_courses_label.Font = new System.Drawing.Font("Nirmala UI", 9.5F);
-            this.elective10_courses_label.Location = new System.Drawing.Point(0, 1375);
+            this.elective10_courses_label.Location = new System.Drawing.Point(0, 1330);
             this.elective10_courses_label.Name = "elective10_courses_label";
             this.elective10_courses_label.Size = new System.Drawing.Size(64, 19);
             this.elective10_courses_label.TabIndex = 29;
@@ -686,7 +686,7 @@
             this.elective9_courses_datagridview.DefaultCellStyle = dataGridViewCellStyle15;
             this.elective9_courses_datagridview.Dock = System.Windows.Forms.DockStyle.Top;
             this.elective9_courses_datagridview.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.elective9_courses_datagridview.Location = new System.Drawing.Point(0, 1252);
+            this.elective9_courses_datagridview.Location = new System.Drawing.Point(0, 1207);
             this.elective9_courses_datagridview.Name = "elective9_courses_datagridview";
             this.elective9_courses_datagridview.ReadOnly = true;
             this.elective9_courses_datagridview.RowHeadersVisible = false;
@@ -743,7 +743,7 @@
             this.elective9_courses_label.BackColor = System.Drawing.Color.Transparent;
             this.elective9_courses_label.Dock = System.Windows.Forms.DockStyle.Top;
             this.elective9_courses_label.Font = new System.Drawing.Font("Nirmala UI", 9.5F);
-            this.elective9_courses_label.Location = new System.Drawing.Point(0, 1233);
+            this.elective9_courses_label.Location = new System.Drawing.Point(0, 1188);
             this.elective9_courses_label.Name = "elective9_courses_label";
             this.elective9_courses_label.Size = new System.Drawing.Size(57, 19);
             this.elective9_courses_label.TabIndex = 27;
@@ -781,7 +781,7 @@
             this.elective8_courses_datagridview.DefaultCellStyle = dataGridViewCellStyle18;
             this.elective8_courses_datagridview.Dock = System.Windows.Forms.DockStyle.Top;
             this.elective8_courses_datagridview.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.elective8_courses_datagridview.Location = new System.Drawing.Point(0, 1110);
+            this.elective8_courses_datagridview.Location = new System.Drawing.Point(0, 1065);
             this.elective8_courses_datagridview.Name = "elective8_courses_datagridview";
             this.elective8_courses_datagridview.ReadOnly = true;
             this.elective8_courses_datagridview.RowHeadersVisible = false;
@@ -838,7 +838,7 @@
             this.elective8_courses_label.BackColor = System.Drawing.Color.Transparent;
             this.elective8_courses_label.Dock = System.Windows.Forms.DockStyle.Top;
             this.elective8_courses_label.Font = new System.Drawing.Font("Nirmala UI", 9.5F);
-            this.elective8_courses_label.Location = new System.Drawing.Point(0, 1091);
+            this.elective8_courses_label.Location = new System.Drawing.Point(0, 1046);
             this.elective8_courses_label.Name = "elective8_courses_label";
             this.elective8_courses_label.Size = new System.Drawing.Size(57, 19);
             this.elective8_courses_label.TabIndex = 25;
@@ -876,7 +876,7 @@
             this.elective7_courses_datagridview.DefaultCellStyle = dataGridViewCellStyle21;
             this.elective7_courses_datagridview.Dock = System.Windows.Forms.DockStyle.Top;
             this.elective7_courses_datagridview.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.elective7_courses_datagridview.Location = new System.Drawing.Point(0, 968);
+            this.elective7_courses_datagridview.Location = new System.Drawing.Point(0, 923);
             this.elective7_courses_datagridview.Name = "elective7_courses_datagridview";
             this.elective7_courses_datagridview.ReadOnly = true;
             this.elective7_courses_datagridview.RowHeadersVisible = false;
@@ -933,7 +933,7 @@
             this.elective7_courses_label.BackColor = System.Drawing.Color.Transparent;
             this.elective7_courses_label.Dock = System.Windows.Forms.DockStyle.Top;
             this.elective7_courses_label.Font = new System.Drawing.Font("Nirmala UI", 9.5F);
-            this.elective7_courses_label.Location = new System.Drawing.Point(0, 949);
+            this.elective7_courses_label.Location = new System.Drawing.Point(0, 904);
             this.elective7_courses_label.Name = "elective7_courses_label";
             this.elective7_courses_label.Size = new System.Drawing.Size(57, 19);
             this.elective7_courses_label.TabIndex = 23;
@@ -971,7 +971,7 @@
             this.elective6_courses_datagridview.DefaultCellStyle = dataGridViewCellStyle24;
             this.elective6_courses_datagridview.Dock = System.Windows.Forms.DockStyle.Top;
             this.elective6_courses_datagridview.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.elective6_courses_datagridview.Location = new System.Drawing.Point(0, 826);
+            this.elective6_courses_datagridview.Location = new System.Drawing.Point(0, 781);
             this.elective6_courses_datagridview.Name = "elective6_courses_datagridview";
             this.elective6_courses_datagridview.ReadOnly = true;
             this.elective6_courses_datagridview.RowHeadersVisible = false;
@@ -1028,7 +1028,7 @@
             this.elective6_courses_label.BackColor = System.Drawing.Color.Transparent;
             this.elective6_courses_label.Dock = System.Windows.Forms.DockStyle.Top;
             this.elective6_courses_label.Font = new System.Drawing.Font("Nirmala UI", 9.5F);
-            this.elective6_courses_label.Location = new System.Drawing.Point(0, 807);
+            this.elective6_courses_label.Location = new System.Drawing.Point(0, 762);
             this.elective6_courses_label.Name = "elective6_courses_label";
             this.elective6_courses_label.Size = new System.Drawing.Size(53, 19);
             this.elective6_courses_label.TabIndex = 21;
@@ -1066,7 +1066,7 @@
             this.elective5_courses_datagridview.DefaultCellStyle = dataGridViewCellStyle27;
             this.elective5_courses_datagridview.Dock = System.Windows.Forms.DockStyle.Top;
             this.elective5_courses_datagridview.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.elective5_courses_datagridview.Location = new System.Drawing.Point(0, 684);
+            this.elective5_courses_datagridview.Location = new System.Drawing.Point(0, 639);
             this.elective5_courses_datagridview.Name = "elective5_courses_datagridview";
             this.elective5_courses_datagridview.ReadOnly = true;
             this.elective5_courses_datagridview.RowHeadersVisible = false;
@@ -1123,7 +1123,7 @@
             this.elective5_courses_label.BackColor = System.Drawing.Color.Transparent;
             this.elective5_courses_label.Dock = System.Windows.Forms.DockStyle.Top;
             this.elective5_courses_label.Font = new System.Drawing.Font("Nirmala UI", 9.5F);
-            this.elective5_courses_label.Location = new System.Drawing.Point(0, 665);
+            this.elective5_courses_label.Location = new System.Drawing.Point(0, 620);
             this.elective5_courses_label.Name = "elective5_courses_label";
             this.elective5_courses_label.Size = new System.Drawing.Size(57, 19);
             this.elective5_courses_label.TabIndex = 19;
@@ -1161,7 +1161,7 @@
             this.elective4_courses_datagridview.DefaultCellStyle = dataGridViewCellStyle30;
             this.elective4_courses_datagridview.Dock = System.Windows.Forms.DockStyle.Top;
             this.elective4_courses_datagridview.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.elective4_courses_datagridview.Location = new System.Drawing.Point(0, 542);
+            this.elective4_courses_datagridview.Location = new System.Drawing.Point(0, 497);
             this.elective4_courses_datagridview.Name = "elective4_courses_datagridview";
             this.elective4_courses_datagridview.ReadOnly = true;
             this.elective4_courses_datagridview.RowHeadersVisible = false;
@@ -1218,7 +1218,7 @@
             this.elective4_courses_label.BackColor = System.Drawing.Color.Transparent;
             this.elective4_courses_label.Dock = System.Windows.Forms.DockStyle.Top;
             this.elective4_courses_label.Font = new System.Drawing.Font("Nirmala UI", 9.5F);
-            this.elective4_courses_label.Location = new System.Drawing.Point(0, 523);
+            this.elective4_courses_label.Location = new System.Drawing.Point(0, 478);
             this.elective4_courses_label.Name = "elective4_courses_label";
             this.elective4_courses_label.Size = new System.Drawing.Size(53, 19);
             this.elective4_courses_label.TabIndex = 16;
@@ -1258,7 +1258,7 @@
             this.elective3_courses_datagridview.DefaultCellStyle = dataGridViewCellStyle33;
             this.elective3_courses_datagridview.Dock = System.Windows.Forms.DockStyle.Top;
             this.elective3_courses_datagridview.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.elective3_courses_datagridview.Location = new System.Drawing.Point(0, 388);
+            this.elective3_courses_datagridview.Location = new System.Drawing.Point(0, 343);
             this.elective3_courses_datagridview.Name = "elective3_courses_datagridview";
             this.elective3_courses_datagridview.ReadOnly = true;
             this.elective3_courses_datagridview.RowHeadersVisible = false;
@@ -1315,7 +1315,7 @@
             this.elective3_courses_label.BackColor = System.Drawing.Color.Transparent;
             this.elective3_courses_label.Dock = System.Windows.Forms.DockStyle.Top;
             this.elective3_courses_label.Font = new System.Drawing.Font("Nirmala UI", 9.5F);
-            this.elective3_courses_label.Location = new System.Drawing.Point(0, 364);
+            this.elective3_courses_label.Location = new System.Drawing.Point(0, 319);
             this.elective3_courses_label.Name = "elective3_courses_label";
             this.elective3_courses_label.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
             this.elective3_courses_label.Size = new System.Drawing.Size(57, 24);
@@ -1351,7 +1351,7 @@
             this.elective2_courses_datagridview.DefaultCellStyle = dataGridViewCellStyle36;
             this.elective2_courses_datagridview.Dock = System.Windows.Forms.DockStyle.Top;
             this.elective2_courses_datagridview.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.elective2_courses_datagridview.Location = new System.Drawing.Point(0, 240);
+            this.elective2_courses_datagridview.Location = new System.Drawing.Point(0, 195);
             this.elective2_courses_datagridview.Name = "elective2_courses_datagridview";
             this.elective2_courses_datagridview.ReadOnly = true;
             this.elective2_courses_datagridview.RowHeadersVisible = false;
@@ -1385,7 +1385,7 @@
             this.elective2_courses_label.BackColor = System.Drawing.Color.Transparent;
             this.elective2_courses_label.Dock = System.Windows.Forms.DockStyle.Top;
             this.elective2_courses_label.Font = new System.Drawing.Font("Nirmala UI", 9.5F);
-            this.elective2_courses_label.Location = new System.Drawing.Point(0, 216);
+            this.elective2_courses_label.Location = new System.Drawing.Point(0, 171);
             this.elective2_courses_label.Name = "elective2_courses_label";
             this.elective2_courses_label.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
             this.elective2_courses_label.Size = new System.Drawing.Size(57, 24);
@@ -1399,7 +1399,7 @@
             this.elective1_courses_datagridview.AllowUserToDeleteRows = false;
             dataGridViewCellStyle37.BackColor = System.Drawing.Color.White;
             this.elective1_courses_datagridview.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle37;
-            this.elective1_courses_datagridview.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.elective1_courses_datagridview.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.None;
             this.elective1_courses_datagridview.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle38.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle38.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
@@ -1421,10 +1421,9 @@
             this.elective1_courses_datagridview.DefaultCellStyle = dataGridViewCellStyle39;
             this.elective1_courses_datagridview.Dock = System.Windows.Forms.DockStyle.Top;
             this.elective1_courses_datagridview.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.elective1_courses_datagridview.Location = new System.Drawing.Point(0, 120);
+            this.elective1_courses_datagridview.Location = new System.Drawing.Point(0, 75);
             this.elective1_courses_datagridview.Name = "elective1_courses_datagridview";
             this.elective1_courses_datagridview.ReadOnly = true;
-            this.elective1_courses_datagridview.RowHeadersVisible = false;
             this.elective1_courses_datagridview.Size = new System.Drawing.Size(475, 96);
             this.elective1_courses_datagridview.TabIndex = 7;
             this.elective1_courses_datagridview.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -1455,7 +1454,7 @@
             this.elective1_courses_label.BackColor = System.Drawing.Color.Transparent;
             this.elective1_courses_label.Dock = System.Windows.Forms.DockStyle.Top;
             this.elective1_courses_label.Font = new System.Drawing.Font("Nirmala UI", 9.5F);
-            this.elective1_courses_label.Location = new System.Drawing.Point(0, 96);
+            this.elective1_courses_label.Location = new System.Drawing.Point(0, 51);
             this.elective1_courses_label.Name = "elective1_courses_label";
             this.elective1_courses_label.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
             this.elective1_courses_label.Size = new System.Drawing.Size(57, 24);
@@ -1469,7 +1468,7 @@
             this.elective_courses_label.Dock = System.Windows.Forms.DockStyle.Top;
             this.elective_courses_label.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold);
             this.elective_courses_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(78)))), ((int)(((byte)(161)))));
-            this.elective_courses_label.Location = new System.Drawing.Point(0, 68);
+            this.elective_courses_label.Location = new System.Drawing.Point(0, 23);
             this.elective_courses_label.Name = "elective_courses_label";
             this.elective_courses_label.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
             this.elective_courses_label.Size = new System.Drawing.Size(126, 28);
@@ -1481,9 +1480,13 @@
             // 
             this.core_courses_datagridview.AllowUserToAddRows = false;
             this.core_courses_datagridview.AllowUserToDeleteRows = false;
+            this.core_courses_datagridview.AllowUserToOrderColumns = true;
+            this.core_courses_datagridview.AllowUserToResizeColumns = false;
+            this.core_courses_datagridview.AllowUserToResizeRows = false;
             dataGridViewCellStyle40.BackColor = System.Drawing.Color.White;
             this.core_courses_datagridview.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle40;
             this.core_courses_datagridview.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.core_courses_datagridview.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
             this.core_courses_datagridview.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle41.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle41.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
@@ -1494,7 +1497,6 @@
             dataGridViewCellStyle41.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.core_courses_datagridview.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle41;
             this.core_courses_datagridview.ColumnHeadersHeight = 17;
-            this.core_courses_datagridview.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.core_courses_datagridview.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3});
@@ -1506,13 +1508,13 @@
             dataGridViewCellStyle42.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             dataGridViewCellStyle42.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.core_courses_datagridview.DefaultCellStyle = dataGridViewCellStyle42;
-            this.core_courses_datagridview.Dock = System.Windows.Forms.DockStyle.Top;
             this.core_courses_datagridview.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.core_courses_datagridview.Location = new System.Drawing.Point(0, 23);
             this.core_courses_datagridview.Name = "core_courses_datagridview";
             this.core_courses_datagridview.ReadOnly = true;
             this.core_courses_datagridview.RowHeadersVisible = false;
-            this.core_courses_datagridview.Size = new System.Drawing.Size(475, 45);
+            this.core_courses_datagridview.ShowRowErrors = false;
+            this.core_courses_datagridview.Size = new System.Drawing.Size(475, 103);
             this.core_courses_datagridview.TabIndex = 4;
             this.core_courses_datagridview.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.core_courses_datagridview.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -1525,7 +1527,7 @@
             this.core_courses_datagridview.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.core_courses_datagridview.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.core_courses_datagridview.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.core_courses_datagridview.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.core_courses_datagridview.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.core_courses_datagridview.ThemeStyle.HeaderStyle.Height = 17;
             this.core_courses_datagridview.ThemeStyle.ReadOnly = true;
             this.core_courses_datagridview.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
@@ -1572,7 +1574,7 @@
             this.guna2Panel6.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Panel6.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel6.Name = "guna2Panel6";
-            this.guna2Panel6.Size = new System.Drawing.Size(492, 65);
+            this.guna2Panel6.Size = new System.Drawing.Size(492, 53);
             this.guna2Panel6.TabIndex = 9;
             // 
             // course_heading_label
