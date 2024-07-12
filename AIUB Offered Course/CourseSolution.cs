@@ -103,6 +103,8 @@ namespace AIUB_Offered_Course
         {
             // Clear existing columns (if any)
             course_datagridview.Rows.Clear();
+            course_datagridview.Columns["creditorPrerequisite"].HeaderText = "Credit";
+
 
             // Iterate through all courses
             for (int i = 0; i < courses.Count; i++)
@@ -693,16 +695,17 @@ namespace AIUB_Offered_Course
             
             // Clear existing columns (if any)
             course_datagridview.Rows.Clear();
+            course_datagridview.Columns["creditorPrerequisite"].HeaderText = "Pre-requisite";
 
             // Iterate through all courses
             for (int i = 0; i < courses.Count; i++)
             {
-                // Add a new row(Course ID, Name, Number of credit) to DataGridView for each course
-                course_datagridview.Rows.Add(
-                $"{courses[i].Id}",
-                $"{courses[i].Name}",
-                $"{string.Join(", ", courses[i].Prerequisites)}"
-            );
+                course_datagridview.Rows.Add
+                (
+                    $"{courses[i].Id}",
+                    $"{courses[i].Name}",
+                    $"{(courses[i].Prerequisites != null && courses[i].Prerequisites.Count > 0 ? string.Join(", ", courses[i].Prerequisites) : "None")}"
+                );
 
             }
         }
