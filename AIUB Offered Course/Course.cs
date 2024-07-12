@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace AIUB_Offered_Course
 {
 
-    class Course
+    public class Course
     {
         public int Id {  get; set; }
         public string Name { get; set; }
@@ -17,4 +17,6 @@ namespace AIUB_Offered_Course
         public int CourseDept { get; set; }
 
     }
+
+
 }

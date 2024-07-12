@@ -11,7 +11,7 @@ namespace AIUB_Offered_Course
     {
 
         // Function to handle CSE courses
-        public static List<Course> CseCourses()
+        public static List<Course> CSECourses()
         {
             return new List<Course>
                         {
@@ -142,7 +142,7 @@ namespace AIUB_Offered_Course
         }
 
         // Function to handle EEE courses
-        public static List<Course> EeeCourses()
+        public static List<Course> EEECourses()
         {
             return new List<Course>
             {
