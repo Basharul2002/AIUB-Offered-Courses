@@ -9,6 +9,7 @@ namespace AIUB_Offered_Course
 
     class Course
     {
+        public int Id {  get; set; }
         public string Name { get; set; }
         public HashSet<int> Prerequisites { get; set; }
         public int CourseCredit { get; set; }
