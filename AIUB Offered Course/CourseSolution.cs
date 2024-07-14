@@ -58,13 +58,19 @@ namespace AIUB_Offered_Course
         {
             rightside_initial_state_panel.Visible = false;
             department_choosing_panel.Visible = false;
-            course_chosing_panel.Visible = true;
-            course_datagridview.Visible = true;
             offered_courses_panel.Visible = false;
             elective_courses_label.Visible = false;
+
+            search_panel.Visible = true;
+            course_chosing_panel.Visible = true;
+            course_datagridview.Visible = true;
+
+
             completed_course_number_button.Focus();
             this.AcceptButton = completed_course_number_button;
             GetPreviousControl(course_chosing_panel);
+
+            
 
             allCourses = CourseAdviser.CourseInformation(departmentNumber);
             PrintCourses(allCourses);
@@ -75,8 +81,6 @@ namespace AIUB_Offered_Course
         private void DepartmentEnviroment()
         {
             congratulation_panel.Visible = false;
-            rightside_initial_state_panel.Visible = true;
-           
             course_chosing_panel.Visible = false;
             department_combobox.StartIndex = 0;
             course_datagridview.Visible = false;
@@ -85,10 +89,13 @@ namespace AIUB_Offered_Course
             department_warning_label.Visible = false;
 
             course_number_warning_label.Visible = false;
-            course_number_textbox.Clear();
+            course_number_textbox.Text = "";
 
-            
+            search_panel.Visible = false;
 
+
+
+            rightside_initial_state_panel.Visible = true;
             department_choosing_panel.Visible = true;
             this.AcceptButton = department_choose_button;
 
@@ -103,7 +110,8 @@ namespace AIUB_Offered_Course
         {
             // Clear existing columns (if any)
             course_datagridview.Rows.Clear();
-            course_datagridview.Columns["creditorPrerequisite"].HeaderText = "Credit";
+            course_datagridview.Columns["credit_prerequisite"].HeaderText = "Credit";
+
 
 
             // Iterate through all courses
@@ -591,10 +599,10 @@ namespace AIUB_Offered_Course
 
             
             if(departmentNumber == 1)
-                dataGridView.Rows.Add($"{courseIndex} {course.Name}", course.CourseCredit, (CseCourse)course.CourseType-1);
+                dataGridView.Rows.Add($"{courseIndex}.  {course.Name}", course.CourseCredit, (CseCourse)course.CourseType-1);
 
             else
-                dataGridView.Rows.Add($"{courseIndex} {course.Name}", course.CourseCredit);
+                dataGridView.Rows.Add($"{courseIndex}.  {course.Name}", course.CourseCredit);
             dataGridView.Visible = true;
             label.Visible = true;
 
@@ -692,10 +700,17 @@ namespace AIUB_Offered_Course
 
         private void ShowSearchResult(List<Course> courses)
         {
-            
+           
+            offered_courses_panel.Visible = false;
+            congratulation_panel.Visible = false;
+
+            course_datagridview.Visible = true;
+
             // Clear existing columns (if any)
             course_datagridview.Rows.Clear();
-            course_datagridview.Columns["creditorPrerequisite"].HeaderText = "Pre-requisite";
+            course_datagridview.Columns["credit_prerequisite"].HeaderText = "Pre-requisite";
+
+
 
             // Iterate through all courses
             for (int i = 0; i < courses.Count; i++)
