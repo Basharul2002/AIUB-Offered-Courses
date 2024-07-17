@@ -61,7 +61,7 @@ namespace AIUB_Offered_Course
             offered_courses_panel.Visible = false;
             elective_courses_label.Visible = false;
 
-            search_panel.Visible = true;
+           // search_panel.Visible = true;
             course_chosing_panel.Visible = true;
             course_datagridview.Visible = true;
 
@@ -727,7 +727,13 @@ namespace AIUB_Offered_Course
 
         private void search_back_button_Click(object sender, EventArgs e)
         {
+            course_number_warning_label.Visible = false;
+            core_courses_datagridview.Rows.Clear();
 
+            search_panel.Visible = false;
+            DepartmentChoose();
+
+            return;
         }
 
         // Action listener perform for offered courses
