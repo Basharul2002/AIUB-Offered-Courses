@@ -760,14 +760,16 @@ namespace AIUB_Offered_Course
 
         private void search_back_button_Click(object sender, EventArgs e)
         {
-            course_number_warning_label.Visible = false;
+            //course_number_warning_label.Visible = false;
             core_courses_datagridview.Rows.Clear();
-
+            searching_courses_tb.Text = "";
             search_panel.Visible = false;
             DepartmentChoose();
 
             return;
         }
+
+        
 
         private void refreshButton_search_Click(object sender, EventArgs e)
         {
