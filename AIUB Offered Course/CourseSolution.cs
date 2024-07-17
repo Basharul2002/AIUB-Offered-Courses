@@ -736,6 +736,15 @@ namespace AIUB_Offered_Course
             return;
         }
 
+        private void refreshButton_search_Click(object sender, EventArgs e)
+        {
+            searching_warning_label.Visible = false;
+            core_courses_datagridview.Rows.Clear();
+            core_courses_datagridview.Visible = false;
+            searching_courses_tb.Text = string.Empty;
+            rightside_initial_state_panel.Visible = true;
+        }
+
         // Action listener perform for offered courses
         private void completed_course_button_Click(object sender, EventArgs e)
         {
