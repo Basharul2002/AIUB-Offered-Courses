@@ -75,6 +75,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle45 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CourseSolution));
             this.parent_panel = new Guna.UI2.WinForms.Guna2Panel();
+            this.right_side_panel = new Guna.UI2.WinForms.Guna2Panel();
             this.offered_courses_panel = new Guna.UI2.WinForms.Guna2Panel();
             this.recomended_courses_panel = new Guna.UI2.WinForms.Guna2Panel();
             this.elective13_courses_datagridview = new Guna.UI2.WinForms.Guna2DataGridView();
@@ -138,15 +139,20 @@
             this.elective1_courses_label = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.elective_courses_label = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.core_courses_datagridview = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.core_course_credit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.core_courses_label = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.offered_courses_info_top_panel = new Guna.UI2.WinForms.Guna2Panel();
             this.course_heading_label = new System.Windows.Forms.Label();
-            this.rightside_initial_state_panel = new Guna.UI2.WinForms.Guna2Panel();
-            this.label5 = new System.Windows.Forms.Label();
             this.congratulation_panel = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.course_datagridview = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CourseName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.credit_prerequisite = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rightside_initial_state_panel = new Guna.UI2.WinForms.Guna2Panel();
+            this.label5 = new System.Windows.Forms.Label();
             this.left_right_side_devider = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.left_panel = new Guna.UI2.WinForms.Guna2Panel();
             this.search_panel = new Guna.UI2.WinForms.Guna2Panel();
@@ -175,13 +181,8 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.core_course_credit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.right_side_panel = new Guna.UI2.WinForms.Guna2Panel();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CourseName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.credit_prerequisite = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.parent_panel.SuspendLayout();
+            this.right_side_panel.SuspendLayout();
             this.offered_courses_panel.SuspendLayout();
             this.recomended_courses_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.elective13_courses_datagridview)).BeginInit();
@@ -199,10 +200,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.elective1_courses_datagridview)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.core_courses_datagridview)).BeginInit();
             this.offered_courses_info_top_panel.SuspendLayout();
-            this.rightside_initial_state_panel.SuspendLayout();
             this.congratulation_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.course_datagridview)).BeginInit();
+            this.rightside_initial_state_panel.SuspendLayout();
             this.left_panel.SuspendLayout();
             this.search_panel.SuspendLayout();
             this.course_chosing_panel.SuspendLayout();
@@ -211,7 +212,6 @@
             this.top_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
-            this.right_side_panel.SuspendLayout();
             this.SuspendLayout();
             // 
             // parent_panel
@@ -227,6 +227,19 @@
             this.parent_panel.Name = "parent_panel";
             this.parent_panel.Size = new System.Drawing.Size(798, 484);
             this.parent_panel.TabIndex = 0;
+            // 
+            // right_side_panel
+            // 
+            this.right_side_panel.Controls.Add(this.offered_courses_panel);
+            this.right_side_panel.Controls.Add(this.congratulation_panel);
+            this.right_side_panel.Controls.Add(this.course_datagridview);
+            this.right_side_panel.Controls.Add(this.rightside_initial_state_panel);
+            this.right_side_panel.Controls.Add(this.left_right_side_devider);
+            this.right_side_panel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.right_side_panel.Location = new System.Drawing.Point(303, 158);
+            this.right_side_panel.Name = "right_side_panel";
+            this.right_side_panel.Size = new System.Drawing.Size(495, 326);
+            this.right_side_panel.TabIndex = 36;
             // 
             // offered_courses_panel
             // 
@@ -1544,6 +1557,22 @@
             this.core_courses_datagridview.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.core_courses_datagridview.Visible = false;
             // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn2.FillWeight = 240.8579F;
+            this.dataGridViewTextBoxColumn2.HeaderText = "Course Name";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // core_course_credit
+            // 
+            this.core_course_credit.FillWeight = 30.45686F;
+            this.core_course_credit.HeaderText = "Credit";
+            this.core_course_credit.Name = "core_course_credit";
+            this.core_course_credit.ReadOnly = true;
+            this.core_course_credit.Width = 58;
+            // 
             // core_courses_label
             // 
             this.core_courses_label.BackColor = System.Drawing.Color.Transparent;
@@ -1576,27 +1605,6 @@
             this.course_heading_label.Size = new System.Drawing.Size(174, 42);
             this.course_heading_label.TabIndex = 0;
             this.course_heading_label.Text = "Completed Credit : 90\r\nAvailable Courses : ";
-            // 
-            // rightside_initial_state_panel
-            // 
-            this.rightside_initial_state_panel.Controls.Add(this.label5);
-            this.rightside_initial_state_panel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rightside_initial_state_panel.Location = new System.Drawing.Point(3, 0);
-            this.rightside_initial_state_panel.Name = "rightside_initial_state_panel";
-            this.rightside_initial_state_panel.Size = new System.Drawing.Size(492, 326);
-            this.rightside_initial_state_panel.TabIndex = 10;
-            // 
-            // label5
-            // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Nirmala UI", 15F, System.Drawing.FontStyle.Bold);
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(78)))), ((int)(((byte)(161)))));
-            this.label5.Location = new System.Drawing.Point(28, 134);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(439, 28);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "Your departmental courses will show up here";
             // 
             // congratulation_panel
             // 
@@ -1696,6 +1704,51 @@
             this.course_datagridview.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.course_datagridview.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.course_datagridview.Visible = false;
+            // 
+            // ID
+            // 
+            this.ID.FillWeight = 28.6853F;
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Width = 42;
+            // 
+            // CourseName
+            // 
+            this.CourseName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.CourseName.FillWeight = 240.8579F;
+            this.CourseName.HeaderText = "Course Name";
+            this.CourseName.Name = "CourseName";
+            this.CourseName.ReadOnly = true;
+            // 
+            // credit_prerequisite
+            // 
+            this.credit_prerequisite.FillWeight = 30.45686F;
+            this.credit_prerequisite.HeaderText = "Credit";
+            this.credit_prerequisite.Name = "credit_prerequisite";
+            this.credit_prerequisite.ReadOnly = true;
+            this.credit_prerequisite.Width = 58;
+            // 
+            // rightside_initial_state_panel
+            // 
+            this.rightside_initial_state_panel.Controls.Add(this.label5);
+            this.rightside_initial_state_panel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rightside_initial_state_panel.Location = new System.Drawing.Point(3, 0);
+            this.rightside_initial_state_panel.Name = "rightside_initial_state_panel";
+            this.rightside_initial_state_panel.Size = new System.Drawing.Size(492, 326);
+            this.rightside_initial_state_panel.TabIndex = 10;
+            // 
+            // label5
+            // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Nirmala UI", 15F, System.Drawing.FontStyle.Bold);
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(78)))), ((int)(((byte)(161)))));
+            this.label5.Location = new System.Drawing.Point(28, 134);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(439, 28);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "Your departmental courses will show up here";
             // 
             // left_right_side_devider
             // 
@@ -2115,59 +2168,6 @@
             this.guna2PictureBox1.TabStop = false;
             this.guna2PictureBox1.UseTransparentBackground = true;
             // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn2.FillWeight = 240.8579F;
-            this.dataGridViewTextBoxColumn2.HeaderText = "Course Name";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // core_course_credit
-            // 
-            this.core_course_credit.FillWeight = 30.45686F;
-            this.core_course_credit.HeaderText = "Credit";
-            this.core_course_credit.Name = "core_course_credit";
-            this.core_course_credit.ReadOnly = true;
-            this.core_course_credit.Width = 58;
-            // 
-            // right_side_panel
-            // 
-            this.right_side_panel.Controls.Add(this.offered_courses_panel);
-            this.right_side_panel.Controls.Add(this.congratulation_panel);
-            this.right_side_panel.Controls.Add(this.course_datagridview);
-            this.right_side_panel.Controls.Add(this.rightside_initial_state_panel);
-            this.right_side_panel.Controls.Add(this.left_right_side_devider);
-            this.right_side_panel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.right_side_panel.Location = new System.Drawing.Point(303, 158);
-            this.right_side_panel.Name = "right_side_panel";
-            this.right_side_panel.Size = new System.Drawing.Size(495, 326);
-            this.right_side_panel.TabIndex = 36;
-            // 
-            // ID
-            // 
-            this.ID.FillWeight = 28.6853F;
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Width = 42;
-            // 
-            // CourseName
-            // 
-            this.CourseName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.CourseName.FillWeight = 240.8579F;
-            this.CourseName.HeaderText = "Course Name";
-            this.CourseName.Name = "CourseName";
-            this.CourseName.ReadOnly = true;
-            // 
-            // credit_prerequisite
-            // 
-            this.credit_prerequisite.FillWeight = 30.45686F;
-            this.credit_prerequisite.HeaderText = "Credit";
-            this.credit_prerequisite.Name = "credit_prerequisite";
-            this.credit_prerequisite.ReadOnly = true;
-            this.credit_prerequisite.Width = 58;
-            // 
             // CourseSolution
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2181,6 +2181,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AIUB Offered Courses";
             this.parent_panel.ResumeLayout(false);
+            this.right_side_panel.ResumeLayout(false);
             this.offered_courses_panel.ResumeLayout(false);
             this.recomended_courses_panel.ResumeLayout(false);
             this.recomended_courses_panel.PerformLayout();
@@ -2200,12 +2201,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.core_courses_datagridview)).EndInit();
             this.offered_courses_info_top_panel.ResumeLayout(false);
             this.offered_courses_info_top_panel.PerformLayout();
-            this.rightside_initial_state_panel.ResumeLayout(false);
-            this.rightside_initial_state_panel.PerformLayout();
             this.congratulation_panel.ResumeLayout(false);
             this.congratulation_panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.course_datagridview)).EndInit();
+            this.rightside_initial_state_panel.ResumeLayout(false);
+            this.rightside_initial_state_panel.PerformLayout();
             this.left_panel.ResumeLayout(false);
             this.search_panel.ResumeLayout(false);
             this.search_panel.PerformLayout();
@@ -2218,7 +2219,6 @@
             this.top_panel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
-            this.right_side_panel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
