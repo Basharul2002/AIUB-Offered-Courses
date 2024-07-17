@@ -751,7 +751,7 @@ namespace AIUB_Offered_Course
             rightside_initial_state_panel.Visible = true;
 
             rightside_initial_state_panel.Visible = true;
-            inital_message_label.Text = "Searched course name will show up here";
+            inital_message_label.Text = "   Searched course name will show up here";
         }
 
         private void search_link_label_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -764,7 +764,11 @@ namespace AIUB_Offered_Course
 
             search_panel.Visible = true;
             rightside_initial_state_panel.Visible = true;
-            inital_message_label.Text = "Searched course name will show up here";
+            inital_message_label.Text = "   Searched course name will show up here";
+
+            search_button.Focus();
+            this.AcceptButton = search_button;
+            GetPreviousControl(search_panel);
         }
 
         // Action listener perform for offered courses
