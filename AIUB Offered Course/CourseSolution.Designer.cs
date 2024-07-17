@@ -1797,7 +1797,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Nirmala UI", 13F, System.Drawing.FontStyle.Bold);
-            this.label7.Location = new System.Drawing.Point(38, 63);
+            this.label7.Location = new System.Drawing.Point(39, 64);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(219, 25);
             this.label7.TabIndex = 11;
@@ -1921,7 +1921,7 @@
             // 
             this.search_link_label.AutoSize = true;
             this.search_link_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.search_link_label.Location = new System.Drawing.Point(165, 257);
+            this.search_link_label.Location = new System.Drawing.Point(167, 257);
             this.search_link_label.Name = "search_link_label";
             this.search_link_label.Size = new System.Drawing.Size(94, 16);
             this.search_link_label.TabIndex = 13;
@@ -1933,7 +1933,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Nirmala UI", 9F);
-            this.label6.Location = new System.Drawing.Point(55, 258);
+            this.label6.Location = new System.Drawing.Point(57, 258);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(110, 15);
             this.label6.TabIndex = 10;
@@ -1962,7 +1962,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(84, 73);
+            this.label4.Location = new System.Drawing.Point(86, 73);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(124, 15);
             this.label4.TabIndex = 7;
