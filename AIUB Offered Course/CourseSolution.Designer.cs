@@ -152,7 +152,7 @@
             this.CourseName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.credit_prerequisite = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rightside_initial_state_panel = new Guna.UI2.WinForms.Guna2Panel();
-            this.label5 = new System.Windows.Forms.Label();
+            this.inital_message_label = new System.Windows.Forms.Label();
             this.left_right_side_devider = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.left_panel = new Guna.UI2.WinForms.Guna2Panel();
             this.search_panel = new Guna.UI2.WinForms.Guna2Panel();
@@ -181,6 +181,10 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.refreshButton_search = new Guna.UI2.WinForms.Guna2Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.search_link_label = new System.Windows.Forms.LinkLabel();
+            this.label7 = new System.Windows.Forms.Label();
             this.parent_panel.SuspendLayout();
             this.right_side_panel.SuspendLayout();
             this.offered_courses_panel.SuspendLayout();
@@ -1731,24 +1735,24 @@
             // 
             // rightside_initial_state_panel
             // 
-            this.rightside_initial_state_panel.Controls.Add(this.label5);
+            this.rightside_initial_state_panel.Controls.Add(this.inital_message_label);
             this.rightside_initial_state_panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rightside_initial_state_panel.Location = new System.Drawing.Point(3, 0);
             this.rightside_initial_state_panel.Name = "rightside_initial_state_panel";
             this.rightside_initial_state_panel.Size = new System.Drawing.Size(492, 326);
             this.rightside_initial_state_panel.TabIndex = 10;
             // 
-            // label5
+            // inital_message_label
             // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Nirmala UI", 15F, System.Drawing.FontStyle.Bold);
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(78)))), ((int)(((byte)(161)))));
-            this.label5.Location = new System.Drawing.Point(28, 134);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(439, 28);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "Your departmental courses will show up here";
+            this.inital_message_label.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.inital_message_label.AutoSize = true;
+            this.inital_message_label.Font = new System.Drawing.Font("Nirmala UI", 15F, System.Drawing.FontStyle.Bold);
+            this.inital_message_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(78)))), ((int)(((byte)(161)))));
+            this.inital_message_label.Location = new System.Drawing.Point(28, 134);
+            this.inital_message_label.Name = "inital_message_label";
+            this.inital_message_label.Size = new System.Drawing.Size(439, 28);
+            this.inital_message_label.TabIndex = 1;
+            this.inital_message_label.Text = "Your departmental courses will show up here";
             // 
             // left_right_side_devider
             // 
@@ -1776,6 +1780,8 @@
             // 
             // search_panel
             // 
+            this.search_panel.Controls.Add(this.label7);
+            this.search_panel.Controls.Add(this.refreshButton_search);
             this.search_panel.Controls.Add(this.searching_warning_label);
             this.search_panel.Controls.Add(this.search_back_button);
             this.search_panel.Controls.Add(this.search_button);
@@ -1783,7 +1789,7 @@
             this.search_panel.Dock = System.Windows.Forms.DockStyle.Top;
             this.search_panel.Location = new System.Drawing.Point(0, 488);
             this.search_panel.Name = "search_panel";
-            this.search_panel.Size = new System.Drawing.Size(286, 156);
+            this.search_panel.Size = new System.Drawing.Size(286, 275);
             this.search_panel.TabIndex = 10;
             this.search_panel.Visible = false;
             // 
@@ -1792,11 +1798,11 @@
             this.searching_warning_label.BackColor = System.Drawing.Color.Transparent;
             this.searching_warning_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.searching_warning_label.ForeColor = System.Drawing.Color.Red;
-            this.searching_warning_label.Location = new System.Drawing.Point(33, 52);
+            this.searching_warning_label.Location = new System.Drawing.Point(29, 153);
             this.searching_warning_label.Name = "searching_warning_label";
-            this.searching_warning_label.Size = new System.Drawing.Size(126, 17);
+            this.searching_warning_label.Size = new System.Drawing.Size(133, 17);
             this.searching_warning_label.TabIndex = 7;
-            this.searching_warning_label.Text = "**Invalid input format**";
+            this.searching_warning_label.Text = "**Invalid course name**";
             this.searching_warning_label.Visible = false;
             // 
             // search_back_button
@@ -1812,7 +1818,7 @@
             this.search_back_button.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(78)))), ((int)(((byte)(161)))));
             this.search_back_button.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold);
             this.search_back_button.ForeColor = System.Drawing.Color.White;
-            this.search_back_button.Location = new System.Drawing.Point(21, 90);
+            this.search_back_button.Location = new System.Drawing.Point(32, 192);
             this.search_back_button.Name = "search_back_button";
             this.search_back_button.Size = new System.Drawing.Size(99, 45);
             this.search_back_button.TabIndex = 6;
@@ -1833,7 +1839,7 @@
             this.search_button.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold);
             this.search_button.ForeColor = System.Drawing.Color.White;
             this.search_button.IndicateFocus = true;
-            this.search_button.Location = new System.Drawing.Point(166, 90);
+            this.search_button.Location = new System.Drawing.Point(177, 192);
             this.search_button.Name = "search_button";
             this.search_button.Size = new System.Drawing.Size(99, 45);
             this.search_button.TabIndex = 5;
@@ -1855,7 +1861,7 @@
             this.searching_courses_tb.Font = new System.Drawing.Font("Nirmala UI", 9F);
             this.searching_courses_tb.ForeColor = System.Drawing.Color.Black;
             this.searching_courses_tb.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.searching_courses_tb.Location = new System.Drawing.Point(28, 13);
+            this.searching_courses_tb.Location = new System.Drawing.Point(33, 115);
             this.searching_courses_tb.Name = "searching_courses_tb";
             this.searching_courses_tb.PasswordChar = '\0';
             this.searching_courses_tb.PlaceholderText = "";
@@ -1866,6 +1872,8 @@
             // 
             // course_chosing_panel
             // 
+            this.course_chosing_panel.Controls.Add(this.search_link_label);
+            this.course_chosing_panel.Controls.Add(this.label6);
             this.course_chosing_panel.Controls.Add(this.refresh_button);
             this.course_chosing_panel.Controls.Add(this.label4);
             this.course_chosing_panel.Controls.Add(this.course_number_warning_label);
@@ -2168,6 +2176,56 @@
             this.guna2PictureBox1.TabStop = false;
             this.guna2PictureBox1.UseTransparentBackground = true;
             // 
+            // refreshButton_search
+            // 
+            this.refreshButton_search.Animated = true;
+            this.refreshButton_search.BackColor = System.Drawing.Color.Transparent;
+            this.refreshButton_search.BorderRadius = 18;
+            this.refreshButton_search.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.refreshButton_search.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.refreshButton_search.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.refreshButton_search.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.refreshButton_search.FillColor = System.Drawing.Color.Transparent;
+            this.refreshButton_search.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.refreshButton_search.ForeColor = System.Drawing.Color.Cornsilk;
+            this.refreshButton_search.Image = global::AIUB_Offered_Course.Properties.Resources.refresh;
+            this.refreshButton_search.Location = new System.Drawing.Point(264, 115);
+            this.refreshButton_search.Name = "refreshButton_search";
+            this.refreshButton_search.Size = new System.Drawing.Size(36, 36);
+            this.refreshButton_search.TabIndex = 10;
+            this.refreshButton_search.Click += new System.EventHandler(this.refreshButton_search_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Nirmala UI", 9F);
+            this.label6.Location = new System.Drawing.Point(55, 258);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(110, 15);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "Can\'t find a course?";
+            // 
+            // search_link_label
+            // 
+            this.search_link_label.AutoSize = true;
+            this.search_link_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.search_link_label.Location = new System.Drawing.Point(165, 257);
+            this.search_link_label.Name = "search_link_label";
+            this.search_link_label.Size = new System.Drawing.Size(94, 16);
+            this.search_link_label.TabIndex = 13;
+            this.search_link_label.TabStop = true;
+            this.search_link_label.Text = "Search Here";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Nirmala UI", 13F, System.Drawing.FontStyle.Bold);
+            this.label7.Location = new System.Drawing.Point(38, 63);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(219, 25);
+            this.label7.TabIndex = 11;
+            this.label7.Text = "Enter  your course name";
+            // 
             // CourseSolution
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2253,7 +2311,7 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel course_number_warning_label;
         private System.Windows.Forms.Label label4;
         private Guna.UI2.WinForms.Guna2Panel rightside_initial_state_panel;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label inital_message_label;
         private Guna.UI2.WinForms.Guna2Panel congratulation_panel;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
@@ -2332,5 +2390,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn CourseName;
         private System.Windows.Forms.DataGridViewTextBoxColumn credit_prerequisite;
+        private Guna.UI2.WinForms.Guna2Button refreshButton_search;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.LinkLabel search_link_label;
+        private System.Windows.Forms.Label label7;
     }
 }
