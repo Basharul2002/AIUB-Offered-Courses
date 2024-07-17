@@ -138,6 +138,7 @@ namespace AIUB_Offered_Course
 
             if (string.IsNullOrWhiteSpace(input))
             {
+                DepartmentChoose();
                 DisplayWarning("**Please Enter Course ID**");
                 return;
             }
@@ -648,31 +649,18 @@ namespace AIUB_Offered_Course
         }
 
 
-        private Control GetPreviousControl(Control currentControl)
-        {
-            Control previousControl = null;
-            Control.ControlCollection controls = this.Controls;
+       
 
-            for (int i = 0; i < controls.Count; i++)
-            {
-                if (controls[i] == currentControl)
-                {
-                    if (i > 0)
-                        previousControl = controls[i - 1];
-
-                    break;
-                }
-            }
-
-            return previousControl;
-        }
-
-        // Action listener perform for after department choosed
+        // Action Event
+        // department_panel Panel
         private void department_choose_button_Click(object sender, EventArgs e)
         {
             DepartmentOption();
         }
 
+
+
+        // Course_searching_panel panel
         private void refresh_button_Click(object sender, EventArgs e)
         {
             course_number_warning_label.Visible = false;
@@ -682,6 +670,41 @@ namespace AIUB_Offered_Course
 
             return;
         }
+
+      
+
+        private void search_link_label_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            course_chosing_panel.Visible = false;
+            offered_courses_panel.Visible = false;
+            congratulation_panel.Visible = false;
+            course_datagridview.Visible = false;
+            recomended_courses_panel.Visible = false;
+
+            search_panel.Visible = true;
+            rightside_initial_state_panel.Visible = true;
+            inital_message_label.Text = "   Searched course name will show up here";
+
+            search_button.Focus();
+            this.AcceptButton = search_button;
+            GetPreviousControl(search_panel);
+        }
+
+        // Action listener perform for offered courses
+        private void completed_course_button_Click(object sender, EventArgs e)
+        {
+            inValidFormat = false;
+            outOfRange = false;
+            inValidNumber = false;
+            CourseDataUserInput(course_number_textbox.Text, departmentNumber);
+        }
+
+        // To return in 
+        private void back_button_Click(object sender, EventArgs e)
+        {
+            DepartmentEnviroment();
+        }
+
 
         private void search_button_Click(object sender, EventArgs e)
         {
@@ -704,7 +727,11 @@ namespace AIUB_Offered_Course
 
             if (courses.Count == 0)
             {
+                course_datagridview.Visible = false;
+
                 searching_warning_label.Visible = true;
+                rightside_initial_state_panel.Visible = true;
+                inital_message_label.Text = "   Searched course name will show up here";
                 return;
             }
             offered_courses_panel.Visible = false;
@@ -748,42 +775,29 @@ namespace AIUB_Offered_Course
             recomended_courses_panel.Visible = false;
             course_datagridview.Visible = false;
             searching_courses_tb.Text = "";
-            rightside_initial_state_panel.Visible = true;
 
             rightside_initial_state_panel.Visible = true;
             inital_message_label.Text = "   Searched course name will show up here";
         }
 
-        private void search_link_label_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+
+        private Control GetPreviousControl(Control currentControl)
         {
-            course_chosing_panel.Visible = false;
-            offered_courses_panel.Visible = false;
-            congratulation_panel.Visible = false;
-            course_datagridview.Visible = false;
-            recomended_courses_panel.Visible = false;
+            Control previousControl = null;
+            Control.ControlCollection controls = this.Controls;
 
-            search_panel.Visible = true;
-            rightside_initial_state_panel.Visible = true;
-            inital_message_label.Text = "   Searched course name will show up here";
+            for (int i = 0; i < controls.Count; i++)
+            {
+                if (controls[i] == currentControl)
+                {
+                    if (i > 0)
+                        previousControl = controls[i - 1];
 
-            search_button.Focus();
-            this.AcceptButton = search_button;
-            GetPreviousControl(search_panel);
-        }
+                    break;
+                }
+            }
 
-        // Action listener perform for offered courses
-        private void completed_course_button_Click(object sender, EventArgs e)
-        {
-            inValidFormat = false;
-            outOfRange = false;
-            inValidNumber = false;
-            CourseDataUserInput(course_number_textbox.Text, departmentNumber);
-        }
-
-        // To return in 
-        private void back_button_Click(object sender, EventArgs e)
-        {
-            DepartmentEnviroment();
+            return previousControl;
         }
     }
 }
