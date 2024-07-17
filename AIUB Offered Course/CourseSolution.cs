@@ -90,6 +90,7 @@ namespace AIUB_Offered_Course
 
             course_number_warning_label.Visible = false;
             course_number_textbox.Text = "";
+            inital_message_label.Text = "Your departmental courses will show up here";
 
             search_panel.Visible = false;
 
@@ -700,7 +701,12 @@ namespace AIUB_Offered_Course
 
         private void ShowSearchResult(List<Course> courses)
         {
-           
+
+            if (courses.Count == 0)
+            {
+                searching_warning_label.Visible = true;
+                return;
+            }
             offered_courses_panel.Visible = false;
             congratulation_panel.Visible = false;
 
@@ -739,10 +745,26 @@ namespace AIUB_Offered_Course
         private void refreshButton_search_Click(object sender, EventArgs e)
         {
             searching_warning_label.Visible = false;
-            core_courses_datagridview.Rows.Clear();
-            core_courses_datagridview.Visible = false;
-            searching_courses_tb.Text = string.Empty;
+            recomended_courses_panel.Visible = false;
+            course_datagridview.Visible = false;
+            searching_courses_tb.Text = "";
             rightside_initial_state_panel.Visible = true;
+
+            rightside_initial_state_panel.Visible = true;
+            inital_message_label.Text = "Searched course name will show up here";
+        }
+
+        private void search_link_label_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            course_chosing_panel.Visible = false;
+            offered_courses_panel.Visible = false;
+            congratulation_panel.Visible = false;
+            course_datagridview.Visible = false;
+            recomended_courses_panel.Visible = false;
+
+            search_panel.Visible = true;
+            rightside_initial_state_panel.Visible = true;
+            inital_message_label.Text = "Searched course name will show up here";
         }
 
         // Action listener perform for offered courses

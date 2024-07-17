@@ -156,11 +156,15 @@
             this.left_right_side_devider = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.left_panel = new Guna.UI2.WinForms.Guna2Panel();
             this.search_panel = new Guna.UI2.WinForms.Guna2Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.refreshButton_search = new Guna.UI2.WinForms.Guna2Button();
             this.searching_warning_label = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.search_back_button = new Guna.UI2.WinForms.Guna2Button();
             this.search_button = new Guna.UI2.WinForms.Guna2Button();
             this.searching_courses_tb = new Guna.UI2.WinForms.Guna2TextBox();
             this.course_chosing_panel = new Guna.UI2.WinForms.Guna2Panel();
+            this.search_link_label = new System.Windows.Forms.LinkLabel();
+            this.label6 = new System.Windows.Forms.Label();
             this.refresh_button = new Guna.UI2.WinForms.Guna2Button();
             this.label4 = new System.Windows.Forms.Label();
             this.course_number_warning_label = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -181,10 +185,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.refreshButton_search = new Guna.UI2.WinForms.Guna2Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.search_link_label = new System.Windows.Forms.LinkLabel();
-            this.label7 = new System.Windows.Forms.Label();
             this.parent_panel.SuspendLayout();
             this.right_side_panel.SuspendLayout();
             this.offered_courses_panel.SuspendLayout();
@@ -1793,6 +1793,35 @@
             this.search_panel.TabIndex = 10;
             this.search_panel.Visible = false;
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Nirmala UI", 13F, System.Drawing.FontStyle.Bold);
+            this.label7.Location = new System.Drawing.Point(38, 63);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(219, 25);
+            this.label7.TabIndex = 11;
+            this.label7.Text = "Enter  your course name";
+            // 
+            // refreshButton_search
+            // 
+            this.refreshButton_search.Animated = true;
+            this.refreshButton_search.BackColor = System.Drawing.Color.Transparent;
+            this.refreshButton_search.BorderRadius = 18;
+            this.refreshButton_search.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.refreshButton_search.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.refreshButton_search.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.refreshButton_search.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.refreshButton_search.FillColor = System.Drawing.Color.Transparent;
+            this.refreshButton_search.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.refreshButton_search.ForeColor = System.Drawing.Color.Cornsilk;
+            this.refreshButton_search.Image = global::AIUB_Offered_Course.Properties.Resources.refresh;
+            this.refreshButton_search.Location = new System.Drawing.Point(264, 115);
+            this.refreshButton_search.Name = "refreshButton_search";
+            this.refreshButton_search.Size = new System.Drawing.Size(36, 36);
+            this.refreshButton_search.TabIndex = 10;
+            this.refreshButton_search.Click += new System.EventHandler(this.refreshButton_search_Click);
+            // 
             // searching_warning_label
             // 
             this.searching_warning_label.BackColor = System.Drawing.Color.Transparent;
@@ -1887,6 +1916,28 @@
             this.course_chosing_panel.Size = new System.Drawing.Size(286, 275);
             this.course_chosing_panel.TabIndex = 1;
             this.course_chosing_panel.Visible = false;
+            // 
+            // search_link_label
+            // 
+            this.search_link_label.AutoSize = true;
+            this.search_link_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.search_link_label.Location = new System.Drawing.Point(165, 257);
+            this.search_link_label.Name = "search_link_label";
+            this.search_link_label.Size = new System.Drawing.Size(94, 16);
+            this.search_link_label.TabIndex = 13;
+            this.search_link_label.TabStop = true;
+            this.search_link_label.Text = "Search Here";
+            this.search_link_label.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.search_link_label_LinkClicked);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Nirmala UI", 9F);
+            this.label6.Location = new System.Drawing.Point(55, 258);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(110, 15);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "Can\'t find a course?";
             // 
             // refresh_button
             // 
@@ -2175,56 +2226,6 @@
             this.guna2PictureBox1.TabIndex = 0;
             this.guna2PictureBox1.TabStop = false;
             this.guna2PictureBox1.UseTransparentBackground = true;
-            // 
-            // refreshButton_search
-            // 
-            this.refreshButton_search.Animated = true;
-            this.refreshButton_search.BackColor = System.Drawing.Color.Transparent;
-            this.refreshButton_search.BorderRadius = 18;
-            this.refreshButton_search.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.refreshButton_search.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.refreshButton_search.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.refreshButton_search.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.refreshButton_search.FillColor = System.Drawing.Color.Transparent;
-            this.refreshButton_search.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.refreshButton_search.ForeColor = System.Drawing.Color.Cornsilk;
-            this.refreshButton_search.Image = global::AIUB_Offered_Course.Properties.Resources.refresh;
-            this.refreshButton_search.Location = new System.Drawing.Point(264, 115);
-            this.refreshButton_search.Name = "refreshButton_search";
-            this.refreshButton_search.Size = new System.Drawing.Size(36, 36);
-            this.refreshButton_search.TabIndex = 10;
-            this.refreshButton_search.Click += new System.EventHandler(this.refreshButton_search_Click);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Nirmala UI", 9F);
-            this.label6.Location = new System.Drawing.Point(55, 258);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(110, 15);
-            this.label6.TabIndex = 10;
-            this.label6.Text = "Can\'t find a course?";
-            // 
-            // search_link_label
-            // 
-            this.search_link_label.AutoSize = true;
-            this.search_link_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.search_link_label.Location = new System.Drawing.Point(165, 257);
-            this.search_link_label.Name = "search_link_label";
-            this.search_link_label.Size = new System.Drawing.Size(94, 16);
-            this.search_link_label.TabIndex = 13;
-            this.search_link_label.TabStop = true;
-            this.search_link_label.Text = "Search Here";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Nirmala UI", 13F, System.Drawing.FontStyle.Bold);
-            this.label7.Location = new System.Drawing.Point(38, 63);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(219, 25);
-            this.label7.TabIndex = 11;
-            this.label7.Text = "Enter  your course name";
             // 
             // CourseSolution
             // 
