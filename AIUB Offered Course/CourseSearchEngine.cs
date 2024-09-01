@@ -25,9 +25,8 @@ namespace AIUB_Offered_Course
         {
             root = new TrieNode();
             foreach (var course in allCourses)
-            {
                 Insert(course);
-            }
+            
         }
 
         private void Insert(Course course)
@@ -40,9 +39,8 @@ namespace AIUB_Offered_Course
                 {
                     char c = normalizedCourseName[j];
                     if (!node.Children.ContainsKey(c))
-                    {
                         node.Children[c] = new TrieNode();
-                    }
+                    
                     node = node.Children[c];
                     node.Courses.Add(course);
                 }
@@ -56,9 +54,8 @@ namespace AIUB_Offered_Course
             foreach (char c in normalizedSearchText)
             {
                 if (!node.Children.ContainsKey(c))
-                {
                     return new List<Course>(); // Return an empty list if no courses found
-                }
+                
                 node = node.Children[c];
             }
             return new List<Course>(node.Courses);

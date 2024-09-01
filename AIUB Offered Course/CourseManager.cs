@@ -735,7 +735,5 @@ namespace AIUB_Offered_Course
                 new Course { Id = 83, Name = "ADVANCE MATERIAL AND PROCESS", Prerequisites = new HashSet<int> { 28 }, CourseCredit = 3, CourseType = 4}, // 80
             };
         }
-
-
     }
 }

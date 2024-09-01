@@ -434,9 +434,8 @@ namespace AIUB_Offered_Course
                 SetupDataGridView(elective4_courses_datagridview, "<b>Major in Computer Engineering</b>", new int[] { 326, 58, 91 }, DataGridViewContentAlignment.MiddleCenter);
             }
             else if (departmentNumber == 2) // EEE (1 Major)
-            {
                 SetupDataGridView(elective1_courses_datagridview, "", new int[] { 417, 58 }, DataGridViewContentAlignment.MiddleCenter);
-            }
+            
             else if (departmentNumber == 3) // English (2 Majors)
             {
                 SetupDataGridView(elective1_courses_datagridview, "<b>Major in Linguistics & TESL</b>  <br>First Major: Complete any 10 courses in Linguistics & TESL <br> Second Major: Complete any 6 courses in Linguistics & TESL <br>Minor: Complete any FOUR 4 courses in Linguistics & TESL", new int[] { 417, 58 }, DataGridViewContentAlignment.MiddleCenter);
@@ -680,6 +679,7 @@ namespace AIUB_Offered_Course
             congratulation_panel.Visible = false;
             course_datagridview.Visible = false;
             recomended_courses_panel.Visible = false;
+            searching_warning_label.Visible = false;
 
             search_panel.Visible = true;
             rightside_initial_state_panel.Visible = true;
