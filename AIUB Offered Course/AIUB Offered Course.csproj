@@ -68,6 +68,9 @@
     <Reference Include="Guna.UI2, Version=2.0.4.6, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
       <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.6\lib\net48\Guna.UI2.dll</HintPath>
     </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.11.65.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlAgilityPack.1.11.65\lib\Net45\HtmlAgilityPack.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Design" />
@@ -100,13 +103,23 @@
     <Compile Include="Offline.Designer.cs">
       <DependentUpon>Offline.cs</DependentUpon>
     </Compile>
+    <Compile Include="Online.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Online.Designer.cs">
+      <DependentUpon>Online.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WebScraperInjector.cs" />
     <EmbeddedResource Include="CourseSolution.resx">
       <DependentUpon>CourseSolution.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Offline.resx">
       <DependentUpon>Offline.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Online.resx">
+      <DependentUpon>Online.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

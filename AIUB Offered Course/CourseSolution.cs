@@ -15,6 +15,10 @@ namespace AIUB_Offered_Course
     public partial class CourseSolution : Form
     {
         static CourseSolution obj;
+
+        Offline offline = new Offline();
+        Online online = new Online();
+
         public CourseSolution()
         {
             InitializeComponent();
@@ -45,9 +49,19 @@ namespace AIUB_Offered_Course
         private void OfflineOption()
         {
             panelContainer.Controls.Clear();
-            Offline offline = new Offline();
+            offline = new Offline();
             offline.Dock = DockStyle.Fill;
             panelContainer.Controls.Add(offline);
+        }
+
+
+
+        private void onlineOption()
+        {
+            panelContainer.Controls.Clear();
+            online = new Online();
+            online.Dock = DockStyle.Fill;
+            panelContainer.Controls.Add(online);
         }
 
 
@@ -56,6 +70,18 @@ namespace AIUB_Offered_Course
             obj = this;
 
             OfflineOption();
+        }
+
+        private void offline_button_Click(object sender, EventArgs e)
+        {
+            if (!panelContainer.Controls.ContainsKey("Offline"))
+                OfflineOption();
+        }
+
+        private void online_btn_Click(object sender, EventArgs e)
+        {
+            if (!panelContainer.Controls.ContainsKey("Online"))
+                onlineOption();
         }
     }
 }
