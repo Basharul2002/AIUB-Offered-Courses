@@ -94,10 +94,19 @@
     <Compile Include="CourseSolution.Designer.cs">
       <DependentUpon>CourseSolution.cs</DependentUpon>
     </Compile>
+    <Compile Include="Offline.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Offline.Designer.cs">
+      <DependentUpon>Offline.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="CourseSolution.resx">
       <DependentUpon>CourseSolution.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Offline.resx">
+      <DependentUpon>Offline.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
